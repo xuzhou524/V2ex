@@ -120,7 +120,7 @@ class HomeViewController: UIViewController {
                 if let err = error as? ApiError {
                     switch err {
                     case .needs2FA:
-                        V2Client.sharedInstance.centerViewController!.navigationController?.present(TwoFAViewController(), animated: true, completion: nil);
+                        self.navigationController?.present(TwoFAViewController(), animated: true, completion: nil);
                     default:
                         SVProgressHUD.showError(withStatus: err.rawString())
                     }

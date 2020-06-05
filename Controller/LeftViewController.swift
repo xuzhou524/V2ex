@@ -47,14 +47,14 @@ class LeftViewController: UIViewController,UITableViewDataSource,UITableViewDele
         if V2User.sharedInstance.isLogin {
             self.getUserInfo(V2User.sharedInstance.username!)
         }
-        self.themeChangedHandler = {[weak self] (style) -> Void in
-            if V2EXColor.sharedInstance.style == V2EXColor.V2EXColorStyleDefault {
-                self?.backgroundImageView.image = UIImage(named: "32.jpg")
-            }
-            else{
-                self?.backgroundImageView.image = UIImage(named: "12.jpg")
-            }
-        }
+//        self.themeChangedHandler = {[weak self] (style) -> Void in
+//            if V2EXColor.sharedInstance.style == V2EXColor.V2EXColorStyleDefault {
+//                self?.backgroundImageView.image = UIImage(named: "32.jpg")
+//            }
+//            else{
+//                self?.backgroundImageView.image = UIImage(named: "12.jpg")
+//            }
+//        }
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
@@ -105,7 +105,7 @@ class LeftViewController: UIViewController,UITableViewDataSource,UITableViewDele
             if indexPath.row == 0 {
                 if !V2User.sharedInstance.isLogin {
                     let loginViewController = LoginViewController()
-                    V2Client.sharedInstance.centerViewController!.navigationController?.present(loginViewController, animated: true, completion: nil);
+                    self.navigationController?.present(loginViewController, animated: true, completion: nil);
                 }else{
                     let memberViewController = MyCenterViewController()
                     memberViewController.username = V2User.sharedInstance.username
@@ -139,11 +139,11 @@ class LeftViewController: UIViewController,UITableViewDataSource,UITableViewDele
         else if indexPath.section == 2 {
             if indexPath.row == 0 {
                 let nodesViewController = NodesViewController()
-                V2Client.sharedInstance.centerViewController!.navigationController?.pushViewController(nodesViewController, animated: true)
+                self.navigationController?.pushViewController(nodesViewController, animated: true)
             }
             else if indexPath.row == 1 {
                 let moreViewController = MoreViewController()
-                V2Client.sharedInstance.centerViewController!.navigationController?.pushViewController(moreViewController, animated: true)
+                self.navigationController?.pushViewController(moreViewController, animated: true)
             }
             V2Client.sharedInstance.drawerController?.closeDrawer(animated: true, completion: nil)
         }

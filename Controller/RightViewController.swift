@@ -64,15 +64,7 @@ class RightViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         self.tableView.snp.makeConstraints{ (make) -> Void in
             make.top.right.bottom.left.equalTo(self.view);
         }
-        self.themeChangedHandler = {[weak self] (style) -> Void in
-            if V2EXColor.sharedInstance.style == V2EXColor.V2EXColorStyleDefault {
-                self?.backgroundImageView?.image = UIImage(named: "32.jpg")
-            }
-            else{
-                self?.backgroundImageView?.image = UIImage(named: "12.jpg")
-            }
-        }
-        
+
         let rowHeight = self.tableView(self.tableView, heightForRowAt: IndexPath(row: 0, section: 0))
         let rowCount = self.tableView(self.tableView, numberOfRowsInSection: 0)
         var paddingTop = (SCREEN_HEIGHT - CGFloat(rowCount) * rowHeight) / 2
@@ -114,13 +106,11 @@ class RightViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let node = self.rightNodes[indexPath.row];
-        V2Client.sharedInstance.centerViewController?.tab = node.nodeTab
-        V2Client.sharedInstance.centerViewController?.refreshPage()
-        V2Client.sharedInstance.drawerController?.closeDrawer(animated: true, completion: nil)
+        let homeVC = HomeViewController()
+        V2EXSettings.sharedInstance[kHomeTab] = node.nodeTab
+        self.navigationController?.pushViewController(homeVC, animated: true)
     }
 }
-
-
 
 struct rightNodeModel {
     var nodeName:String?
