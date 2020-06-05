@@ -11,9 +11,6 @@ import Kingfisher
 import YYText
 
 class HomeTopicListTableViewCell: UITableViewCell {
-    //? 为什么用这个圆角图片，而不用layer.cornerRadius
-    // 因为 设置 layer.cornerRadius 太耗系统资源，每次滑动 都需要渲染很多次，所以滑动掉帧
-    // iOS中可以缓存渲染，但效果还是不如直接 用圆角图片
     
     /// 节点信息label的圆角背景图
     fileprivate static var nodeBackgroundImage_Default =
