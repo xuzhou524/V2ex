@@ -49,9 +49,11 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tab = V2EXSettings.sharedInstance[kHomeTab]
-//        self.setupNavigationItem()
-        
+        if self.tab == nil {
+            self.tab = "全部"
+//            self.tab = V2EXSettings.sharedInstance[kHomeTab]
+        }
+ 
         //监听程序即将进入前台运行、进入后台休眠 事件
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.applicationWillEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.applicationDidEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)

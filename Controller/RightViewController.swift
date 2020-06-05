@@ -25,7 +25,6 @@ let RightViewControllerRightNodes = [
 ]
 class RightViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     let rightNodes = RightViewControllerRightNodes
-    var currentSelectedTabIndex = 0;
     
     var backgroundImageView:UIImageView?
     
@@ -53,8 +52,7 @@ class RightViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         if currentTab == nil {
             currentTab = "all"
         }
-        self.currentSelectedTabIndex = rightNodes.firstIndex { $0.nodeTab == currentTab }!
-        
+   
         self.backgroundImageView = UIImageView()
         self.backgroundImageView!.frame = self.view.frame
         self.backgroundImageView!.contentMode = .left
@@ -99,15 +97,13 @@ class RightViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         let cell = getCell(tableView, cell: RightNodeTableViewCell.self, indexPath: indexPath);
         cell.nodeNameLabel.text = self.rightNodes[indexPath.row].nodeName
         
-        if indexPath.row == self.currentSelectedTabIndex && cell.isSelected == false {
-            self.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .middle)
-        }
         return cell ;
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let node = self.rightNodes[indexPath.row];
         let homeVC = HomeViewController()
-        V2EXSettings.sharedInstance[kHomeTab] = node.nodeTab
+        homeVC.tab = node.nodeTab
+
         self.navigationController?.pushViewController(homeVC, animated: true)
     }
 }
