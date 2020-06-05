@@ -19,18 +19,7 @@ import SVProgressHUD
 
 class HomeViewController: UIViewController {
     var topicList:Array<TopicListModel>?
-    var tab:String? = nil {
-        didSet{
-            var name = "全部"
-            for model in RightViewControllerRightNodes {
-                if model.nodeTab == tab {
-                    name = model.nodeName ?? ""
-                    break;
-                }
-            }
-            self.title = name
-        }
-    }
+    var tab:String? = "all"
     var currentPage = 0
     
     fileprivate lazy var tableView: UITableView  = {
@@ -47,9 +36,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if self.tab == nil {
-            self.tab = "全部"
-        }
+        self.title = "全部"
  
         //监听程序即将进入前台运行、进入后台休眠 事件
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.applicationWillEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
