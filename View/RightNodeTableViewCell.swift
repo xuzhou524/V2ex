@@ -12,11 +12,9 @@ class RightNodeTableViewCell: UITableViewCell {
 
     var nodeNameLabel: UILabel = {
         let label = UILabel()
-        label.font = v2Font(15)
+        label.font = v2Font(16)
         return label
     }()
-    
-    var panel = UIView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier);
@@ -28,36 +26,13 @@ class RightNodeTableViewCell: UITableViewCell {
     }
     func setup()->Void{
         self.selectionStyle = .none
-        self.backgroundColor = UIColor.clear
+        self.backgroundColor = UIColor.white
         
-        self.contentView.addSubview(panel)
-        self.panel.snp.makeConstraints{ (make) -> Void in
-            make.left.top.right.equalTo(self.contentView)
-            make.bottom.equalTo(self.contentView).offset(-1 * SEPARATOR_HEIGHT)
-        }
-        
-        panel.addSubview(self.nodeNameLabel)
+        self.nodeNameLabel.textColor = V2EXColor.colors.v2_LeftNodeTintColor
+        self.contentView.addSubview(self.nodeNameLabel)
         self.nodeNameLabel.snp.makeConstraints{ (make) -> Void in
-            make.right.equalTo(panel).offset(-22)
-            make.centerY.equalTo(panel)
-        }
-        
-        self.themeChangedHandler = {[weak self] (style) -> Void in
-            self?.refreshBackgroundColor()
-            self?.nodeNameLabel.textColor = V2EXColor.colors.v2_LeftNodeTintColor
-        }
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated);        
-        self.refreshBackgroundColor()
-    }
-    func refreshBackgroundColor() {
-        if self.isSelected {
-            self.panel.backgroundColor = V2EXColor.colors.v2_LeftNodeBackgroundHighLightedColor
-        }
-        else{
-            self.panel.backgroundColor = V2EXColor.colors.v2_LeftNodeBackgroundColor
+            make.left.equalTo(self.contentView).offset(15)
+            make.centerY.equalTo(self.contentView)
         }
     }
 }

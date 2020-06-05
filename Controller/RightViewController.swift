@@ -60,7 +60,6 @@ class RightViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = getCell(tableView, cell: RightNodeTableViewCell.self, indexPath: indexPath);
         cell.nodeNameLabel.text = self.rightNodes[indexPath.row].nodeName
-        
         return cell ;
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
