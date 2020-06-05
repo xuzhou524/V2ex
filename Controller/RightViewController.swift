@@ -46,6 +46,7 @@ class RightViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "分类"
         self.view.backgroundColor = V2EXColor.colors.v2_backgroundColor;
         
         var currentTab:String? = V2EXSettings.sharedInstance[kHomeTab]

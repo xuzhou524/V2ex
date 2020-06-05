@@ -16,7 +16,6 @@ PODS:
     - DrawerController/Core
   - Fabric (1.10.2)
   - FDFullscreenPopGesture (1.1)
-  - FXBlurView (1.6.4)
   - Ji (5.0.0)
   - KeychainSwift (18.0.0)
   - Kingfisher (4.10.1)
@@ -47,7 +46,6 @@ DEPENDENCIES:
   - DrawerController
   - Fabric
   - FDFullscreenPopGesture
-  - FXBlurView
   - Ji
   - KeychainSwift
   - Kingfisher (~> 4.10.0)
@@ -64,7 +62,6 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Old-Specs:
     - FDFullscreenPopGesture
-    - FXBlurView
     - KVOController
     - Shimmer
     - YYText
@@ -99,7 +96,6 @@ SPEC CHECKSUMS:
   DrawerController: eb1168e9f7185cc49f654ae8486917f0acb3dc88
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
-  FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
   Ji: d795fed288fe78658b404c88946d753b17d8d7f4
   KeychainSwift: c46e1438d121e47459fb304ac88c5e058a2a91ed
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
@@ -115,6 +111,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 7fea84059aeb8f3e65d7b0e556d219067a9e048b
+PODFILE CHECKSUM: 754a9e6dae67cee6f17b7130d2ae3bcd82519554
 
 COCOAPODS: 1.7.3

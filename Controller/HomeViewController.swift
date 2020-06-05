@@ -50,7 +50,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tab = V2EXSettings.sharedInstance[kHomeTab]
-        self.setupNavigationItem()
+//        self.setupNavigationItem()
         
         //监听程序即将进入前台运行、进入后台休眠 事件
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.applicationWillEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
@@ -80,27 +80,6 @@ class HomeViewController: UIViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         V2Client.sharedInstance.drawerController?.openDrawerGestureModeMask = []
-    }
-    func setupNavigationItem(){
-        let leftButton = NotificationMenuButton()
-        leftButton.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftButton)
-        leftButton.addTarget(self, action: #selector(HomeViewController.leftClick), for: .touchUpInside)
-        
-        
-        let rightButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-        rightButton.contentMode = .center
-        rightButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -15)
-        rightButton.setImage(UIImage.imageUsedTemplateMode("ic_more_horiz_36pt")!.withRenderingMode(.alwaysTemplate), for: .normal)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
-        rightButton.addTarget(self, action: #selector(HomeViewController.rightClick), for: .touchUpInside)
-
-    }
-    @objc func leftClick(){
-        V2Client.sharedInstance.drawerController?.toggleLeftDrawerSide(animated: true, completion: nil)
-    }
-    @objc func rightClick(){
-        V2Client.sharedInstance.drawerController?.toggleRightDrawerSide(animated: true, completion: nil)
     }
     
     func refreshPage(){
@@ -191,7 +170,6 @@ class HomeViewController: UIViewController {
     }
 }
 
-
 //MARK: - TableViewDataSource
 extension HomeViewController:UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -253,6 +231,5 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate {
         
         self.tableView.endUpdates()
         
-
     }
 }

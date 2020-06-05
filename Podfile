@@ -13,7 +13,6 @@ def pods
   pod 'KeychainSwift'
   pod 'KVOController'
   pod 'YYText'
-  pod 'FXBlurView'
   pod 'SVProgressHUD'
   pod 'MJRefresh', '~> 3.1.15.7'
   pod 'CXSwipeGestureRecognizer'

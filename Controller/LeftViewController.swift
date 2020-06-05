@@ -33,6 +33,7 @@ class LeftViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "我的"
         self.view.backgroundColor = V2EXColor.colors.v2_backgroundColor;
         
         self.backgroundImageView.frame = self.view.frame
