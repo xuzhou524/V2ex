@@ -169,7 +169,7 @@
 		068910D01C61A44D00D22B4F /* NodeTopicListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeTopicListViewController.swift; sourceTree = "<group>"; };
 		068DF8201C803A38008FC29D /* V2PhotoBrowserSwipeInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V2PhotoBrowserSwipeInteractiveTransition.swift; sourceTree = "<group>"; };
 		0691BC79231CC00000A84E92 /* TopicApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicApi.swift; sourceTree = "<group>"; };
-		069508E01C3F74FF0088D031 /* V2ex-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "V2ex-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		069508E01C3F74FF0088D031 /* V社区.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "V社区.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		069508E31C3F74FF0088D031 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		069508EA1C3F74FF0088D031 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		069508EF1C3F74FF0088D031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -327,7 +327,7 @@
 		069508E11C3F74FF0088D031 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				069508E01C3F74FF0088D031 /* V2ex-Swift.app */,
+				069508E01C3F74FF0088D031 /* V社区.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -550,7 +550,7 @@
 			);
 			name = "V2ex-Swift";
 			productName = "V2ex-Swift";
-			productReference = 069508E01C3F74FF0088D031 /* V2ex-Swift.app */;
+			productReference = 069508E01C3F74FF0088D031 /* V社区.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -565,7 +565,7 @@
 				TargetAttributes = {
 					069508DF1C3F74FF0088D031 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 5U8LBRXG3A;
+						DevelopmentTeam = 6JC78V6G2N;
 						LastSwiftMigration = 1120;
 					};
 				};
@@ -898,13 +898,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 5U8LBRXG3A;
+				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				INFOPLIST_FILE = "V2ex-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = "me.fin.V2ex-Swift";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xuzhou.V2ex-Swift";
+				PRODUCT_NAME = "V社区";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 5.0;
 			};
@@ -917,12 +917,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 5U8LBRXG3A;
+				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				INFOPLIST_FILE = "V2ex-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "me.fin.V2ex-Swift";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xuzhou.V2ex-Swift";
+				PRODUCT_NAME = "V社区";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 5.0;
 			};
