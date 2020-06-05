@@ -17,8 +17,6 @@ import MJRefresh
 
 import SVProgressHUD
 
-let kHomeTab = "me.fin.homeTab"
-
 class HomeViewController: UIViewController {
     var topicList:Array<TopicListModel>?
     var tab:String? = nil {
@@ -51,7 +49,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         if self.tab == nil {
             self.tab = "全部"
-//            self.tab = V2EXSettings.sharedInstance[kHomeTab]
         }
  
         //监听程序即将进入前台运行、进入后台休眠 事件
@@ -65,7 +62,7 @@ class HomeViewController: UIViewController {
         self.tableView.mj_header = V2RefreshHeader(refreshingBlock: {[weak self] () -> Void in
             self?.refresh()
         })
-        self.refreshPage()
+        self.tableView.mj_header.beginRefreshing();
         
         let footer = V2RefreshFooter(refreshingBlock: {[weak self] () -> Void in
             self?.getNextPage()
@@ -84,10 +81,6 @@ class HomeViewController: UIViewController {
         V2Client.sharedInstance.drawerController?.openDrawerGestureModeMask = []
     }
     
-    func refreshPage(){
-        self.tableView.mj_header.beginRefreshing();
-        V2EXSettings.sharedInstance[kHomeTab] = tab
-    }
     func refresh(){
         
         //如果有上拉加载更多 正在执行，则取消它
