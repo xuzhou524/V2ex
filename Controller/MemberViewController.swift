@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FXBlurView
 import DeviceKit
 
 class MemberViewController: UIViewController,UITableViewDelegate,UITableViewDataSource ,UIScrollViewDelegate {
@@ -68,14 +67,6 @@ class MemberViewController: UIViewController,UITableViewDelegate,UITableViewData
         self.backgroundImageView!.contentMode = .scaleToFill
         view.addSubview(self.backgroundImageView!)
         
-        let frostedView = FXBlurView()
-        frostedView.underlyingView = self.backgroundImageView!
-        frostedView.isDynamic = false
-        frostedView.frame = self.view.frame
-        frostedView.tintColor = UIColor.black
-        self.view.addSubview(frostedView)
-        
-
         self.view.addSubview(self.tableView);
         self.tableView.snp.makeConstraints{ (make) -> Void in
             make.top.right.bottom.left.equalTo(self.view);

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FXBlurView
+
 let RightViewControllerRightNodes = [
     rightNodeModel(nodeName: NSLocalizedString("tech" ), nodeTab: "tech"),
     rightNodeModel(nodeName: NSLocalizedString("creative" ), nodeTab: "creative"),
@@ -28,7 +28,6 @@ class RightViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     var currentSelectedTabIndex = 0;
     
     var backgroundImageView:UIImageView?
-    var frostedView = FXBlurView()
     
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -59,12 +58,6 @@ class RightViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         self.backgroundImageView!.frame = self.view.frame
         self.backgroundImageView!.contentMode = .left
         view.addSubview(self.backgroundImageView!)
-
-        frostedView.underlyingView = self.backgroundImageView!
-        frostedView.isDynamic = false
-        frostedView.frame = self.view.frame
-        frostedView.tintColor = UIColor.black
-        self.view.addSubview(frostedView)
         
         self.view.addSubview(self.tableView);
         self.tableView.snp.makeConstraints{ (make) -> Void in
@@ -77,7 +70,6 @@ class RightViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             else{
                 self?.backgroundImageView?.image = UIImage(named: "12.jpg")
             }
-            self?.frostedView.updateAsynchronously(true, completion: nil)
         }
         
         let rowHeight = self.tableView(self.tableView, heightForRowAt: IndexPath(row: 0, section: 0))

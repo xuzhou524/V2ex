@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FXBlurView
 
 class LeftViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
@@ -15,12 +14,6 @@ class LeftViewController: UIViewController,UITableViewDataSource,UITableViewDele
         let backgroundImageView = UIImageView()
         backgroundImageView.contentMode = .scaleToFill
         return backgroundImageView
-    }()
-    var frostedView: FXBlurView = {
-        let frostedView = FXBlurView()
-        frostedView.isDynamic = false
-        frostedView.tintColor = UIColor.black
-        return frostedView;
     }()
     
     fileprivate lazy var tableView: UITableView = {
@@ -44,11 +37,7 @@ class LeftViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         self.backgroundImageView.frame = self.view.frame
         view.addSubview(self.backgroundImageView)
-        
-        self.frostedView.underlyingView = self.backgroundImageView
-        self.frostedView.frame = self.view.frame
-        self.view.addSubview(self.frostedView)
-        
+
         self.view.addSubview(self.tableView);
         self.tableView.snp.makeConstraints{ (make) -> Void in
             make.top.right.bottom.left.equalTo(self.view);
@@ -64,7 +53,6 @@ class LeftViewController: UIViewController,UITableViewDataSource,UITableViewDele
             else{
                 self?.backgroundImageView.image = UIImage(named: "12.jpg")
             }
-            self?.frostedView.updateAsynchronously(true, completion: nil)
         }
     }
     func numberOfSections(in tableView: UITableView) -> Int {

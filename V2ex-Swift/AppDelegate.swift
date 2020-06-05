@@ -22,30 +22,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         URLProtocol.registerClass(WebViewImageProtocol.self)
         
+
+        let tabBarController = LDTabBarController()
+        
+         let vc1 = HomeViewController()
+        let nav1 = LDNavigationController(rootViewController: vc1)
+        nav1.tabBarItem = UITabBarItem(title: "首页", image: UIImage(named: "ic_turned_in"), selectedImage: UIImage(named: "ic_turned_in"))
+
+        let vc2 = RightViewController()
+        let nav2 = LDNavigationController(rootViewController: vc2)
+        nav2.tabBarItem = UITabBarItem(title: "分类", image: UIImage(named: "ic_turned_in"), selectedImage: UIImage(named: "ic_turned_in"))
+        
+        let vc3 = LeftViewController()
+        let nav3 = LDNavigationController(rootViewController: vc3)
+        nav3.tabBarItem = UITabBarItem(title: "我的", image: UIImage(named: "ic_turned_in"), selectedImage: UIImage(named: "ic_turned_in"))
+        
+         tabBarController.viewControllers = [nav1,nav2,nav3]
+
+        
         self.window = V2Window();
         V2Client.sharedInstance.window = self.window
-        self.window?.frame=UIScreen.main.bounds;
-        self.window?.makeKeyAndVisible();
-
-        let centerNav = V2EXNavigationController(rootViewController: HomeViewController());
-        let leftViewController = LeftViewController();
-        let rightViewController = RightViewController();
-        let drawerController = DrawerController(centerViewController: centerNav, leftDrawerViewController: leftViewController, rightDrawerViewController: rightViewController);
+        self.window?.frame=UIScreen.main.bounds
+        self.window?.backgroundColor = UIColor.white
+        self.window?.makeKeyAndVisible()
+        self.window?.rootViewController = tabBarController
         
-        self.window?.themeChangedHandler = {[weak self] (style) -> Void in
-            self?.window?.backgroundColor = V2EXColor.colors.v2_backgroundColor;
-            drawerController.view.backgroundColor = V2EXColor.colors.v2_backgroundColor
-        }
-        
-        drawerController.maximumLeftDrawerWidth=230;
-        drawerController.maximumRightDrawerWidth = rightViewController.maximumRightDrawerWidth()
-        drawerController.openDrawerGestureModeMask=OpenDrawerGestureMode.panningCenterView
-        drawerController.closeDrawerGestureModeMask=CloseDrawerGestureMode.all;
-        self.window?.rootViewController = drawerController;
-
-        V2Client.sharedInstance.drawerController = drawerController
-        V2Client.sharedInstance.centerViewController = centerNav.viewControllers[0] as? HomeViewController
-        V2Client.sharedInstance.centerNavigation = centerNav
+//        self.window = V2Window();
+//        V2Client.sharedInstance.window = self.window
+//        self.window?.frame=UIScreen.main.bounds;
+//        self.window?.makeKeyAndVisible();
+//
+//        let centerNav = V2EXNavigationController(rootViewController: HomeViewController());
+//        let leftViewController = LeftViewController();
+//        let rightViewController = RightViewController();
+//        let drawerController = DrawerController(centerViewController: centerNav, leftDrawerViewController: leftViewController, rightDrawerViewController: rightViewController);
+//
+//        self.window?.themeChangedHandler = {[weak self] (style) -> Void in
+//            self?.window?.backgroundColor = V2EXColor.colors.v2_backgroundColor;
+//            drawerController.view.backgroundColor = V2EXColor.colors.v2_backgroundColor
+//        }
+//
+//        drawerController.maximumLeftDrawerWidth=230;
+//        drawerController.maximumRightDrawerWidth = rightViewController.maximumRightDrawerWidth()
+//        drawerController.openDrawerGestureModeMask=OpenDrawerGestureMode.panningCenterView
+//        drawerController.closeDrawerGestureModeMask=CloseDrawerGestureMode.all;
+//        self.window?.rootViewController = tabBarController;
+//
+//        V2Client.sharedInstance.drawerController = drawerController
+//        V2Client.sharedInstance.centerViewController = centerNav.viewControllers[0] as? HomeViewController
+//        V2Client.sharedInstance.centerNavigation = centerNav
         #if DEBUG
             let fpsLabel = V2FPSLabel(frame: CGRect(x: 15, y: SCREEN_HEIGHT-40,width: 55,height: 20));
             self.window?.addSubview(fpsLabel);

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FXBlurView
 import Shimmer
 
 class RelevantCommentsNav:V2EXNavigationController , UIViewControllerTransitioningDelegate {
@@ -70,20 +69,10 @@ class RelevantCommentsViewController: UIViewController, UITableViewDelegate,UITa
         tableView.dataSource = self
         return tableView
     }()
-    
-    var frostedView = FXBlurView()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        frostedView.underlyingView = V2Client.sharedInstance.centerNavigation!.view
-        frostedView.isDynamic = false
-        frostedView.blurRadius = 35
-        frostedView.tintColor = UIColor.black
-        frostedView.frame = self.view.frame
-        self.view.addSubview(frostedView)
-        
-
         let shimmeringView = FBShimmeringView()
         shimmeringView.isShimmering = true
         shimmeringView.shimmeringOpacity = 0.3
