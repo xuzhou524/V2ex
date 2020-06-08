@@ -113,6 +113,7 @@
 		06FA34D11C8AA458001D6830 /* SVProgressHUD+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FA34D01C8AA458001D6830 /* SVProgressHUD+Extension.swift */; };
 		2D43B43D1CAA2CDD007B0007 /* V2ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D43B43C1CAA2CDD007B0007 /* V2ProgressHUD.swift */; };
 		2D6B1BB01CA93F970050121D /* V2User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6B1BAF1CA93F970050121D /* V2User.swift */; };
+		53C9D16F248E34F500DD1643 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9D16E248E34F500DD1643 /* UserViewController.swift */; };
 		53E7BEA6248A2F3800438BCB /* LDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E7BEA2248A2F3800438BCB /* LDTabBarController.m */; };
 		53E7BEA7248A2F3800438BCB /* LDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E7BEA5248A2F3800438BCB /* LDNavigationController.m */; };
 		53E7BEAA248A2FE900438BCB /* LDColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E7BEA9248A2FE900438BCB /* LDColor.m */; };
@@ -232,6 +233,7 @@
 		2D6B1BAF1CA93F970050121D /* V2User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V2User.swift; sourceTree = "<group>"; };
 		4B0F4B166DB726F4DA349A16 /* libPods-V2ex-Swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-V2ex-Swift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52700928D2B67AA24FBCC006 /* Pods-V2ex-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V2ex-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-V2ex-Swift/Pods-V2ex-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		53C9D16E248E34F500DD1643 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		53E7BEA1248A2F3700438BCB /* V2ex-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "V2ex-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		53E7BEA2248A2F3800438BCB /* LDTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDTabBarController.m; sourceTree = "<group>"; };
 		53E7BEA3248A2F3800438BCB /* LDNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDNavigationController.h; sourceTree = "<group>"; };
@@ -392,6 +394,7 @@
 				069508FA1C3F75C70088D031 /* HomeViewController.swift */,
 				069839821C478ECC00FF7163 /* RightViewController.swift */,
 				069839801C478EC300FF7163 /* LeftViewController.swift */,
+				53C9D16E248E34F500DD1643 /* UserViewController.swift */,
 				06662CA51C4A89520024452C /* TopicDetailViewController.swift */,
 				064BD2641C880ADB00B55558 /* RelevantCommentsViewController.swift */,
 				06098B3E1C52171D00848159 /* LoginViewController.swift */,
@@ -724,6 +727,7 @@
 				069508E41C3F74FF0088D031 /* AppDelegate.swift in Sources */,
 				069839831C478ECC00FF7163 /* RightViewController.swift in Sources */,
 				06E583851C3F8F4B00FCA361 /* HomeTopicListTableViewCell.swift in Sources */,
+				53C9D16F248E34F500DD1643 /* UserViewController.swift in Sources */,
 				065B69111C75ABE1009AAC37 /* AnalyzeURLHelper.swift in Sources */,
 				53E7BEAD248A306A00438BCB /* LDTabBar.m in Sources */,
 				0618768B1C7C19F0002E9C33 /* PodCellTableViewCell.swift in Sources */,

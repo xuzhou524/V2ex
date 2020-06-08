@@ -38,7 +38,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let nav3 = LDNavigationController(rootViewController: vc3)
         nav3.tabBarItem = UITabBarItem(title: "我的", image: UIImage(named: "tabar_me"), selectedImage: UIImage(named: "tabar_me_sel")?.withRenderingMode(.alwaysOriginal))
         
-         tabBarController.viewControllers = [nav1,nav2,nav3]
+        let vc4 = UserViewController()
+        let nav4 = LDNavigationController(rootViewController: vc4)
+        nav4.tabBarItem = UITabBarItem(title: "我的", image: UIImage(named: "tabar_me"), selectedImage: UIImage(named: "tabar_me_sel")?.withRenderingMode(.alwaysOriginal))
+         tabBarController.viewControllers = [nav1,nav2,nav3,nav4]
         
         // 设置字体大小
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 11.0)], for: UIControl.State.normal)

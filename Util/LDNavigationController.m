@@ -31,7 +31,7 @@
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     
-    [self.navigationBar setShadowImage:[LDColor createImageWithColor:[LDColor separatorColor]]];
+    [self.navigationBar setShadowImage:[UIImage new]];
 }
 
 #pragma mark 返回按钮
