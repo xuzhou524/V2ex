@@ -18,8 +18,8 @@ class LoginViewController: UIViewController {
 
     var successHandel:LoginSuccessHandel?
 
-    let backgroundImageView = UIImageView()
-    let frostedView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+//    let backgroundImageView = UIImageView()
+//    let frostedView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
     let userNameTextField:UITextField = {
         let userNameTextField = UITextField()
         userNameTextField.autocorrectionType = UITextAutocorrectionType.no
@@ -124,12 +124,12 @@ class LoginViewController: UIViewController {
         self.cancelButton.addTarget(self, action: #selector(LoginViewController.cancelClick), for: .touchUpInside)
     }
     override func viewDidAppear(_ animated: Bool) {
-        UIView.animate(withDuration: 2, animations: { () -> Void in
-            self.backgroundImageView.alpha=1;
-        }) 
-        UIView.animate(withDuration: 20, animations: { () -> Void in
-            self.backgroundImageView.frame = CGRect(x: -1*( 1000 - SCREEN_WIDTH )/2, y: 0, width: SCREEN_HEIGHT+500, height: SCREEN_HEIGHT+500);
-        }) 
+//        UIView.animate(withDuration: 2, animations: { () -> Void in
+//            self.backgroundImageView.alpha=1;
+//        })
+//        UIView.animate(withDuration: 20, animations: { () -> Void in
+//            self.backgroundImageView.frame = CGRect(x: -1*( 1000 - SCREEN_WIDTH )/2, y: 0, width: SCREEN_HEIGHT+500, height: SCREEN_HEIGHT+500);
+//        })
     }
 
 
@@ -270,63 +270,63 @@ extension UIViewController {
 //MARK: - 初始化界面
 extension LoginViewController {
     func setupView(){
-        self.view.backgroundColor = UIColor.black
+        self.view.backgroundColor = V2EXColor.colors.v2_backgroundColor
 
-        self.backgroundImageView.image = UIImage(named: "32.jpg")
-        self.backgroundImageView.frame = self.view.frame
-        self.backgroundImageView.contentMode = .scaleToFill
-        self.view.addSubview(self.backgroundImageView)
-        backgroundImageView.alpha = 0
+//        self.backgroundImageView.image = UIImage(named: "32.jpg")
+//        self.backgroundImageView.frame = self.view.frame
+//        self.backgroundImageView.contentMode = .scaleToFill
+//        self.view.addSubview(self.backgroundImageView)
+//        backgroundImageView.alpha = 0
 
-        self.frostedView.frame = self.view.frame
-        self.view.addSubview(self.frostedView)
+//        self.frostedView.frame = self.view.frame
+//        self.view.addSubview(self.frostedView)
         
-        var blurEffect:UIBlurEffect.Style = .dark
-        if #available(iOS 13.0, *) {
-            blurEffect = .systemUltraThinMaterialDark
-        }
+//        var blurEffect:UIBlurEffect.Style = .dark
+//        if #available(iOS 13.0, *) {
+//            blurEffect = .systemUltraThinMaterialDark
+//        }
         
-        let vibrancy = UIVibrancyEffect(blurEffect: UIBlurEffect(style: blurEffect))
-        let vibrancyView = UIVisualEffectView(effect: vibrancy)
-        vibrancyView.isUserInteractionEnabled = true
-        vibrancyView.frame = self.frostedView.frame
-        self.frostedView.contentView.addSubview(vibrancyView)
+//        let vibrancy = UIVibrancyEffect(blurEffect: UIBlurEffect(style: blurEffect))
+//        let vibrancyView = UIVisualEffectView(effect: vibrancy)
+//        vibrancyView.isUserInteractionEnabled = true
+//        vibrancyView.frame = self.frostedView.frame
+//        self.frostedView.contentView.addSubview(vibrancyView)
 
         let v2exLabel = UILabel()
         v2exLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 25)!;
         v2exLabel.text = "Explore"
-        vibrancyView.contentView.addSubview(v2exLabel);
+        self.view.addSubview(v2exLabel);
         v2exLabel.snp.makeConstraints{ (make) -> Void in
-            make.centerX.equalTo(vibrancyView)
-            make.top.equalTo(vibrancyView).offset(NavigationBarHeight)
+            make.centerX.equalTo(self.view)
+            make.top.equalTo(self.view).offset(NavigationBarHeight)
         }
 
         let v2exSummaryLabel = UILabel()
         v2exSummaryLabel.font = v2Font(13);
         v2exSummaryLabel.text = "创意者的工作社区"
-        vibrancyView.contentView.addSubview(v2exSummaryLabel);
+        self.view.addSubview(v2exSummaryLabel);
         v2exSummaryLabel.snp.makeConstraints{ (make) -> Void in
-            make.centerX.equalTo(vibrancyView)
+            make.centerX.equalTo(self.view)
             make.top.equalTo(v2exLabel.snp.bottom).offset(2)
         }
 
-        vibrancyView.contentView.addSubview(self.userNameTextField);
+        self.view.addSubview(self.userNameTextField);
         self.userNameTextField.snp.makeConstraints{ (make) -> Void in
             make.top.equalTo(v2exSummaryLabel.snp.bottom).offset(25)
-            make.centerX.equalTo(vibrancyView)
+            make.centerX.equalTo(self.view)
             make.width.equalTo(300)
             make.height.equalTo(38)
         }
 
-        vibrancyView.contentView.addSubview(self.passwordTextField);
+        self.view.addSubview(self.passwordTextField);
         self.passwordTextField.snp.makeConstraints{ (make) -> Void in
             make.top.equalTo(self.userNameTextField.snp.bottom).offset(15)
-            make.centerX.equalTo(vibrancyView)
+            make.centerX.equalTo(self.view)
             make.width.equalTo(300)
             make.height.equalTo(38)
         }
         
-        vibrancyView.contentView.addSubview(self.codeTextField)
+        self.view.addSubview(self.codeTextField)
         self.codeTextField.snp.makeConstraints { (make) in
             make.top.equalTo(self.passwordTextField.snp.bottom).offset(15)
             make.left.equalTo(passwordTextField)
@@ -351,11 +351,11 @@ extension LoginViewController {
         self.loginButton.layer.cornerRadius = 3;
         self.loginButton.layer.borderWidth = 0.5
         self.loginButton.layer.borderColor = UIColor(white: 1, alpha: 0.8).cgColor;
-        vibrancyView.contentView.addSubview(self.loginButton);
+        self.view.addSubview(self.loginButton);
 
         self.loginButton.snp.makeConstraints{ (make) -> Void in
             make.top.equalTo(self.codeTextField.snp.bottom).offset(20)
-            make.centerX.equalTo(vibrancyView)
+            make.centerX.equalTo(self.view)
             make.width.equalTo(300)
             make.height.equalTo(38)
         }
@@ -365,32 +365,20 @@ extension LoginViewController {
         codeProblem.text = "验证码不显示?"
         codeProblem.isUserInteractionEnabled = true
         codeProblem.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(codeProblemClick)))
-        vibrancyView.contentView.addSubview(codeProblem);
+        self.view.addSubview(codeProblem);
 
         codeProblem.snp.makeConstraints{ (make) -> Void in
             make.top.equalTo(self.loginButton.snp.bottom).offset(14)
             make.right.equalTo(self.loginButton)
         }
 
-        let footLabel = UILabel()
-        footLabel.alpha = 0.5
-        footLabel.font = v2Font(12)
-        footLabel.text = "© 2020 Fin"
-
-        vibrancyView.contentView.addSubview(footLabel);
-
-        footLabel.snp.makeConstraints{ (make) -> Void in
-            make.bottom.equalTo(vibrancyView).offset(-20)
-            make.centerX.equalTo(vibrancyView)
-        }
-
         self.cancelButton.contentMode = .center
         cancelButton .setImage(UIImage(named: "ic_cancel")!.withRenderingMode(.alwaysTemplate), for: .normal)
-        vibrancyView.contentView.addSubview(cancelButton)
+        self.view.addSubview(cancelButton)
         cancelButton.snp.makeConstraints{ (make) -> Void in
-            make.centerY.equalTo(footLabel)
-            make.right.equalTo(vibrancyView).offset(-5)
-            make.width.height.equalTo(40)
+            make.bottom.equalTo(self.view).offset(-50)
+            make.right.equalTo(self.view).offset(-5)
+            make.width.height.equalTo(45)
         }
         
         refreshCode()

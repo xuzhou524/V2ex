@@ -18,8 +18,8 @@ class LeftViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView();
-        tableView.backgroundColor = UIColor.clear
-        tableView.estimatedRowHeight=100;
+        tableView.backgroundColor = UIColor.white
+//        tableView.estimatedRowHeight=100;
         tableView.separatorStyle = .none
         
         regClass(tableView, cell: LeftUserHeadCell.self)
