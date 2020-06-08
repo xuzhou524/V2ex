@@ -25,6 +25,7 @@ class LeftUserHeadCell: UITableViewCell {
     var userNameLabel: UILabel = {
         let label = UILabel()
         label.font = v2Font(16)
+        label.textColor = V2EXColor.colors.v2_LeftNodeTintColor
         return label
     }()
     
@@ -69,10 +70,5 @@ class LeftUserHeadCell: UITableViewCell {
                 }
             }
         }
-
-        self.themeChangedHandler = {[weak self] (style) -> Void in
-            self?.userNameLabel.textColor = V2EXColor.colors.v2_TopicListUserNameColor
-        }
     }
-
 }

@@ -139,7 +139,7 @@ class V2EXDefaultColor: NSObject,V2EXColorProtocol {
     }
     var v2_LeftNodeTintColor : UIColor {
         get {
-            return colorWith255RGBA(0, g: 0, b: 0, a: 140)
+            return colorWith255RGB(51, g: 51, b: 51)
         }
     }
     
