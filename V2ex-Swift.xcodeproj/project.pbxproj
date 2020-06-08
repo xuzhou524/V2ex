@@ -64,7 +64,6 @@
 		069508FB1C3F75C70088D031 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069508FA1C3F75C70088D031 /* HomeViewController.swift */; };
 		069806931CA3AA7700388DB6 /* TopicCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069806921CA3AA7700388DB6 /* TopicCommentModel.swift */; };
 		069839761C4773D600FF7163 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 069839781C4773D600FF7163 /* Localizable.strings */; };
-		069839811C478EC300FF7163 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069839801C478EC300FF7163 /* LeftViewController.swift */; };
 		069839831C478ECC00FF7163 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069839821C478ECC00FF7163 /* RightViewController.swift */; };
 		06A490681C67018E00F6A063 /* MyCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A490671C67018E00F6A063 /* MyCenterViewController.swift */; };
 		06A4907C1C67058800F6A063 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06A4907B1C67058800F6A063 /* Media.xcassets */; };
@@ -182,7 +181,6 @@
 		069806921CA3AA7700388DB6 /* TopicCommentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicCommentModel.swift; sourceTree = "<group>"; };
 		069839771C4773D600FF7163 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		069839791C47740B00FF7163 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		069839801C478EC300FF7163 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		069839821C478ECC00FF7163 /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
 		06A490671C67018E00F6A063 /* MyCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCenterViewController.swift; sourceTree = "<group>"; };
 		06A4907B1C67058800F6A063 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
@@ -393,7 +391,6 @@
 				06E145A71C60C23300BDD63D /* BaseViewController.swift */,
 				069508FA1C3F75C70088D031 /* HomeViewController.swift */,
 				069839821C478ECC00FF7163 /* RightViewController.swift */,
-				069839801C478EC300FF7163 /* LeftViewController.swift */,
 				53C9D16E248E34F500DD1643 /* UserViewController.swift */,
 				06662CA51C4A89520024452C /* TopicDetailViewController.swift */,
 				064BD2641C880ADB00B55558 /* RelevantCommentsViewController.swift */,
@@ -799,7 +796,6 @@
 				06D0EE2E1C917696003095FF /* V2Slider.swift in Sources */,
 				063671761C7AF55800B72D9F /* V2TapDetectingImageView.swift in Sources */,
 				06FA34D11C8AA458001D6830 /* SVProgressHUD+Extension.swift in Sources */,
-				069839811C478EC300FF7163 /* LeftViewController.swift in Sources */,
 				06D300241C6C21B600547CE6 /* AccountsManagerViewController.swift in Sources */,
 				0691BC7A231CC00000A84E92 /* TopicApi.swift in Sources */,
 				06EB0CD0243EC58A00B958CA /* String+Avatar.swift in Sources */,

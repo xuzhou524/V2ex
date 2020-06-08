@@ -28,7 +28,7 @@ class LeftNodeTableViewCell: UITableViewCell {
     
     func setup()->Void{
         self.selectionStyle = .none
-        self.backgroundColor = UIColor.clear
+        self.backgroundColor = UIColor.white
         
         self.contentView.addSubview(panel)
         panel.addSubview(self.nodeImageView)

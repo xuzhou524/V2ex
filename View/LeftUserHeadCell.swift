@@ -36,20 +36,20 @@ class LeftUserHeadCell: UITableViewCell {
         super.init(coder: aDecoder)
     }
     func setup()->Void{
-        self.backgroundColor = UIColor.clear
+        self.backgroundColor = UIColor.white
         self.selectionStyle = .none
 
         self.contentView.addSubview(self.avatarImageView)
         self.contentView.addSubview(self.userNameLabel)
         
         self.avatarImageView.snp.makeConstraints{ (make) -> Void in
-            make.centerX.equalTo(self.contentView)
+            make.left.equalTo(self.contentView).offset(20)
             make.centerY.equalTo(self.contentView).offset(-8)
             make.width.height.equalTo(self.avatarImageView.layer.cornerRadius * 2)
         }
         self.userNameLabel.snp.makeConstraints{ (make) -> Void in
-            make.top.equalTo(self.avatarImageView.snp.bottom).offset(10)
-            make.centerX.equalTo(self.avatarImageView)
+            make.left.equalTo(self.avatarImageView.snp.right).offset(10)
+            make.centerY.equalTo(self.avatarImageView)
         }
 
         self.kvoController.observe(V2User.sharedInstance, keyPath: "username", options: [.initial , .new]){

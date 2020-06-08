@@ -24,13 +24,13 @@
         if ([tabBarButton isKindOfClass:NSClassFromString(@"_UIBarBackground")]) {
             for (UIView * view in tabBarButton.subviews) {
                 if ([view isKindOfClass:NSClassFromString(@"UIImageView")]) {
-                    view.layer.shadowOffset = CGSizeMake(1, 1);            //偏移距离
-                    view.layer.shadowOpacity = 1;                        //不透明度
+                    view.layer.shadowOffset = CGSizeMake(2, 2);            //偏移距离
+                    view.layer.shadowOpacity = 0.5;                        //不透明度
                     view.layer.shadowRadius = 3.0;                         //半径
                     view.layer.shadowColor = [LDColor grayColor].CGColor; //阴影颜色
                     view.layer.shadowPath = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 1)].CGPath;
                 }
-                view.backgroundColor = [LDColor backgroudColor];
+                view.backgroundColor = [LDColor whiteColor];
             }
         }
         //设置每次点击的动画
