@@ -87,6 +87,6 @@ extension NodesViewController : UICollectionViewDelegate {
         let nodeModel = self.nodeGroupArray![indexPath.section].children[indexPath.row]
         let controller = NodeTopicListViewController()
         controller.node = nodeModel
-        V2Client.sharedInstance.centerNavigation?.pushViewController(controller, animated: true)
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }

@@ -14,7 +14,7 @@ class LeftUserHeadCell: UITableViewCell {
     /// 头像
     var avatarImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = UIColor(white: 0.9, alpha: 0.3)
+        imageView.image = UIImage(named: "ic_head")
         imageView.layer.borderWidth = 1.5
         imageView.layer.borderColor = UIColor(white: 1, alpha: 0.6).cgColor
         imageView.layer.masksToBounds = true
@@ -65,7 +65,7 @@ class LeftUserHeadCell: UITableViewCell {
                     })
                 }
                 else { //没有登录
-                    weakSelf.avatarImageView.image = nil
+                    weakSelf.avatarImageView.image = UIImage(named: "ic_head")
                 }
             }
         }

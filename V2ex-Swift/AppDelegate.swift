@@ -27,17 +27,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
          let vc1 = HomeViewController()
         let nav1 = LDNavigationController(rootViewController: vc1)
-        nav1.tabBarItem = UITabBarItem(title: "首页", image: UIImage(named: "ic_turned_in"), selectedImage: UIImage(named: "ic_turned_in"))
+        
+        nav1.tabBarItem = UITabBarItem(title: "首页", image: UIImage(named: "tabar_home"), selectedImage: UIImage(named: "tabar_home_sel")?.withRenderingMode(.alwaysOriginal))
 
         let vc2 = RightViewController()
         let nav2 = LDNavigationController(rootViewController: vc2)
-        nav2.tabBarItem = UITabBarItem(title: "分类", image: UIImage(named: "ic_turned_in"), selectedImage: UIImage(named: "ic_turned_in"))
+        nav2.tabBarItem = UITabBarItem(title: "分类", image: UIImage(named: "tabar_class"), selectedImage: UIImage(named: "tabar_class_sel")?.withRenderingMode(.alwaysOriginal))
         
         let vc3 = LeftViewController()
         let nav3 = LDNavigationController(rootViewController: vc3)
-        nav3.tabBarItem = UITabBarItem(title: "我的", image: UIImage(named: "ic_turned_in"), selectedImage: UIImage(named: "ic_turned_in"))
+        nav3.tabBarItem = UITabBarItem(title: "我的", image: UIImage(named: "tabar_me"), selectedImage: UIImage(named: "tabar_me_sel")?.withRenderingMode(.alwaysOriginal))
         
          tabBarController.viewControllers = [nav1,nav2,nav3]
+        
+        // 设置字体大小
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 11.0)], for: UIControl.State.normal)
+        // 设置字体偏移
+        UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: 0.0)
+        // 设置图标选中时颜色
+        UITabBar.appearance().tintColor = UIColor.black
+        UITabBar.appearance().isTranslucent = false
 
         
         self.window = V2Window();

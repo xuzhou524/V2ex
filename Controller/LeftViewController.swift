@@ -109,7 +109,7 @@ class LeftViewController: UIViewController,UITableViewDataSource,UITableViewDele
                 }else{
                     let memberViewController = MyCenterViewController()
                     memberViewController.username = V2User.sharedInstance.username
-                    V2Client.sharedInstance.centerNavigation?.pushViewController(memberViewController, animated: true)
+                    self.navigationController?.pushViewController(memberViewController, animated: true)
                     V2Client.sharedInstance.drawerController?.closeDrawer(animated: true, completion: nil)
                 }
             }
@@ -117,21 +117,21 @@ class LeftViewController: UIViewController,UITableViewDataSource,UITableViewDele
         else if indexPath.section == 1 {
             if !V2User.sharedInstance.isLogin {
                 let loginViewController = LoginViewController()
-                V2Client.sharedInstance.centerNavigation?.present(loginViewController, animated: true, completion: nil);
+                self.navigationController?.present(loginViewController, animated: true, completion: nil);
                 return
             }
             if indexPath.row == 0 {
                 let memberViewController = MyCenterViewController()
                 memberViewController.username = V2User.sharedInstance.username
-                V2Client.sharedInstance.centerNavigation?.pushViewController(memberViewController, animated: true)
+                self.navigationController?.pushViewController(memberViewController, animated: true)
             }
             else if indexPath.row == 1 {
                 let notificationsViewController = NotificationsViewController()
-                V2Client.sharedInstance.centerNavigation?.pushViewController(notificationsViewController, animated: true)
+                self.navigationController?.pushViewController(notificationsViewController, animated: true)
             }
             else if indexPath.row == 2 {
                 let favoritesViewController = FavoritesViewController()
-                V2Client.sharedInstance.centerNavigation?.pushViewController(favoritesViewController, animated: true)
+                self.navigationController?.pushViewController(favoritesViewController, animated: true)
             }
             V2Client.sharedInstance.drawerController?.closeDrawer(animated: true, completion: nil)
             
