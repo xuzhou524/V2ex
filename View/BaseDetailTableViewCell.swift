@@ -22,7 +22,7 @@ class BaseDetailTableViewCell: UITableViewCell {
     }()
     
     var detailMarkImageView:UIImageView = {
-        let imageview = UIImageView(image: UIImage.imageUsedTemplateMode("ic_keyboard_arrow_right"))
+        let imageview = UIImageView(image: UIImage.imageUsedTemplateMode("ic_rightArrow"))
         imageview.contentMode = .center
         return imageview
     }()
@@ -49,7 +49,7 @@ class BaseDetailTableViewCell: UITableViewCell {
             }
             else{
                 self.detailMarkImageView.snp.remakeConstraints{ (make) -> Void in
-                    make.width.height.equalTo(20)
+                    make.width.height.equalTo(15)
                     make.centerY.equalTo(self.contentView)
                     make.right.equalTo(self.contentView).offset(-12)
                 }

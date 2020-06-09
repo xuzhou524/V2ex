@@ -36,7 +36,7 @@ class RightNodeTableViewCell: UITableViewCell {
             make.centerY.equalTo(self.contentView)
         }
         self.contentView.addSubview(self.rightImageView)
-        self.rightImageView.image = UIImage(named: "ic_ rightArrow")
+        self.rightImageView.image = UIImage(named: "ic_rightArrow")
         self.rightImageView.snp.makeConstraints{ (make) -> Void in
             make.centerY.equalTo(self.contentView)
             make.right.equalTo(self.contentView).offset(-15)

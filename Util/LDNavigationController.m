@@ -39,8 +39,8 @@
 
 #pragma mark 创建返回按钮
 -(UIBarButtonItem *)createBackButton {
-    UIButton *liftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
-    [liftBtn setImage:[UIImage imageNamed:@"ic_chevron_left"] forState:UIControlStateNormal];
+    UIButton *liftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    [liftBtn setImage:[UIImage imageNamed:@"ic_return_left"] forState:UIControlStateNormal];
     liftBtn.imageEdgeInsets = UIEdgeInsetsMake( 2, 0, 2, 5);
     [liftBtn addTarget:self action:@selector(popself) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem * liftButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftBtn];

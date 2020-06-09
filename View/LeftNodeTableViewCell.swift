@@ -55,7 +55,7 @@ class LeftNodeTableViewCell: UITableViewCell {
             make.left.equalTo(self.nodeImageView.snp.right).offset(15)
             make.centerY.equalTo(self.nodeImageView)
         }
-        self.rightImageView.image = UIImage(named: "ic_ rightArrow")
+        self.rightImageView.image = UIImage(named: "ic_rightArrow")
         self.rightImageView.snp.makeConstraints{ (make) -> Void in
             make.centerY.equalTo(panel)
             make.right.equalTo(panel).offset(-15)

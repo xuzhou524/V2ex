@@ -39,12 +39,12 @@ class V2WebViewViewController: UIViewController ,V2WebViewProgressDelegate ,V2Ac
         self.view.backgroundColor = XZSwiftColor.backgroudColor
         
         let backbtn = UIButton(type: .custom)
-        backbtn.setTitle("返回", for: .normal)
-        backbtn.frame = CGRect(x: 0, y: 0, width: 35, height: 44)
+//        backbtn.setTitle("返回", for: .normal)
+        backbtn.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         backbtn.imageView!.contentMode = .center;
-        backbtn.setImage(UIImage.imageUsedTemplateMode("ic_keyboard_arrow_left_36pt"), for: .normal)
-        backbtn.imageEdgeInsets = UIEdgeInsets(top: 0, left: -21, bottom: 0, right: 0)
-        backbtn.titleEdgeInsets = UIEdgeInsets(top: 0, left: -31, bottom: 0, right: 0)
+        backbtn.setImage(UIImage.imageUsedTemplateMode("ic_return_left"), for: .normal)
+//        backbtn.imageEdgeInsets = UIEdgeInsets(top: 0, left: -21, bottom: 0, right: 0)
+//        backbtn.titleEdgeInsets = UIEdgeInsets(top: 0, left: -31, bottom: 0, right: 0)
         backbtn.titleLabel?.font = v2Font(14)
         backbtn.setTitleColor(self.navigationController?.navigationBar.tintColor, for: .normal)
         backbtn.contentHorizontalAlignment = .left
