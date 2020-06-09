@@ -61,12 +61,6 @@ class HomeViewController: UIViewController {
             self?.tableView.backgroundColor = V2EXColor.colors.v2_backgroundColor
         }
     }
-    override func viewWillAppear(_ animated: Bool) {
-        V2Client.sharedInstance.drawerController?.openDrawerGestureModeMask = .panningCenterView
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        V2Client.sharedInstance.drawerController?.openDrawerGestureModeMask = []
-    }
     
     func refresh(){
         
@@ -164,7 +158,7 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate {
         let item = self.topicList![indexPath.row]
         let titleHeight = item.topicTitleLayout?.textBoundingRect.size.height ?? 0
         //          上间隔   头像高度  头像下间隔       标题高度    标题下间隔 cell间隔
-        let height = 12    +  35     +  12      + titleHeight   + 12      + 8
+        let height = 12    +  50     +  12      + titleHeight   + 12      + 10
 
         return height
     }

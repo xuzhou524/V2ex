@@ -8,12 +8,6 @@ PODS:
     - Fabric (~> 1.10.2)
   - CXSwipeGestureRecognizer (1.1.0)
   - DeviceKit (2.3.0)
-  - DrawerController (4.0.0):
-    - DrawerController/Core (= 4.0.0)
-    - DrawerController/DrawerVisualStates (= 4.0.0)
-  - DrawerController/Core (4.0.0)
-  - DrawerController/DrawerVisualStates (4.0.0):
-    - DrawerController/Core
   - Fabric (1.10.2)
   - FDFullscreenPopGesture (1.1)
   - Ji (5.0.0)
@@ -43,7 +37,6 @@ DEPENDENCIES:
   - Crashlytics
   - CXSwipeGestureRecognizer
   - DeviceKit
-  - DrawerController
   - Fabric
   - FDFullscreenPopGesture
   - Ji
@@ -72,7 +65,6 @@ SPEC REPOS:
     - Crashlytics
     - CXSwipeGestureRecognizer
     - DeviceKit
-    - DrawerController
     - Fabric
     - Ji
     - KeychainSwift
@@ -93,7 +85,6 @@ SPEC CHECKSUMS:
   Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
   CXSwipeGestureRecognizer: 5a53916aa69e85d041c35b5fc2180ff0bfe6333b
   DeviceKit: da103891aa928d89f64ea8dd8aca738c5f3d8ac0
-  DrawerController: eb1168e9f7185cc49f654ae8486917f0acb3dc88
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   Ji: d795fed288fe78658b404c88946d753b17d8d7f4
@@ -111,6 +102,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 754a9e6dae67cee6f17b7130d2ae3bcd82519554
+PODFILE CHECKSUM: f6aa062f5065a6df2ac62a573430e0b2849f6427
 
 COCOAPODS: 1.7.3

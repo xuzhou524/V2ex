@@ -10,7 +10,6 @@ import UIKit
 import Fabric
 import Crashlytics
 
-import DrawerController
 import SVProgressHUD
 
 @UIApplicationMain
@@ -55,30 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         self.window?.rootViewController = tabBarController
         
-//        self.window = V2Window();
-//        V2Client.sharedInstance.window = self.window
-//        self.window?.frame=UIScreen.main.bounds;
-//        self.window?.makeKeyAndVisible();
-//
-//        let centerNav = V2EXNavigationController(rootViewController: HomeViewController());
-//        let leftViewController = LeftViewController();
-//        let rightViewController = RightViewController();
-//        let drawerController = DrawerController(centerViewController: centerNav, leftDrawerViewController: leftViewController, rightDrawerViewController: rightViewController);
-//
-//        self.window?.themeChangedHandler = {[weak self] (style) -> Void in
-//            self?.window?.backgroundColor = V2EXColor.colors.v2_backgroundColor;
-//            drawerController.view.backgroundColor = V2EXColor.colors.v2_backgroundColor
-//        }
-//
-//        drawerController.maximumLeftDrawerWidth=230;
-//        drawerController.maximumRightDrawerWidth = rightViewController.maximumRightDrawerWidth()
-//        drawerController.openDrawerGestureModeMask=OpenDrawerGestureMode.panningCenterView
-//        drawerController.closeDrawerGestureModeMask=CloseDrawerGestureMode.all;
-//        self.window?.rootViewController = tabBarController;
-//
-//        V2Client.sharedInstance.drawerController = drawerController
-//        V2Client.sharedInstance.centerViewController = centerNav.viewControllers[0] as? HomeViewController
-//        V2Client.sharedInstance.centerNavigation = centerNav
+        V2Client.sharedInstance.centerTabBarController = tabBarController
+        
         #if DEBUG
             let fpsLabel = V2FPSLabel(frame: CGRect(x: 15, y: SCREEN_HEIGHT-40,width: 55,height: 20));
             self.window?.addSubview(fpsLabel);

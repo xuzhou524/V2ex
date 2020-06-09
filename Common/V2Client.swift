@@ -7,21 +7,21 @@
 //
 
 import UIKit
-import DrawerController
 
 class V2Client: NSObject {
     static let sharedInstance = V2Client()
     
     var window : UIWindow? = nil
     
-    var drawerController :DrawerController? = nil
     var centerViewController : HomeViewController? = nil
+    var centerTabBarController : LDTabBarController? = nil
     var centerNavigation : V2EXNavigationController? = nil
     
     // 当前程序中，最上层的 NavigationController
     var topNavigationController : UINavigationController {
         get{
-            return V2Client.getTopNavigationController(V2Client.sharedInstance.centerNavigation!)
+            let rooVC = centerTabBarController?.viewControllers?[centerTabBarController?.selectedIndex ?? 0]
+            return V2Client.getTopNavigationController(rooVC as! UINavigationController)
         }
     }
     

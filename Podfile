@@ -8,7 +8,6 @@ def pods
   pod 'ObjectMapper'
   pod 'AlamofireObjectMapper'
   pod 'Ji'
-  pod 'DrawerController'
   pod 'Kingfisher', '~> 4.10.0'
   pod 'KeychainSwift'
   pod 'KVOController'
