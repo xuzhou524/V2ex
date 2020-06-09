@@ -14,7 +14,7 @@ class TopicDetailCommentCell: UITableViewCell{
     var avatarImageView: UIImageView = {
         let avatarImageView = UIImageView()
         avatarImageView.contentMode=UIView.ContentMode.scaleAspectFit
-        avatarImageView.layer.cornerRadius = 3
+        avatarImageView.layer.cornerRadius = 18
         avatarImageView.layer.masksToBounds = true
         return avatarImageView
     }()
@@ -133,7 +133,7 @@ class TopicDetailCommentCell: UITableViewCell{
         }
         self.avatarImageView.snp.makeConstraints{ (make) -> Void in
             make.left.top.equalTo(self.contentView).offset(12);
-            make.width.height.equalTo(35);
+            make.width.height.equalTo(36);
         }
         self.userNameLabel.snp.makeConstraints{ (make) -> Void in
             make.left.equalTo(self.avatarImageView.snp.right).offset(10);

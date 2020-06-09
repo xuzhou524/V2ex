@@ -14,7 +14,7 @@ class NotificationTableViewCell: UITableViewCell {
     var avatarImageView: UIImageView = {
         let imageView =  UIImageView()
         imageView.contentMode=UIView.ContentMode.scaleAspectFit
-        imageView.layer.cornerRadius = 3
+        imageView.layer.cornerRadius = 18
         imageView.layer.masksToBounds = true
         return imageView
     }()
@@ -134,7 +134,7 @@ class NotificationTableViewCell: UITableViewCell {
     fileprivate func setupLayout(){
         self.avatarImageView.snp.makeConstraints{ (make) -> Void in
             make.left.top.equalTo(self.contentView).offset(12);
-            make.width.height.equalTo(35);
+            make.width.height.equalTo(36);
         }
         self.userNameLabel.snp.makeConstraints{ (make) -> Void in
             make.left.equalTo(self.avatarImageView.snp.right).offset(10);
