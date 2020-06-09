@@ -44,7 +44,7 @@ class UserViewController: UIViewController,UITableViewDataSource,UITableViewDele
         return 3
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return [1,3,3][section]
+        return [1,2,3][section]
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath.section == 1 && indexPath.row == 2){
@@ -72,7 +72,7 @@ class UserViewController: UIViewController,UITableViewDataSource,UITableViewDele
                 return UITableViewCell()
             }
         }else if (indexPath.section == 1) {
-            if indexPath.row == 1 {
+            if indexPath.row == 0 {
                 let cell = getCell(tableView, cell: LeftNotifictionCell.self, indexPath: indexPath)
                 cell.nodeImageView.image = UIImage(named: "ic_notifications_none")
                 return cell
@@ -80,9 +80,8 @@ class UserViewController: UIViewController,UITableViewDataSource,UITableViewDele
                 let cell = getCell(tableView, cell: LeftNodeTableViewCell.self, indexPath: indexPath)
                 cell.summeryLabel.isHidden = true
                 cell.isHiddenRightImage(hidden: false)
-                cell.nodeNameLabel.text = [NSLocalizedString("me"),"",NSLocalizedString("favorites")][indexPath.row]
-                let names = ["ic_face","","ic_turned_in_not"]
-                cell.nodeImageView.image = UIImage(named: names[indexPath.row])
+                cell.nodeNameLabel.text = NSLocalizedString("favorites")
+                cell.nodeImageView.image = UIImage(named: "ic_turned_in_not")
                 return cell
             }
         }else {
@@ -126,13 +125,9 @@ class UserViewController: UIViewController,UITableViewDataSource,UITableViewDele
                 return
             }
             if indexPath.row == 0 {
-                let memberViewController = MyCenterViewController()
-                memberViewController.username = V2User.sharedInstance.username
-                self.navigationController?.pushViewController(memberViewController, animated: true)
-            }else if indexPath.row == 1 {
                 let notificationsViewController = NotificationsViewController()
                 self.navigationController?.pushViewController(notificationsViewController, animated: true)
-            }else if indexPath.row == 2 {
+            }else if indexPath.row == 1 {
                 let favoritesViewController = FavoritesViewController()
                 self.navigationController?.pushViewController(favoritesViewController, animated: true)
             }
