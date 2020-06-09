@@ -105,14 +105,12 @@ class TopicListModel:NSObject, HtmlModelArrayProtocol {
                     NSAttributedString.Key.font:v2Font(16),
                     NSAttributedString.Key.foregroundColor:V2EXColor.colors.v2_TopicListTitleColor,
                 ])
-            self.topicTitleAttributedString?.yy_lineSpacing = 3
+            self.topicTitleAttributedString?.yy_lineSpacing = 5
 
             //监听颜色配置文件变化，当有变化时，改变自身颜色
-            self.themeChangedHandler = {[weak self] (style) -> Void in
-                if let str = self?.topicTitleAttributedString {
-                    str.yy_color = V2EXColor.colors.v2_TopicListTitleColor
-                    self?.topicTitleLayout = YYTextLayout(containerSize: CGSize(width: SCREEN_WIDTH-30, height: 9999), text: str)
-                }
+            if let str = self.topicTitleAttributedString {
+                str.yy_color = V2EXColor.colors.v2_TopicListTitleColor
+                self.topicTitleLayout = YYTextLayout(containerSize: CGSize(width: SCREEN_WIDTH-30, height: 9999), text: str)
             }
         }
     }

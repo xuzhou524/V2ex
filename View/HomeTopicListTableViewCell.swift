@@ -65,7 +65,7 @@ class HomeTopicListTableViewCell: UITableViewCell {
         let label = YYLabel()
         label.textVerticalAlignment = .top
         label.font=v2Font(16)
-//        label.displaysAsynchronously = true
+        label.displaysAsynchronously = true
         label.numberOfLines=0
         return label
     }()
@@ -164,14 +164,13 @@ class HomeTopicListTableViewCell: UITableViewCell {
             make.top.equalTo(self.avatarImageView.snp.bottom).offset(12);
             make.left.equalTo(self.contentView).offset(15);
             make.right.equalTo(self.contentView).offset(-15);
-            make.bottom.equalTo(self.contentView).offset(-54)
         }
         
         self.dateAndLastPostUserLabel.snp.makeConstraints{ (make) -> Void in
             make.top.equalTo(self.topicTitleLabel.snp.bottom).offset(12);
             make.left.equalTo(self.avatarImageView);
         }
-        
+
         self.replyCountLabel.snp.makeConstraints{ (make) -> Void in
             make.centerY.equalTo(self.dateAndLastPostUserLabel);
             make.right.equalTo(self.contentPanel).offset(-15);
@@ -180,6 +179,7 @@ class HomeTopicListTableViewCell: UITableViewCell {
             make.centerY.equalTo(self.replyCountLabel);
             make.width.height.equalTo(20);
             make.right.equalTo(self.replyCountLabel.snp.left).offset(-2);
+            make.bottom.equalTo(self.contentPanel).offset(-12)
         }
         
         self.contentPanel.snp.makeConstraints{ (make) -> Void in

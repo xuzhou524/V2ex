@@ -57,9 +57,7 @@ class HomeViewController: UIViewController {
         footer?.centerOffset = -4
         self.tableView.mj_footer = footer
         
-        self.themeChangedHandler = {[weak self] (style) -> Void in
-            self?.tableView.backgroundColor = XZSwiftColor.backgroudColor
-        }
+        self.tableView.backgroundColor = XZSwiftColor.backgroudColor
     }
     
     func refresh(){
@@ -158,7 +156,7 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate {
         let item = self.topicList![indexPath.row]
         let titleHeight = item.topicTitleLayout?.textBoundingRect.size.height ?? 0
         //          上间隔   头像高度  头像下间隔   标题高度      标题下间隔 评论数高度  cell间隔
-          let height = 12    +  36   +  12  + titleHeight  + 12     + 20   + 12  + 10
+        let height = 12    +  36   +  12  + titleHeight  + 12     + 20   + 12  + 10
 
         return height
     }
