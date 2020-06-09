@@ -70,22 +70,19 @@ class MemberTopicCell: UITableViewCell {
         
         self.setupLayout()
 
-        self.themeChangedHandler = {[weak self] _ in
-            self?.contentPanel.backgroundColor =  XZSwiftColor.white
-            self?.backgroundColor = XZSwiftColor.backgroudColor
-            
-            self?.dateAndLastPostUserLabel.textColor=XZSwiftColor.topicListDateColor
-            self?.replyCountLabel.textColor = XZSwiftColor.topicListDateColor
-            self?.nodeNameLabel.textColor = XZSwiftColor.topicListDateColor
-            self?.nodeNameLabel.backgroundColor = XZSwiftColor.nodeBackgroundColor
-            self?.topicTitleLabel.textColor=XZSwiftColor.topicListTitleColor
-            
-            self?.dateAndLastPostUserLabel.backgroundColor = self?.contentPanel.backgroundColor
-            self?.replyCountLabel.backgroundColor = self?.contentPanel.backgroundColor
-            self?.replyCountIconImageView.backgroundColor = self?.contentPanel.backgroundColor
-            self?.topicTitleLabel.backgroundColor = self?.contentPanel.backgroundColor
-            
-        }
+        self.contentPanel.backgroundColor =  XZSwiftColor.white
+        self.backgroundColor = XZSwiftColor.backgroudColor
+        
+        self.dateAndLastPostUserLabel.textColor=XZSwiftColor.topicListDateColor
+        self.replyCountLabel.textColor = XZSwiftColor.topicListDateColor
+        self.nodeNameLabel.textColor = XZSwiftColor.topicListDateColor
+        self.nodeNameLabel.backgroundColor = XZSwiftColor.nodeBackgroundColor
+        self.topicTitleLabel.textColor=XZSwiftColor.topicListTitleColor
+        
+        self.dateAndLastPostUserLabel.backgroundColor = self.contentPanel.backgroundColor
+        self.replyCountLabel.backgroundColor = self.contentPanel.backgroundColor
+        self.replyCountIconImageView.backgroundColor = self.contentPanel.backgroundColor
+        self.topicTitleLabel.backgroundColor = self.contentPanel.backgroundColor
     }
     
     func setupLayout(){

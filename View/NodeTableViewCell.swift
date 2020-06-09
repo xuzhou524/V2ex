@@ -24,11 +24,9 @@ class NodeTableViewCell: UICollectionViewCell {
             make.center.equalTo(self.contentView)
         })
 
-        self.themeChangedHandler = {[weak self] _ in
-            self?.backgroundColor = XZSwiftColor.white
-            self?.textLabel.textColor = XZSwiftColor.leftNodeTintColor
-            self?.textLabel.backgroundColor = XZSwiftColor.white
-        }
+        self.backgroundColor = XZSwiftColor.white
+        self.textLabel.textColor = XZSwiftColor.leftNodeTintColor
+        self.textLabel.backgroundColor = XZSwiftColor.white
     }
     
     required init?(coder aDecoder: NSCoder) {

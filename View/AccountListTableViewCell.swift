@@ -65,13 +65,11 @@ class AccountListTableViewCell: UITableViewCell {
             make.height.equalTo(SEPARATOR_HEIGHT)
         }
         
-        self.themeChangedHandler = {[weak self] _ in
-            self?.backgroundColor = XZSwiftColor.white
-            self?.userNameLabel.textColor = XZSwiftColor.leftNodeTintColor
-            self?.usedLabel.textColor = XZSwiftColor.noticePointColor
-            
-            separator.image = createImageWithColor(XZSwiftColor.backgroudColor)
-        }
+        self.backgroundColor = XZSwiftColor.white
+        self.userNameLabel.textColor = XZSwiftColor.leftNodeTintColor
+        self.usedLabel.textColor = XZSwiftColor.noticePointColor
+        
+        separator.image = createImageWithColor(XZSwiftColor.backgroudColor)
     }
     
     func bind(_ model:LocalSecurityAccountModel) {

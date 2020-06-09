@@ -109,25 +109,23 @@ class TopicDetailCommentCell: UITableViewCell{
             )
         )
         
-        self.themeChangedHandler = {[weak self] _ in
-            self?.userNameLabel.textColor = XZSwiftColor.leftNodeTintColor
-            self?.authorLabel.textColor = XZSwiftColor.leftNodeTintColor
-            self?.dateLabel.textColor=XZSwiftColor.topicListDateColor
-            self?.commentLabel.textColor=XZSwiftColor.topicListTitleColor
-            self?.contentPanel.backgroundColor = XZSwiftColor.white
-            self?.favoriteIconView.tintColor = XZSwiftColor.topicListDateColor
-            self?.favoriteLabel.textColor = XZSwiftColor.topicListDateColor
-            self?.backgroundColor = XZSwiftColor.backgroudColor
-            self?.selectedBackgroundView?.backgroundColor = XZSwiftColor.backgroudColor
-            
-            self?.avatarImageView.backgroundColor = self?.contentPanel.backgroundColor
-            self?.userNameLabel.backgroundColor = self?.contentPanel.backgroundColor
-            self?.authorLabel.backgroundColor = self?.contentPanel.backgroundColor
-            self?.dateLabel.backgroundColor = self?.contentPanel.backgroundColor
-            self?.commentLabel.backgroundColor = self?.contentPanel.backgroundColor
-            self?.favoriteIconView.backgroundColor = self?.contentPanel.backgroundColor
-            self?.favoriteLabel.backgroundColor = self?.contentPanel.backgroundColor
-        }
+        self.userNameLabel.textColor = XZSwiftColor.leftNodeTintColor
+        self.authorLabel.textColor = XZSwiftColor.leftNodeTintColor
+        self.dateLabel.textColor=XZSwiftColor.topicListDateColor
+        self.commentLabel.textColor=XZSwiftColor.topicListTitleColor
+        self.contentPanel.backgroundColor = XZSwiftColor.white
+        self.favoriteIconView.tintColor = XZSwiftColor.topicListDateColor
+        self.favoriteLabel.textColor = XZSwiftColor.topicListDateColor
+        self.backgroundColor = XZSwiftColor.backgroudColor
+        self.selectedBackgroundView?.backgroundColor = XZSwiftColor.backgroudColor
+        
+        self.avatarImageView.backgroundColor = self.contentPanel.backgroundColor
+        self.userNameLabel.backgroundColor = self.contentPanel.backgroundColor
+        self.authorLabel.backgroundColor = self.contentPanel.backgroundColor
+        self.dateLabel.backgroundColor = self.contentPanel.backgroundColor
+        self.commentLabel.backgroundColor = self.contentPanel.backgroundColor
+        self.favoriteIconView.backgroundColor = self.contentPanel.backgroundColor
+        self.favoriteLabel.backgroundColor = self.contentPanel.backgroundColor
     }
     func setupLayout(){
         self.contentPanel.snp.makeConstraints{ (make) -> Void in

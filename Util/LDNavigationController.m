@@ -28,9 +28,7 @@
                                                   NSFontAttributeName : LDFont2(18),
                                                   NSForegroundColorAttributeName : [LDColor ldgray69]
                                                   }];
-    
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-    
+        
     [self.navigationBar setShadowImage:[UIImage new]];
 }
 

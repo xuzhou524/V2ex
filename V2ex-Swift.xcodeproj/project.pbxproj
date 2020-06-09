@@ -88,7 +88,6 @@
 		06D300281C6C720800547CE6 /* V2UsersKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D300271C6C720800547CE6 /* V2UsersKeychain.swift */; };
 		06D3002A1C6D801100547CE6 /* LogoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D300291C6D801100547CE6 /* LogoutTableViewCell.swift */; };
 		06D33A5E1C4DF64B006CF3AE /* TopicDetailWebViewContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D33A5D1C4DF64B006CF3AE /* TopicDetailWebViewContentCell.swift */; };
-		06DD400B1C43726600CE293D /* V2EXColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DD400A1C43726600CE293D /* V2EXColor.swift */; };
 		06E1459F1C609E8500BDD63D /* NodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E1459E1C609E8500BDD63D /* NodesViewController.swift */; };
 		06E145A21C60A5E600BDD63D /* NodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E145A11C60A5E600BDD63D /* NodeTableViewCell.swift */; };
 		06E145A41C60A86D00BDD63D /* NodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E145A31C60A86D00BDD63D /* NodeModel.swift */; };
@@ -200,7 +199,6 @@
 		06D300271C6C720800547CE6 /* V2UsersKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V2UsersKeychain.swift; sourceTree = "<group>"; };
 		06D300291C6D801100547CE6 /* LogoutTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutTableViewCell.swift; sourceTree = "<group>"; };
 		06D33A5D1C4DF64B006CF3AE /* TopicDetailWebViewContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailWebViewContentCell.swift; sourceTree = "<group>"; };
-		06DD400A1C43726600CE293D /* V2EXColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V2EXColor.swift; sourceTree = "<group>"; };
 		06E1459E1C609E8500BDD63D /* NodesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodesViewController.swift; sourceTree = "<group>"; };
 		06E145A11C60A5E600BDD63D /* NodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeTableViewCell.swift; sourceTree = "<group>"; };
 		06E145A31C60A86D00BDD63D /* NodeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeModel.swift; sourceTree = "<group>"; };
@@ -355,7 +353,6 @@
 			children = (
 				0678D2031C61B3F0007FFCFD /* Extension */,
 				0653CFA61C44E09B00E4FC05 /* UITableView+FINAutomaticHeightCell */,
-				06DD400A1C43726600CE293D /* V2EXColor.swift */,
 				536537CF248F69CB009D834B /* XZSwiftColor.swift */,
 				06D0EE1E1C915CAD003095FF /* V2Style.swift */,
 				06C49B6C1C43BFAB00684CA6 /* V2ex+Define.swift */,
@@ -724,7 +721,6 @@
 				0684A1E81C5B58D600B12437 /* UIButton+Extension.swift in Sources */,
 				06E1BA331C7023D900867454 /* V2WebViewViewController.swift in Sources */,
 				06744A531E49D4C0001E3D1B /* TwoFAViewController.swift in Sources */,
-				06DD400B1C43726600CE293D /* V2EXColor.swift in Sources */,
 				53E7BEA7248A2F3800438BCB /* LDNavigationController.m in Sources */,
 				0678F47120CE388E0048A64B /* Observable+Extension.swift in Sources */,
 				06E1459F1C609E8500BDD63D /* NodesViewController.swift in Sources */,

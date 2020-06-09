@@ -46,10 +46,8 @@ class FavoritesViewController: BaseViewController,UITableViewDataSource,UITableV
         footer?.centerOffset = -4
         self.tableView.mj_footer = footer
         
-        self.themeChangedHandler = {[weak self] _ in
-            self?.view.backgroundColor = XZSwiftColor.backgroudColor
-            self?.tableView.backgroundColor = XZSwiftColor.backgroudColor
-        }
+        self.view.backgroundColor = XZSwiftColor.backgroudColor
+        self.tableView.backgroundColor = XZSwiftColor.backgroudColor
     }
     
     func refresh(){

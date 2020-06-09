@@ -47,10 +47,8 @@ class AccountsManagerViewController: UIViewController,UITableViewDataSource,UITa
             self.users.append(user)
         }
         
-        self.themeChangedHandler = {[weak self] _ in
-            self?.tableView.backgroundColor = XZSwiftColor.backgroudColor
-            self?.view.backgroundColor = XZSwiftColor.backgroudColor
-        }
+        self.tableView.backgroundColor = XZSwiftColor.backgroudColor
+        self.view.backgroundColor = XZSwiftColor.backgroudColor
     }
 
     @objc func warningClick(){

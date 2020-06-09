@@ -69,15 +69,12 @@ class TopicDetailViewController: BaseViewController{
             self?.getNextPage()
         })
         
-        self.themeChangedHandler = {[weak self] _ in
-            self?.tableView.backgroundColor = XZSwiftColor.backgroudColor
-            self?.view.backgroundColor = XZSwiftColor.backgroudColor
-            
-            self?.tableView.v2_scrollToTop()
-            self?.showLoadingView()
-            self?.getData()
-        }
+        self.tableView.backgroundColor = XZSwiftColor.backgroudColor
+        self.view.backgroundColor = XZSwiftColor.backgroudColor
         
+        self.tableView.v2_scrollToTop()
+        self.showLoadingView()
+        self.getData()
         
     }
     

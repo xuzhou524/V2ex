@@ -119,18 +119,16 @@ class NotificationTableViewCell: UITableViewCell {
         //按钮点击事件
         self.replyButton.addTarget(self, action: #selector(replyButtonClick(_:)), for: .touchUpInside)
         
-        self.themeChangedHandler = {[weak self] _ in
-            self?.backgroundColor=XZSwiftColor.backgroudColor
-            self?.selectedBackgroundView?.backgroundColor = XZSwiftColor.backgroudColor
-            self?.userNameLabel.textColor = XZSwiftColor.leftNodeTintColor
-            self?.dateLabel.textColor=XZSwiftColor.topicListDateColor
-            self?.detailLabel.textColor=XZSwiftColor.topicListTitleColor
-            self?.commentLabel.textColor=XZSwiftColor.topicListTitleColor
-            self?.commentPanel.backgroundColor = XZSwiftColor.backgroudColor
-            self?.dropUpImageView.tintColor = self?.commentPanel.backgroundColor
-            self?.contentPanel.backgroundColor = XZSwiftColor.white
-            self?.replyButton.backgroundColor  = XZSwiftColor.buttonBackgroundColor
-        }
+        self.backgroundColor=XZSwiftColor.backgroudColor
+        self.selectedBackgroundView?.backgroundColor = XZSwiftColor.backgroudColor
+        self.userNameLabel.textColor = XZSwiftColor.leftNodeTintColor
+        self.dateLabel.textColor=XZSwiftColor.topicListDateColor
+        self.detailLabel.textColor=XZSwiftColor.topicListTitleColor
+        self.commentLabel.textColor=XZSwiftColor.topicListTitleColor
+        self.commentPanel.backgroundColor = XZSwiftColor.backgroudColor
+        self.dropUpImageView.tintColor = self.commentPanel.backgroundColor
+        self.contentPanel.backgroundColor = XZSwiftColor.white
+        self.replyButton.backgroundColor  = XZSwiftColor.buttonBackgroundColor
         
     }
     fileprivate func setupLayout(){

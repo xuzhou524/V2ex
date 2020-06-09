@@ -54,12 +54,10 @@ class TopicDetailToolCell: UITableViewCell {
             make.height.equalTo(SEPARATOR_HEIGHT)
         }
         
-        self.themeChangedHandler = {[weak self] (style) -> Void in
-            self?.sortButton.setTitleColor(XZSwiftColor.topicListTitleColor, for: .normal)
-            self?.backgroundColor = XZSwiftColor.white
-            self?.titleLabel.textColor = XZSwiftColor.topicListTitleColor
-            self?.separator.image = createImageWithColor(XZSwiftColor.backgroudColor)
-        }
+        self.sortButton.setTitleColor(XZSwiftColor.topicListTitleColor, for: .normal)
+        self.backgroundColor = XZSwiftColor.white
+        self.titleLabel.textColor = XZSwiftColor.topicListTitleColor
+        self.separator.image = createImageWithColor(XZSwiftColor.backgroudColor)
         
         self.sortButton.addTarget(self, action: #selector(sortClick(sender:)), for: .touchUpInside)
     }

@@ -68,9 +68,7 @@ class LeftNodeTableViewCell: UITableViewCell {
         
         self.summeryLabel.isHidden = true
         
-        self.themeChangedHandler = {[weak self] (style) -> Void in
-            self?.configureColor()
-        }        
+        self.configureColor()
     }
     func configureColor(){
         self.panel.backgroundColor = XZSwiftColor.white

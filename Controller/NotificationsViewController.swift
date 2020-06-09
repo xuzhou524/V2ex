@@ -40,10 +40,8 @@ class NotificationsViewController: BaseViewController,UITableViewDataSource,UITa
         self.showLoadingView()
         self.tableView.mj_header.beginRefreshing();
         
-        self.themeChangedHandler = {[weak self] _ in
-            self?.view.backgroundColor = XZSwiftColor.backgroudColor
-            self?.tableView.backgroundColor = XZSwiftColor.backgroudColor
-        }
+        self.view.backgroundColor = XZSwiftColor.backgroudColor
+        self.tableView.backgroundColor = XZSwiftColor.backgroudColor
     }
     
     func refresh(){

@@ -237,10 +237,8 @@ class MemberViewController: UIViewController,UITableViewDelegate,UITableViewData
         }
         
         weak var weakView = view
-        view.themeChangedHandler = {_ in
-            weakView?.backgroundColor = XZSwiftColor.white
-            label.textColor = XZSwiftColor.leftNodeTintColor
-        }
+        weakView?.backgroundColor = XZSwiftColor.white
+        label.textColor = XZSwiftColor.leftNodeTintColor
         
         tableViewHeader.append(view)
         return view

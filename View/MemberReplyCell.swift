@@ -72,15 +72,13 @@ class MemberReplyCell: UITableViewCell {
             make.height.equalTo(5)
         }
         
-        self.themeChangedHandler = {[weak self] _ in
-            self?.backgroundColor = XZSwiftColor.backgroudColor
-            
-            self?.detailLabel.textColor=XZSwiftColor.topicListTitleColor
-            self?.commentLabel.textColor=XZSwiftColor.topicListTitleColor
-            self?.commentPanel.backgroundColor = XZSwiftColor.backgroudColor
-            self?.contentPanel.backgroundColor =  XZSwiftColor.white
-            dropUpImageView.tintColor = self?.commentPanel.backgroundColor
-        }
+        self.backgroundColor = XZSwiftColor.backgroudColor
+        
+        self.detailLabel.textColor=XZSwiftColor.topicListTitleColor
+        self.commentLabel.textColor=XZSwiftColor.topicListTitleColor
+        self.commentPanel.backgroundColor = XZSwiftColor.backgroudColor
+        self.contentPanel.backgroundColor =  XZSwiftColor.white
+        dropUpImageView.tintColor = self.commentPanel.backgroundColor
     }
     func setupLayout(){
         self.contentPanel.snp.makeConstraints{ (make) -> Void in

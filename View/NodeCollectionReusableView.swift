@@ -24,11 +24,9 @@ class NodeCollectionReusableView: UICollectionReusableView {
             make.left.equalTo(self).offset(15)
         }
         
-        self.themeChangedHandler = {[weak self] _ in
-            self?.backgroundColor = XZSwiftColor.backgroudColor
-            self?.label.textColor = XZSwiftColor.topicListTitleColor
-            self?.label.backgroundColor = XZSwiftColor.backgroudColor
-        }
+        self.backgroundColor = XZSwiftColor.backgroudColor
+        self.label.textColor = XZSwiftColor.topicListTitleColor
+        self.label.backgroundColor = XZSwiftColor.backgroudColor
     }
     
     required init?(coder aDecoder: NSCoder) {
