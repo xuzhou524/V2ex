@@ -79,6 +79,7 @@ class UserViewController: UIViewController,UITableViewDataSource,UITableViewDele
             }else {
                 let cell = getCell(tableView, cell: LeftNodeTableViewCell.self, indexPath: indexPath)
                 cell.summeryLabel.isHidden = true
+                cell.isHiddenRightImage(hidden: false)
                 cell.nodeNameLabel.text = [NSLocalizedString("me"),"",NSLocalizedString("favorites")][indexPath.row]
                 let names = ["ic_face","","ic_turned_in_not"]
                 cell.nodeImageView.image = UIImage(named: names[indexPath.row])
@@ -90,6 +91,7 @@ class UserViewController: UIViewController,UITableViewDataSource,UITableViewDele
             let names = ["ic_navigation","ic_settings_input_svideo"]
             cell.nodeImageView.image = UIImage(named: names[indexPath.row])
             if indexPath.row == 1 {
+                cell.isHiddenRightImage(hidden: true)
                 let infoDict = Bundle.main.infoDictionary
                 if let info = infoDict {
                    // app版本
@@ -98,6 +100,7 @@ class UserViewController: UIViewController,UITableViewDataSource,UITableViewDele
                    cell.summeryLabel.isHidden = false
                 }
             }else{
+                cell.isHiddenRightImage(hidden: false)
                 cell.summeryLabel.isHidden = true
             }
             return cell

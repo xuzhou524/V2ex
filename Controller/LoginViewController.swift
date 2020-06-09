@@ -260,12 +260,12 @@ extension LoginViewController {
         self.view.backgroundColor = UIColor.white
         
         self.cancelButton.contentMode = .center
-        cancelButton .setImage(UIImage(named: "ic_cancel")!.withRenderingMode(.alwaysTemplate), for: .normal)
+        cancelButton .setImage(UIImage(named: "guanbi"), for: .normal)
         self.view.addSubview(cancelButton)
         cancelButton.snp.makeConstraints{ (make) -> Void in
             make.top.equalTo(self.view).offset(64)
             make.left.equalTo(self.view).offset(25)
-            make.width.height.equalTo(50)
+            make.width.height.equalTo(30)
         }
 
         let v2exLabel = UILabel()
@@ -275,7 +275,7 @@ extension LoginViewController {
         self.view.addSubview(v2exLabel);
         v2exLabel.snp.makeConstraints{ (make) -> Void in
             make.centerX.equalTo(self.view)
-            make.top.equalTo(self.view).offset(150)
+            make.top.equalTo(self.view).offset(120)
         }
 
         let v2exSummaryLabel = UILabel()
@@ -289,7 +289,7 @@ extension LoginViewController {
 
         self.view.addSubview(self.userNameTextField);
         self.userNameTextField.snp.makeConstraints{ (make) -> Void in
-            make.top.equalTo(v2exSummaryLabel.snp.bottom).offset(25)
+            make.top.equalTo(v2exSummaryLabel.snp.bottom).offset(45)
             make.centerX.equalTo(self.view)
             make.width.equalTo(300)
             make.height.equalTo(45)

@@ -10,6 +10,7 @@ import UIKit
 
 class RightNodeTableViewCell: UITableViewCell {
 
+    var rightImageView = UIImageView()
     var nodeNameLabel: UILabel = {
         let label = UILabel()
         label.font = v2Font(16)
@@ -33,6 +34,13 @@ class RightNodeTableViewCell: UITableViewCell {
         self.nodeNameLabel.snp.makeConstraints{ (make) -> Void in
             make.left.equalTo(self.contentView).offset(15)
             make.centerY.equalTo(self.contentView)
+        }
+        self.contentView.addSubview(self.rightImageView)
+        self.rightImageView.image = UIImage(named: "ic_ rightArrow")
+        self.rightImageView.snp.makeConstraints{ (make) -> Void in
+            make.centerY.equalTo(self.contentView)
+            make.right.equalTo(self.contentView).offset(-15)
+            make.width.height.equalTo(15)
         }
     }
 }
