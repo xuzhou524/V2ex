@@ -21,7 +21,7 @@ nodes    = "节点";
 members  = "关注";
 
 //左侧边栏
-versionNum = "版本号";
+version = "版本号";
 more = "更多";
 nodes = "节点";
 favorites = "我的收藏";
@@ -36,26 +36,6 @@ comments = "创建的回复";
 accounts = "账户";
 current = "正在使用";
 logOut ="注销当前账号";
-
-//更多
-viewOptions = "阅读设置";
-clearCache = "清空缓存";
-
-rateV2ex = "去商店评分";
-reportAProblem = "提出BUG或改进";
-
-followThisProjectSourceCode = "关注本项目源代码";
-open-SourceLibraries = "开源库";
-version = "版本号";
-
-//阅读设置
-viewOptionThemeSet = "    配色 - 点击下面选项，设置APP的配色方案";
-followSystem = "跟随系统";
-default = "亮色";
-dark = "暗色";
-
-
-viewOptionTextSize = "    文字大小 - 滑动滑块调整文字大小";
 
 //节点导航
 navigation = "节点导航";

@@ -21,6 +21,7 @@ nodes    = "nodes";
 members  = "members";
 
 //左侧边栏
+version = "Version";
 more = "More";
 nodes = "Nodes";
 favorites = "Favorites";
@@ -35,24 +36,6 @@ comments = "Comments";
 accounts = "Accounts";
 current = "current";
 logOut ="LogOut";
-
-//更多
-viewOptions = "View Options";
-clearCache = "Clear Cache";
-
-rateV2ex = "Rate V2EX";
-reportAProblem = "Report a Problem";
-
-followThisProjectSourceCode = "Source Code";
-open-SourceLibraries = "Open Source Libraries";
-version = "Version";
-
-//阅读设置
-viewOptionThemeSet = "    Theme - Click on the options below to set the theme";
-followSystem = "Follow System";
-default = "Light";
-dark = "Dark";
-viewOptionTextSize = "    Text Size - Slide the slider to adjust the text size";
 
 //节点导航
 navigation = "Navigation";

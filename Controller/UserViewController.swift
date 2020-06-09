@@ -48,9 +48,9 @@ class UserViewController: UIViewController,UITableViewDataSource,UITableViewDele
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath.section == 1 && indexPath.row == 2){
-            return 55 + 10
+            return 55 + 15
         }
-        return [180, 55+SEPARATOR_HEIGHT, 55+SEPARATOR_HEIGHT][indexPath.section]
+        return [150, 55+SEPARATOR_HEIGHT, 55+SEPARATOR_HEIGHT][indexPath.section]
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
@@ -85,7 +85,7 @@ class UserViewController: UIViewController,UITableViewDataSource,UITableViewDele
             }
         }else {
             let cell = getCell(tableView, cell: LeftNodeTableViewCell.self, indexPath: indexPath)
-            cell.nodeNameLabel.text = [NSLocalizedString("nodes"),NSLocalizedString("versionNum")][indexPath.row]
+            cell.nodeNameLabel.text = [NSLocalizedString("nodes"),NSLocalizedString("version")][indexPath.row]
             let names = ["ic_navigation","ic_settings_input_svideo"]
             cell.nodeImageView.image = UIImage(named: names[indexPath.row])
             return cell
@@ -125,9 +125,6 @@ class UserViewController: UIViewController,UITableViewDataSource,UITableViewDele
             if indexPath.row == 0 {
                 let nodesViewController = NodesViewController()
                 self.navigationController?.pushViewController(nodesViewController, animated: true)
-            }else if indexPath.row == 1 {
-                let moreViewController = MoreViewController()
-                self.navigationController?.pushViewController(moreViewController, animated: true)
             }
         }
     }
