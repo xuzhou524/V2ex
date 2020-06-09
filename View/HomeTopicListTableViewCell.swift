@@ -56,7 +56,7 @@ class HomeTopicListTableViewCell: UITableViewCell {
     /// 节点
     var nodeNameLabel: UILabel = {
         let label = UILabel();
-        label.font = v2Font(14)
+        label.font = v2Font(13)
         return label
     }()
     var nodeBackgroundImageView:UIImageView = UIImageView()
