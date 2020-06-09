@@ -35,7 +35,7 @@ class V2UsersKeychain {
         self.addUser(user)
     }
     
-    static let usersKey = "me.fin.testDict"
+    static let usersKey = "me.Aaron_xu.testDict"
     func saveUsersDict(){
         let data = NSMutableData()
         let archiver = NSKeyedArchiver(forWritingWith: data)

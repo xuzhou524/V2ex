@@ -72,8 +72,8 @@ extension UITableView {
     }
     
     fileprivate struct AssociatedKey {
-        static var CellsIdentifier = "me.fin.cellsIdentifier"
-        static var HeightsCacheIdentifier = "me.fin.heightsCacheIdentifier"
+        static var CellsIdentifier = "me.Aaron_xu.cellsIdentifier"
+        static var HeightsCacheIdentifier = "me.Aaron_xu.heightsCacheIdentifier"
         static var finHeightCacheAbsendValue = CGFloat(-1);
     }
 

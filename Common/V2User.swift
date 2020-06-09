@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import Ji
 
-let kUserName = "me.fin.username"
+let kUserName = "me.Aaron_xu.username"
 
 class V2User: NSObject {
     static let sharedInstance = V2User()

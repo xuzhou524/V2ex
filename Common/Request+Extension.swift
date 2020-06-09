@@ -21,7 +21,7 @@ extension DataRequest {
         case dataSerializationFailed = 2
     }
     internal static func newError(_ code: ErrorCode, failureReason: String) -> NSError {
-        let errorDomain = "me.fin.v2ex.error"
+        let errorDomain = "me.Aaron_xu.v2ex.error"
         let userInfo = [NSLocalizedFailureReasonErrorKey: failureReason]
         let returnError = NSError(domain: errorDomain, code: code.rawValue, userInfo: userInfo)
         return returnError

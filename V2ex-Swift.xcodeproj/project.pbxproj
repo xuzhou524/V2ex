@@ -84,9 +84,6 @@
 		06D0EE2A1C9165C3003095FF /* darkStyle.css in Resources */ = {isa = PBXBuildFile; fileRef = 06D0EE261C9165C3003095FF /* darkStyle.css */; };
 		06D0EE2B1C9165C3003095FF /* font.css in Resources */ = {isa = PBXBuildFile; fileRef = 06D0EE271C9165C3003095FF /* font.css */; };
 		06D0EE2C1C9165C3003095FF /* lightStyle.css in Resources */ = {isa = PBXBuildFile; fileRef = 06D0EE281C9165C3003095FF /* lightStyle.css */; };
-		06D0EE2E1C917696003095FF /* V2Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D0EE2D1C917696003095FF /* V2Slider.swift */; };
-		06D0EE311C91787F003095FF /* FontSizeSliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D0EE301C91787F003095FF /* FontSizeSliderTableViewCell.swift */; };
-		06D0EE331C917E4C003095FF /* FontDisplayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D0EE321C917E4C003095FF /* FontDisplayTableViewCell.swift */; };
 		06D300241C6C21B600547CE6 /* AccountsManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D300231C6C21B600547CE6 /* AccountsManagerViewController.swift */; };
 		06D300261C6C222F00547CE6 /* AccountListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D300251C6C222F00547CE6 /* AccountListTableViewCell.swift */; };
 		06D300281C6C720800547CE6 /* V2UsersKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D300271C6C720800547CE6 /* V2UsersKeychain.swift */; };
@@ -199,9 +196,6 @@
 		06D0EE261C9165C3003095FF /* darkStyle.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = darkStyle.css; sourceTree = "<group>"; };
 		06D0EE271C9165C3003095FF /* font.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = font.css; sourceTree = "<group>"; };
 		06D0EE281C9165C3003095FF /* lightStyle.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = lightStyle.css; sourceTree = "<group>"; };
-		06D0EE2D1C917696003095FF /* V2Slider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V2Slider.swift; sourceTree = "<group>"; };
-		06D0EE301C91787F003095FF /* FontSizeSliderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontSizeSliderTableViewCell.swift; sourceTree = "<group>"; };
-		06D0EE321C917E4C003095FF /* FontDisplayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontDisplayTableViewCell.swift; sourceTree = "<group>"; };
 		06D300231C6C21B600547CE6 /* AccountsManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsManagerViewController.swift; sourceTree = "<group>"; };
 		06D300251C6C222F00547CE6 /* AccountListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountListTableViewCell.swift; sourceTree = "<group>"; };
 		06D300271C6C720800547CE6 /* V2UsersKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V2UsersKeychain.swift; sourceTree = "<group>"; };
@@ -431,7 +425,6 @@
 				06C582AA1C50C86E00F24DBC /* Topic */,
 				0611DE571C5F383700933964 /* Member */,
 				06E145A01C60A5D300BDD63D /* Node */,
-				06D0EE2F1C917869003095FF /* More */,
 				06E583841C3F8F4B00FCA361 /* HomeTopicListTableViewCell.swift */,
 				06C582AB1C50C8DC00F24DBC /* BaseDetailTableViewCell.swift */,
 				064D37A31C53BD4C002E7226 /* LeftUserHeadCell.swift */,
@@ -467,7 +460,6 @@
 				0684A1E71C5B58D600B12437 /* UIButton+Extension.swift */,
 				0623EB201C5EF6BB0016E816 /* NotificationMenuButton.swift */,
 				060C72561C8D6100000F4D2F /* V2ActivityViewController.swift */,
-				06D0EE2D1C917696003095FF /* V2Slider.swift */,
 				06CE3D8E1DA8ACB000E16F23 /* INSImageView.swift */,
 			);
 			name = Control;
@@ -493,15 +485,6 @@
 				06D0EE281C9165C3003095FF /* lightStyle.css */,
 			);
 			path = CSS;
-			sourceTree = "<group>";
-		};
-		06D0EE2F1C917869003095FF /* More */ = {
-			isa = PBXGroup;
-			children = (
-				06D0EE301C91787F003095FF /* FontSizeSliderTableViewCell.swift */,
-				06D0EE321C917E4C003095FF /* FontDisplayTableViewCell.swift */,
-			);
-			name = More;
 			sourceTree = "<group>";
 		};
 		06E145A01C60A5D300BDD63D /* Node */ = {
@@ -700,8 +683,6 @@
 				064D37A61C53C4A8002E7226 /* LeftNodeTableViewCell.swift in Sources */,
 				06CE3D8F1DA8ACB000E16F23 /* INSImageView.swift in Sources */,
 				06536F591C4F4B5000CE2CF8 /* TopicDetailCommentCell.swift in Sources */,
-				06D0EE311C91787F003095FF /* FontSizeSliderTableViewCell.swift in Sources */,
-				06D0EE331C917E4C003095FF /* FontDisplayTableViewCell.swift in Sources */,
 				06B6447E21B8D1A600D1BD46 /* V2HitTestSlopButton.swift in Sources */,
 				0678D20C1C61EAA8007FFCFD /* UIImageView+Extension.swift in Sources */,
 				060C4E401C4897BB004FBECC /* V2FPSLabel.swift in Sources */,
@@ -785,7 +766,6 @@
 				0620DA03214F56FC00761FBB /* TopicListApi.swift in Sources */,
 				0684A1EA1C5B608D00B12437 /* NotificationsModel.swift in Sources */,
 				06E583891C3FA1CA00FCA361 /* UITableView+Extension.swift in Sources */,
-				06D0EE2E1C917696003095FF /* V2Slider.swift in Sources */,
 				063671761C7AF55800B72D9F /* V2TapDetectingImageView.swift in Sources */,
 				06FA34D11C8AA458001D6830 /* SVProgressHUD+Extension.swift in Sources */,
 				06D300241C6C21B600547CE6 /* AccountsManagerViewController.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-let keyPrefix =  "me.fin.V2EXSettings."
+let keyPrefix =  "me.Aaron_xu.V2EXSettings."
 
 class V2EXSettings: NSObject {
     static let sharedInstance = V2EXSettings()
