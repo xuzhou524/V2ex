@@ -170,7 +170,7 @@
 		068910D01C61A44D00D22B4F /* NodeTopicListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeTopicListViewController.swift; sourceTree = "<group>"; };
 		068DF8201C803A38008FC29D /* V2PhotoBrowserSwipeInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V2PhotoBrowserSwipeInteractiveTransition.swift; sourceTree = "<group>"; };
 		0691BC79231CC00000A84E92 /* TopicApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicApi.swift; sourceTree = "<group>"; };
-		069508E01C3F74FF0088D031 /* V社区.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "V社区.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		069508E01C3F74FF0088D031 /* 猿社区.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "猿社区.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		069508E31C3F74FF0088D031 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		069508EA1C3F74FF0088D031 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		069508EF1C3F74FF0088D031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -337,7 +337,7 @@
 		069508E11C3F74FF0088D031 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				069508E01C3F74FF0088D031 /* V社区.app */,
+				069508E01C3F74FF0088D031 /* 猿社区.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -574,7 +574,7 @@
 			);
 			name = "V2ex-Swift";
 			productName = "V2ex-Swift";
-			productReference = 069508E01C3F74FF0088D031 /* V社区.app */;
+			productReference = 069508E01C3F74FF0088D031 /* 猿社区.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -931,7 +931,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xuzhou.V2ex-Swift";
-				PRODUCT_NAME = "V社区";
+				PRODUCT_NAME = "猿社区";
 				SWIFT_OBJC_BRIDGING_HEADER = "V2ex-Swift/V2ex-Swift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
@@ -952,7 +952,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xuzhou.V2ex-Swift";
-				PRODUCT_NAME = "V社区";
+				PRODUCT_NAME = "猿社区";
 				SWIFT_OBJC_BRIDGING_HEADER = "V2ex-Swift/V2ex-Swift-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 5.0;

@@ -18,26 +18,23 @@ class LoginViewController: UIViewController {
 
     var successHandel:LoginSuccessHandel?
 
-//    let backgroundImageView = UIImageView()
-//    let frostedView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
     let userNameTextField:UITextField = {
         let userNameTextField = UITextField()
         userNameTextField.autocorrectionType = UITextAutocorrectionType.no
         userNameTextField.autocapitalizationType = UITextAutocapitalizationType.none
         
-        userNameTextField.textColor = UIColor.white
-        userNameTextField.backgroundColor = UIColor(white: 1, alpha: 0.1);
+        userNameTextField.textColor = V2EXColor.colors.v2_LeftNodeTintColor
         userNameTextField.font = v2Font(15)
         userNameTextField.layer.cornerRadius = 3;
         userNameTextField.layer.borderWidth = 0.5
         userNameTextField.keyboardType = .asciiCapable
-        userNameTextField.layer.borderColor = UIColor(white: 1, alpha: 0.8).cgColor;
+        userNameTextField.layer.borderColor = UIColor(white: 0, alpha: 0.8).cgColor;
         userNameTextField.placeholder = "用户名"
         userNameTextField.clearButtonMode = .always
 
         let userNameIconImageView = UIImageView(image: UIImage(named: "ic_account_circle")!.withRenderingMode(.alwaysTemplate));
         userNameIconImageView.frame = CGRect(x: 0, y: 0, width: 34, height: 22)
-        userNameIconImageView.tintColor = UIColor.white
+        userNameIconImageView.tintColor = V2EXColor.colors.v2_LeftNodeTintColor
         userNameIconImageView.contentMode = .scaleAspectFit
         let userNameIconImageViewPanel = UIView(frame: userNameIconImageView.frame)
         userNameIconImageViewPanel.addSubview(userNameIconImageView)
@@ -47,21 +44,20 @@ class LoginViewController: UIViewController {
     }()
     let passwordTextField:UITextField = {
         let passwordTextField = UITextField()
-        passwordTextField.textColor = UIColor.white
-        passwordTextField.backgroundColor = UIColor(white: 1, alpha: 0.1);
+        passwordTextField.textColor = V2EXColor.colors.v2_LeftNodeTintColor
         passwordTextField.font = v2Font(15)
         passwordTextField.layer.cornerRadius = 3;
         passwordTextField.layer.borderWidth = 0.5
         passwordTextField.keyboardType = .asciiCapable
         passwordTextField.isSecureTextEntry = true
-        passwordTextField.layer.borderColor = UIColor(white: 1, alpha: 0.8).cgColor;
+        passwordTextField.layer.borderColor = UIColor(white: 0, alpha: 0.8).cgColor;
         passwordTextField.placeholder = "密码"
         passwordTextField.clearButtonMode = .always
 
         let passwordIconImageView = UIImageView(image: UIImage(named: "ic_lock")!.withRenderingMode(.alwaysTemplate));
         passwordIconImageView.frame = CGRect(x: 0, y: 0, width: 34, height: 22)
         passwordIconImageView.contentMode = .scaleAspectFit
-        passwordIconImageView.tintColor = UIColor.white
+        passwordIconImageView.tintColor = V2EXColor.colors.v2_LeftNodeTintColor
         let passwordIconImageViewPanel = UIView(frame: passwordIconImageView.frame)
         passwordIconImageViewPanel.addSubview(passwordIconImageView)
         passwordTextField.leftView = passwordIconImageViewPanel
@@ -70,20 +66,19 @@ class LoginViewController: UIViewController {
     }()
     let codeTextField:UITextField = {
         let codeTextField = UITextField()
-        codeTextField.textColor = UIColor.white
-        codeTextField.backgroundColor = UIColor(white: 1, alpha: 0.1);
+        codeTextField.textColor = V2EXColor.colors.v2_LeftNodeTintColor
         codeTextField.font = v2Font(15)
         codeTextField.layer.cornerRadius = 3;
         codeTextField.layer.borderWidth = 0.5
         codeTextField.keyboardType = .asciiCapable
-        codeTextField.layer.borderColor = UIColor(white: 1, alpha: 0.8).cgColor;
+        codeTextField.layer.borderColor = UIColor(white: 0, alpha: 0.8).cgColor;
         codeTextField.placeholder = "验证码"
         codeTextField.clearButtonMode = .always
         
         let codeTextFieldImageView = UIImageView(image: UIImage(named: "ic_vpn_key")!.withRenderingMode(.alwaysTemplate));
         codeTextFieldImageView.frame = CGRect(x: 0, y: 0, width: 34, height: 22)
         codeTextFieldImageView.contentMode = .scaleAspectFit
-        codeTextFieldImageView.tintColor = UIColor.white
+        codeTextFieldImageView.tintColor = V2EXColor.colors.v2_LeftNodeTintColor
         let codeTextFieldImageViewPanel = UIView(frame: codeTextFieldImageView.frame)
         codeTextFieldImageViewPanel.addSubview(codeTextFieldImageView)
         codeTextField.leftView = codeTextFieldImageViewPanel
@@ -124,14 +119,7 @@ class LoginViewController: UIViewController {
         self.cancelButton.addTarget(self, action: #selector(LoginViewController.cancelClick), for: .touchUpInside)
     }
     override func viewDidAppear(_ animated: Bool) {
-//        UIView.animate(withDuration: 2, animations: { () -> Void in
-//            self.backgroundImageView.alpha=1;
-//        })
-//        UIView.animate(withDuration: 20, animations: { () -> Void in
-//            self.backgroundImageView.frame = CGRect(x: -1*( 1000 - SCREEN_WIDTH )/2, y: 0, width: SCREEN_HEIGHT+500, height: SCREEN_HEIGHT+500);
-//        })
     }
-
 
     @objc func findLoginFrom1Password(){
         OnePasswordExtension.shared().findLogin(forURLString: "v2ex.com", for: self, sender: nil) { (loginDictionary, errpr) -> Void in
@@ -250,7 +238,6 @@ class LoginViewController: UIViewController {
                     SVProgressHUD.showError(withStatus: "刷新验证码失败")
                 }
             }
-
         }
     }
 }
@@ -270,44 +257,34 @@ extension UIViewController {
 //MARK: - 初始化界面
 extension LoginViewController {
     func setupView(){
-        self.view.backgroundColor = V2EXColor.colors.v2_backgroundColor
-
-//        self.backgroundImageView.image = UIImage(named: "32.jpg")
-//        self.backgroundImageView.frame = self.view.frame
-//        self.backgroundImageView.contentMode = .scaleToFill
-//        self.view.addSubview(self.backgroundImageView)
-//        backgroundImageView.alpha = 0
-
-//        self.frostedView.frame = self.view.frame
-//        self.view.addSubview(self.frostedView)
+        self.view.backgroundColor = UIColor.white
         
-//        var blurEffect:UIBlurEffect.Style = .dark
-//        if #available(iOS 13.0, *) {
-//            blurEffect = .systemUltraThinMaterialDark
-//        }
-        
-//        let vibrancy = UIVibrancyEffect(blurEffect: UIBlurEffect(style: blurEffect))
-//        let vibrancyView = UIVisualEffectView(effect: vibrancy)
-//        vibrancyView.isUserInteractionEnabled = true
-//        vibrancyView.frame = self.frostedView.frame
-//        self.frostedView.contentView.addSubview(vibrancyView)
+        self.cancelButton.contentMode = .center
+        cancelButton .setImage(UIImage(named: "ic_cancel")!.withRenderingMode(.alwaysTemplate), for: .normal)
+        self.view.addSubview(cancelButton)
+        cancelButton.snp.makeConstraints{ (make) -> Void in
+            make.top.equalTo(self.view).offset(64)
+            make.left.equalTo(self.view).offset(25)
+            make.width.height.equalTo(50)
+        }
 
         let v2exLabel = UILabel()
         v2exLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 25)!;
-        v2exLabel.text = "Explore"
+        v2exLabel.text = "猿社区"
+        v2exLabel.textColor = V2EXColor.colors.v2_LeftNodeTintColor
         self.view.addSubview(v2exLabel);
         v2exLabel.snp.makeConstraints{ (make) -> Void in
             make.centerX.equalTo(self.view)
-            make.top.equalTo(self.view).offset(NavigationBarHeight)
+            make.top.equalTo(self.view).offset(150)
         }
 
         let v2exSummaryLabel = UILabel()
         v2exSummaryLabel.font = v2Font(13);
-        v2exSummaryLabel.text = "创意者的工作社区"
+        v2exSummaryLabel.text = "V2EX - 创意者的工作社区"
         self.view.addSubview(v2exSummaryLabel);
         v2exSummaryLabel.snp.makeConstraints{ (make) -> Void in
             make.centerX.equalTo(self.view)
-            make.top.equalTo(v2exLabel.snp.bottom).offset(2)
+            make.top.equalTo(v2exLabel.snp.bottom).offset(10)
         }
 
         self.view.addSubview(self.userNameTextField);
@@ -315,7 +292,7 @@ extension LoginViewController {
             make.top.equalTo(v2exSummaryLabel.snp.bottom).offset(25)
             make.centerX.equalTo(self.view)
             make.width.equalTo(300)
-            make.height.equalTo(38)
+            make.height.equalTo(45)
         }
 
         self.view.addSubview(self.passwordTextField);
@@ -323,7 +300,7 @@ extension LoginViewController {
             make.top.equalTo(self.userNameTextField.snp.bottom).offset(15)
             make.centerX.equalTo(self.view)
             make.width.equalTo(300)
-            make.height.equalTo(38)
+            make.height.equalTo(45)
         }
         
         self.view.addSubview(self.codeTextField)
@@ -331,12 +308,14 @@ extension LoginViewController {
             make.top.equalTo(self.passwordTextField.snp.bottom).offset(15)
             make.left.equalTo(passwordTextField)
             make.width.equalTo(180)
-            make.height.equalTo(38)
+            make.height.equalTo(45)
         }
         
         self.codeImageView.backgroundColor = UIColor(white: 1, alpha: 0.2)
         self.codeImageView.layer.cornerRadius = 3;
         self.codeImageView.clipsToBounds = true
+        self.codeImageView.layer.borderWidth = 0.5
+        self.codeImageView.layer.borderColor = UIColor(white: 0, alpha: 0.8).cgColor;
         self.codeImageView.isUserInteractionEnabled = true
         self.view.addSubview(self.codeImageView)
         self.codeImageView.snp.makeConstraints { (make) in
@@ -346,19 +325,6 @@ extension LoginViewController {
         }
         self.codeImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(refreshCode)))
         
-        self.loginButton.setTitle("登  录", for: .normal)
-        self.loginButton.titleLabel!.font = v2Font(20)
-        self.loginButton.layer.cornerRadius = 3;
-        self.loginButton.layer.borderWidth = 0.5
-        self.loginButton.layer.borderColor = UIColor(white: 1, alpha: 0.8).cgColor;
-        self.view.addSubview(self.loginButton);
-
-        self.loginButton.snp.makeConstraints{ (make) -> Void in
-            make.top.equalTo(self.codeTextField.snp.bottom).offset(20)
-            make.centerX.equalTo(self.view)
-            make.width.equalTo(300)
-            make.height.equalTo(38)
-        }
         let codeProblem = UILabel()
         codeProblem.alpha = 0.5
         codeProblem.font = v2Font(12)
@@ -368,19 +334,25 @@ extension LoginViewController {
         self.view.addSubview(codeProblem);
 
         codeProblem.snp.makeConstraints{ (make) -> Void in
-            make.top.equalTo(self.loginButton.snp.bottom).offset(14)
-            make.right.equalTo(self.loginButton)
-        }
-
-        self.cancelButton.contentMode = .center
-        cancelButton .setImage(UIImage(named: "ic_cancel")!.withRenderingMode(.alwaysTemplate), for: .normal)
-        self.view.addSubview(cancelButton)
-        cancelButton.snp.makeConstraints{ (make) -> Void in
-            make.bottom.equalTo(self.view).offset(-50)
-            make.right.equalTo(self.view).offset(-5)
-            make.width.height.equalTo(45)
+            make.top.equalTo(self.codeImageView.snp.bottom).offset(14)
+            make.right.equalTo(self.codeImageView)
         }
         
+        self.loginButton.setTitle("登录", for: .normal)
+        self.loginButton.setTitleColor(V2EXColor.colors.v2_LeftNodeTintColor, for: .normal)
+        self.loginButton.titleLabel!.font = v2Font(16)
+        self.loginButton.layer.cornerRadius = 3;
+        self.loginButton.layer.borderWidth = 0.5
+        self.loginButton.layer.borderColor = UIColor(white: 0, alpha: 0.8).cgColor;
+        self.view.addSubview(self.loginButton);
+
+        self.loginButton.snp.makeConstraints{ (make) -> Void in
+            make.top.equalTo(codeProblem.snp.bottom).offset(30)
+            make.centerX.equalTo(self.view)
+            make.width.equalTo(300)
+            make.height.equalTo(45)
+        }
+
         refreshCode()
     }
     
