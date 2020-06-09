@@ -58,7 +58,7 @@ class TopicDetailViewController: BaseViewController{
         let rightButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         rightButton.contentMode = .center
         rightButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -15)
-        rightButton.setImage(UIImage(named: "ic_more_horiz_36pt")!.withRenderingMode(.alwaysTemplate), for: .normal)
+        rightButton.setImage(UIImage(named: "ic_more_horiz_36pt"), for: .normal)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
         rightButton.addTarget(self, action: #selector(TopicDetailViewController.rightClick), for: .touchUpInside)
         
