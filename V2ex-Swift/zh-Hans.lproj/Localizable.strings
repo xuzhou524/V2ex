@@ -36,7 +36,7 @@ comments = "创建的回复";
 //账户设置
 accounts = "账户";
 current = "正在使用";
-logOut ="注销当前账号";
+logOut ="退出当前账号";
 
 //节点导航
 navigation = "节点导航";

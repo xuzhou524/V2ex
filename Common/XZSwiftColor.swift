@@ -61,22 +61,10 @@ class XZSwiftColor: UIColor{
             return colorWith255RGB(51, g: 51, b: 51)
         }
     }
-    
-    static var nodeBackgroundColor : UIColor {
-        get {
-            return colorWith255RGB(242, g: 242, b: 242)
-        }
-    }
-    
+
     static var topicListDateColor : UIColor{
         get{
             return colorWith255RGB(173, g: 173, b: 173);
-        }
-    }
-    
-    static var topicListTitleColor : UIColor{
-        get{
-            return colorWith255RGB(15, g: 15, b: 15);
         }
     }
 

@@ -31,7 +31,7 @@ class AccountsManagerViewController: UIViewController,UITableViewDataSource,UITa
         let warningButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         warningButton.contentMode = .center
         warningButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -20)
-        warningButton.setImage(UIImage.imageUsedTemplateMode("ic_warning")!.withRenderingMode(.alwaysTemplate), for: .normal)
+        warningButton.setImage(UIImage.imageUsedTemplateMode("ic_warning"), for: .normal)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: warningButton)
         warningButton.addTarget(self, action: #selector(AccountsManagerViewController.warningClick), for: .touchUpInside)
 
@@ -110,7 +110,7 @@ class AccountsManagerViewController: UIViewController,UITableViewDataSource,UITa
 
         let totalNumOfRows = self.tableView(tableView, numberOfRowsInSection: 0)
         if indexPath.row == totalNumOfRows - 1{ //最后一行，也就是退出登录按钮那行
-            let alertView = UIAlertView(title: "确定注销当前账号吗？", message: "注销只会退出登录，并不会删除保存在Keychain中的账户名与密码。如需删除，请左滑需要删除的账号，然后点击删除按钮", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "注销")
+            let alertView = UIAlertView(title: "确定退出登录吗？", message: "只会退出登录，并不会删除保存在Keychain中的账户名与密码。如需删除，请左滑需要删除的账号，然后点击删除按钮", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "注销")
             alertView.tag = 100000
             alertView.show()
         }

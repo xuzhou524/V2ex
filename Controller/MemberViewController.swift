@@ -93,7 +93,7 @@ class MemberViewController: UIViewController,UITableViewDelegate,UITableViewData
             self.titleLabel!.text = self.model != nil ? self.model!.userName! : "Hello"
             self.titleLabel!.font = v2Font(16)
             self.titleLabel!.textAlignment = .center
-            self.titleLabel!.textColor = XZSwiftColor.topicListTitleColor
+            self.titleLabel!.textColor = XZSwiftColor.leftNodeTintColor
             coverView.addSubview(self.titleLabel!)
         }
     }

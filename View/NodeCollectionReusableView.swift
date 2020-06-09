@@ -25,7 +25,7 @@ class NodeCollectionReusableView: UICollectionReusableView {
         }
         
         self.backgroundColor = XZSwiftColor.backgroudColor
-        self.label.textColor = XZSwiftColor.topicListTitleColor
+        self.label.textColor = XZSwiftColor.leftNodeTintColor
         self.label.backgroundColor = XZSwiftColor.backgroudColor
     }
     

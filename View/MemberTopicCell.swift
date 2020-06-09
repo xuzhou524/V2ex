@@ -76,8 +76,8 @@ class MemberTopicCell: UITableViewCell {
         self.dateAndLastPostUserLabel.textColor=XZSwiftColor.topicListDateColor
         self.replyCountLabel.textColor = XZSwiftColor.topicListDateColor
         self.nodeNameLabel.textColor = XZSwiftColor.topicListDateColor
-        self.nodeNameLabel.backgroundColor = XZSwiftColor.nodeBackgroundColor
-        self.topicTitleLabel.textColor=XZSwiftColor.topicListTitleColor
+        self.nodeNameLabel.backgroundColor = XZSwiftColor.backgroudColor
+        self.topicTitleLabel.textColor=XZSwiftColor.leftNodeTintColor
         
         self.dateAndLastPostUserLabel.backgroundColor = self.contentPanel.backgroundColor
         self.replyCountLabel.backgroundColor = self.contentPanel.backgroundColor

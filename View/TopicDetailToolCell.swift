@@ -54,9 +54,9 @@ class TopicDetailToolCell: UITableViewCell {
             make.height.equalTo(SEPARATOR_HEIGHT)
         }
         
-        self.sortButton.setTitleColor(XZSwiftColor.topicListTitleColor, for: .normal)
+        self.sortButton.setTitleColor(XZSwiftColor.leftNodeTintColor, for: .normal)
         self.backgroundColor = XZSwiftColor.white
-        self.titleLabel.textColor = XZSwiftColor.topicListTitleColor
+        self.titleLabel.textColor = XZSwiftColor.leftNodeTintColor
         self.separator.image = createImageWithColor(XZSwiftColor.backgroudColor)
         
         self.sortButton.addTarget(self, action: #selector(sortClick(sender:)), for: .touchUpInside)

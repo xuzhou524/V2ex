@@ -80,7 +80,7 @@ class V2EXNavigationController: UINavigationController {
         }
         self.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.font : v2Font(18),
-            NSAttributedString.Key.foregroundColor : XZSwiftColor.topicListTitleColor
+            NSAttributedString.Key.foregroundColor : XZSwiftColor.leftNodeTintColor
         ]
         
         maskingView.backgroundColor = UIColor(white: 0, alpha: 0.0);

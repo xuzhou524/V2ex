@@ -90,8 +90,8 @@ class TopicDetailHeaderCell: UITableViewCell {
         self.userNameLabel.textColor = XZSwiftColor.leftNodeTintColor
         self.dateAndLastPostUserLabel.textColor=XZSwiftColor.topicListDateColor
         self.nodeNameLabel.textColor = XZSwiftColor.topicListDateColor
-        self.nodeNameLabel.backgroundColor = XZSwiftColor.nodeBackgroundColor
-        self.topicTitleLabel.textColor = XZSwiftColor.topicListTitleColor
+        self.nodeNameLabel.backgroundColor = XZSwiftColor.backgroudColor
+        self.topicTitleLabel.textColor = XZSwiftColor.leftNodeTintColor
         self.contentPanel.backgroundColor = XZSwiftColor.white
     }
     

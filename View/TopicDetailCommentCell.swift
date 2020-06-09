@@ -112,7 +112,7 @@ class TopicDetailCommentCell: UITableViewCell{
         self.userNameLabel.textColor = XZSwiftColor.leftNodeTintColor
         self.authorLabel.textColor = XZSwiftColor.leftNodeTintColor
         self.dateLabel.textColor=XZSwiftColor.topicListDateColor
-        self.commentLabel.textColor=XZSwiftColor.topicListTitleColor
+        self.commentLabel.textColor=XZSwiftColor.leftNodeTintColor
         self.contentPanel.backgroundColor = XZSwiftColor.white
         self.favoriteIconView.tintColor = XZSwiftColor.topicListDateColor
         self.favoriteLabel.textColor = XZSwiftColor.topicListDateColor

@@ -74,8 +74,8 @@ class MemberReplyCell: UITableViewCell {
         
         self.backgroundColor = XZSwiftColor.backgroudColor
         
-        self.detailLabel.textColor=XZSwiftColor.topicListTitleColor
-        self.commentLabel.textColor=XZSwiftColor.topicListTitleColor
+        self.detailLabel.textColor=XZSwiftColor.leftNodeTintColor
+        self.commentLabel.textColor=XZSwiftColor.leftNodeTintColor
         self.commentPanel.backgroundColor = XZSwiftColor.backgroudColor
         self.contentPanel.backgroundColor =  XZSwiftColor.white
         dropUpImageView.tintColor = self.commentPanel.backgroundColor

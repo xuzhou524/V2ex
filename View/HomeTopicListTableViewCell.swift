@@ -14,11 +14,11 @@ class HomeTopicListTableViewCell: UITableViewCell {
     
     /// 节点信息label的圆角背景图
     fileprivate static var nodeBackgroundImage_Default =
-        createImageWithColor(XZSwiftColor.nodeBackgroundColor,size: CGSize(width: 10, height: 20))
+        createImageWithColor(XZSwiftColor.backgroudColor,size: CGSize(width: 10, height: 20))
             .roundedCornerImageWithCornerRadius(2)
             .stretchableImage(withLeftCapWidth: 3, topCapHeight: 3)
     fileprivate static var nodeBackgroundImage_Dark =
-        createImageWithColor(XZSwiftColor.nodeBackgroundColor,size: CGSize(width: 10, height: 20))
+        createImageWithColor(XZSwiftColor.backgroudColor,size: CGSize(width: 10, height: 20))
             .roundedCornerImageWithCornerRadius(2)
             .stretchableImage(withLeftCapWidth: 3, topCapHeight: 3)
     
@@ -107,7 +107,7 @@ class HomeTopicListTableViewCell: UITableViewCell {
         self.dateAndLastPostUserLabel.textColor=XZSwiftColor.topicListDateColor
         self.replyCountLabel.textColor = XZSwiftColor.topicListDateColor
         self.nodeNameLabel.textColor = XZSwiftColor.topicListDateColor
-        self.topicTitleLabel.textColor=XZSwiftColor.topicListTitleColor
+        self.topicTitleLabel.textColor=XZSwiftColor.leftNodeTintColor
         
         self.avatarImageView.backgroundColor = self.contentPanel.backgroundColor
         self.userNameLabel.backgroundColor = self.contentPanel.backgroundColor

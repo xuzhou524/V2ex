@@ -98,7 +98,7 @@ class BaseDetailTableViewCell: UITableViewCell {
         
         self.backgroundColor = XZSwiftColor.white
         self.selectedBackgroundView!.backgroundColor = XZSwiftColor.backgroudColor
-        self.titleLabel.textColor = XZSwiftColor.topicListTitleColor
+        self.titleLabel.textColor = XZSwiftColor.leftNodeTintColor
         self.detailMarkImageView.tintColor = self.titleLabel.textColor
         self.detailLabel.textColor = XZSwiftColor.leftNodeTintColor
         self.separator.image = createImageWithColor(XZSwiftColor.backgroudColor)

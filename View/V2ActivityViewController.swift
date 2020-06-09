@@ -122,7 +122,7 @@ class V2ActivityViewController: UIViewController ,UIViewControllerTransitioningD
         let cancelButton = UIButton()
         cancelButton.setTitle(NSLocalizedString("cancel2"), for: .normal)
         cancelButton.titleLabel?.font = v2Font(18)
-        cancelButton.setTitleColor(XZSwiftColor.topicListTitleColor, for: .normal)
+        cancelButton.setTitleColor(XZSwiftColor.leftNodeTintColor, for: .normal)
         cancelPanel.addSubview(cancelButton)
         cancelButton.snp.makeConstraints{ (make) -> Void in
             make.left.top.right.bottom.equalTo(cancelPanel)
@@ -236,7 +236,7 @@ class V2ActivityViewController: UIViewController ,UIViewControllerTransitioningD
         titleLabel.numberOfLines = 2
         titleLabel.text = activity?.title
         titleLabel.font = v2Font(12)
-        titleLabel.textColor = XZSwiftColor.topicListTitleColor
+        titleLabel.textColor = XZSwiftColor.leftNodeTintColor
         cellView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints{ (make) -> Void in
             make.centerX.equalTo(cellView)

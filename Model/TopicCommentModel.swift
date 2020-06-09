@@ -140,7 +140,7 @@ class TopicCommentModel: NSObject,BaseHtmlModelProtocol {
             }
             
             if element.name == "text" , let content = element.content{//普通文本
-                commentAttributedString.append(NSMutableAttributedString(string: content,attributes: [NSAttributedString.Key.font:v2ScaleFont(14) , NSAttributedString.Key.foregroundColor:XZSwiftColor.topicListTitleColor]))
+                commentAttributedString.append(NSMutableAttributedString(string: content,attributes: [NSAttributedString.Key.font:v2ScaleFont(14) , NSAttributedString.Key.foregroundColor:XZSwiftColor.leftNodeTintColor]))
                 commentAttributedString.yy_lineSpacing = 5
             }
                 
@@ -178,7 +178,7 @@ class TopicCommentModel: NSObject,BaseHtmlModelProtocol {
             }
             else if let content = element.content{//其他
                 
-                commentAttributedString.append(NSMutableAttributedString(string: content,attributes: [NSAttributedString.Key.foregroundColor:XZSwiftColor.topicListTitleColor]))
+                commentAttributedString.append(NSMutableAttributedString(string: content,attributes: [NSAttributedString.Key.foregroundColor:XZSwiftColor.leftNodeTintColor]))
             }
         }
     }
