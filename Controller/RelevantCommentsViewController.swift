@@ -118,17 +118,17 @@ class RelevantCommentsViewController: UIViewController, UITableViewDelegate,UITa
         }, completion: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        (self.navigationController as! V2EXNavigationController).navigationBarAlpha = 0
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        if !self.dismissing{
-            (self.navigationController as! V2EXNavigationController).navigationBarAlpha = 1
-        }
-    }
-    
-    
-    
+//    override func viewWillAppear(_ animated: Bool) {
+//        (self.navigationController as! V2EXNavigationController).navigationBarAlpha = 0
+//    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        if !self.dismissing{
+//            (self.navigationController as! V2EXNavigationController).navigationBarAlpha = 1
+//        }
+//    }
+//    
+//    
+//    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.commentsArray.count;
     }
