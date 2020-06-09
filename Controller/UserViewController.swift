@@ -44,7 +44,7 @@ class UserViewController: UIViewController,UITableViewDataSource,UITableViewDele
         return 3
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return [1,3,2][section]
+        return [1,3,3][section]
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath.section == 1 && indexPath.row == 2){
@@ -87,10 +87,10 @@ class UserViewController: UIViewController,UITableViewDataSource,UITableViewDele
             }
         }else {
             let cell = getCell(tableView, cell: LeftNodeTableViewCell.self, indexPath: indexPath)
-            cell.nodeNameLabel.text = [NSLocalizedString("nodes"),NSLocalizedString("version")][indexPath.row]
-            let names = ["ic_navigation","ic_settings_input_svideo"]
+            cell.nodeNameLabel.text = [NSLocalizedString("nodes"),NSLocalizedString("supportDev"),NSLocalizedString("version")][indexPath.row]
+            let names = ["ic_navigation","ic_givePraise","ic_settings_input_svideo"]
             cell.nodeImageView.image = UIImage(named: names[indexPath.row])
-            if indexPath.row == 1 {
+            if indexPath.row == 2 {
                 cell.isHiddenRightImage(hidden: true)
                 let infoDict = Bundle.main.infoDictionary
                 if let info = infoDict {
@@ -140,6 +140,11 @@ class UserViewController: UIViewController,UITableViewDataSource,UITableViewDele
             if indexPath.row == 0 {
                 let nodesViewController = NodesViewController()
                 self.navigationController?.pushViewController(nodesViewController, animated: true)
+            }else if indexPath.row == 1 {
+                #if DEBUG
+                #else
+                    SKStoreReviewController.requestReview()
+                #endif
             }
         }
     }

@@ -24,6 +24,7 @@ members  = "关注";
 version = "版本号";
 more = "更多";
 nodes = "节点";
+supportDev = "给个赞";
 favorites = "我的收藏";
 notifications = "消息提醒";
 me = "个人中心";

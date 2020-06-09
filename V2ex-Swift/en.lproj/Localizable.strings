@@ -24,6 +24,7 @@ members  = "members";
 version = "Version";
 more = "More";
 nodes = "Nodes";
+supportDev = "GivePraise";
 favorites = "Favorites";
 notifications = "Notifications";
 me = "My Center";
