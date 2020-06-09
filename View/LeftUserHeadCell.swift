@@ -18,7 +18,7 @@ class LeftUserHeadCell: UITableViewCell {
         imageView.layer.borderWidth = 1.5
         imageView.layer.borderColor = UIColor(white: 1, alpha: 0.6).cgColor
         imageView.layer.masksToBounds = true
-        imageView.layer.cornerRadius = 38
+        imageView.layer.cornerRadius = 30
         return imageView
     }()
     /// 用户名
@@ -28,7 +28,7 @@ class LeftUserHeadCell: UITableViewCell {
         label.textColor = XZSwiftColor.leftNodeTintColor
         return label
     }()
-    
+    var rightImageView: UIImageView = UIImageView()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier);
         self.setup();
@@ -42,6 +42,7 @@ class LeftUserHeadCell: UITableViewCell {
 
         self.contentView.addSubview(self.avatarImageView)
         self.contentView.addSubview(self.userNameLabel)
+        self.contentView.addSubview(self.rightImageView)
         
         self.avatarImageView.snp.makeConstraints{ (make) -> Void in
             make.left.equalTo(self.contentView).offset(20)
@@ -51,6 +52,13 @@ class LeftUserHeadCell: UITableViewCell {
         self.userNameLabel.snp.makeConstraints{ (make) -> Void in
             make.left.equalTo(self.avatarImageView.snp.right).offset(10)
             make.centerY.equalTo(self.avatarImageView)
+        }
+        
+        self.rightImageView.image = UIImage(named: "ic_rightArrow")
+        self.rightImageView.snp.makeConstraints{ (make) -> Void in
+            make.centerY.equalTo(self.contentView)
+            make.right.equalTo(self.contentView).offset(-15)
+            make.width.height.equalTo(15)
         }
 
         self.kvoController.observe(V2User.sharedInstance, keyPath: "username", options: [.initial , .new]){

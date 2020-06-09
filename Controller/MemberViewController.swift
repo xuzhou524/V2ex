@@ -173,10 +173,6 @@ class MemberViewController: UIViewController,UITableViewDelegate,UITableViewData
         self.titleLabel?.frame = frame
     }
     
-//    func changeNavigationAlpha(){
-//        (self.navigationController as? V2EXNavigationController)?.navigationBarAlpha = self.tableView.contentOffset.y/100
-//    }
-    
     func changeNavigationBarTintColor(){
         let offsetY = self.tableView.contentOffset.y
         var y = 100 - offsetY
@@ -312,8 +308,8 @@ extension MemberViewController{
     func refreshButtonImage() {
         let blockImage = self.model?.blockState == .blocked ? UIImage(named: "ic_visibility_off")! : UIImage(named: "ic_visibility")!
         let followImage = self.model?.followState == .followed ? UIImage(named: "ic_favorite")! : UIImage(named: "ic_favorite_border")!
-        self.blockButton?.setImage(blockImage.withRenderingMode(.alwaysTemplate), for: .normal)
-        self.followButton?.setImage(followImage.withRenderingMode(.alwaysTemplate), for: .normal)
+        self.blockButton?.setImage(blockImage, for: .normal)
+        self.followButton?.setImage(followImage, for: .normal)
     }
     
     @objc func toggleFollowState(){

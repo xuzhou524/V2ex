@@ -50,7 +50,7 @@ class UserViewController: UIViewController,UITableViewDataSource,UITableViewDele
         if (indexPath.section == 1 && indexPath.row == 2){
             return 55 + 15
         }
-        return [150, 55+SEPARATOR_HEIGHT, 55+SEPARATOR_HEIGHT][indexPath.section]
+        return [130, 55+SEPARATOR_HEIGHT, 55+SEPARATOR_HEIGHT][indexPath.section]
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
