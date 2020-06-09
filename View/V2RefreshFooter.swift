@@ -64,16 +64,8 @@ class V2RefreshFooter: MJRefreshAutoFooter {
         
         self.noMoreDataStateString = "没有更多数据了"
         
-        self.themeChangedHandler = {[weak self] (style) -> Void in
-            if V2EXColor.sharedInstance.style == V2EXColor.V2EXColorStyleDefault {
-                self?.loadingView?.style = .gray
-                self?.stateLabel!.textColor = UIColor(white: 0, alpha: 0.3)
-            }
-            else{
-                self?.loadingView?.style = .white
-                self?.stateLabel!.textColor = UIColor(white: 1, alpha: 0.3)
-            }
-        }
+        self.loadingView?.style = .gray
+        self.stateLabel!.textColor = UIColor(white: 0, alpha: 0.3)
     }
     
     /**

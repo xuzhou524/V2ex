@@ -30,10 +30,10 @@ class WritingViewController: UIViewController ,YYTextViewDelegate {
         self.view.backgroundColor = XZSwiftColor.backgroudColor
         self.textView = YYTextView()
         self.textView!.scrollsToTop = false
-        self.textView!.backgroundColor = V2EXColor.colors.v2_TextViewBackgroundColor
+        self.textView!.backgroundColor = XZSwiftColor.white
         self.textView!.font = v2Font(18)
         self.textView!.delegate = self
-        self.textView!.textColor = V2EXColor.colors.v2_TopicListUserNameColor
+        self.textView!.textColor = XZSwiftColor.leftNodeTintColor
         self.textView!.textParser = V2EXMentionedBindingParser()
         textView!.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         textView?.keyboardDismissMode = .interactive
@@ -53,7 +53,7 @@ class WritingViewController: UIViewController ,YYTextViewDelegate {
     
     func textViewDidChange(_ textView: YYTextView) {
         if textView.text.Lenght == 0{
-            textView.textColor = V2EXColor.colors.v2_TopicListUserNameColor
+            textView.textColor = XZSwiftColor.leftNodeTintColor
         }
     }
 }

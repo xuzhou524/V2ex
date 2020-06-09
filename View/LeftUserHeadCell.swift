@@ -25,7 +25,7 @@ class LeftUserHeadCell: UITableViewCell {
     var userNameLabel: UILabel = {
         let label = UILabel()
         label.font = v2Font(16)
-        label.textColor = V2EXColor.colors.v2_LeftNodeTintColor
+        label.textColor = XZSwiftColor.leftNodeTintColor
         return label
     }()
     

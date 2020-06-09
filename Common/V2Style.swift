@@ -53,12 +53,7 @@ class V2Style: NSObject {
     
     //重新拼接CSS字符串
     fileprivate func remakeCSS(){
-        if let _ = V2EXColor.colors as? V2EXDefaultColor {
-            self.CSS = BASE_CSS + self.fontCss() + LIGHT_CSS
-        }
-        else{
-            self.CSS = BASE_CSS + self.fontCss() + DARK_CSS
-        }
+        self.CSS = BASE_CSS + self.fontCss() + LIGHT_CSS
     }
     
     /**

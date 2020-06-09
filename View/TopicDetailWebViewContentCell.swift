@@ -68,7 +68,7 @@ class TopicDetailWebViewContentCell: UITableViewCell ,UIWebViewDelegate {
             //强制将 UIWebView 设置背景颜色
             //不然不管怎么设置背景颜色，这B一直是白色，非得我治治他
             for view in self?.contentWebView.scrollView.subviews ?? [] {
-                view.backgroundColor = V2EXColor.colors.v2_CellWhiteBackgroundColor
+                view.backgroundColor = XZSwiftColor.white
             }
         }
         self.kvoController.observe(self.contentWebView.scrollView, keyPath: "contentSize", options: [.new]) {

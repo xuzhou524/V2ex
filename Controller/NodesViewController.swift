@@ -35,7 +35,7 @@ class NodesViewController: BaseViewController {
         
         self.themeChangedHandler = {[weak self] _ in
             self?.view.backgroundColor = XZSwiftColor.backgroudColor
-            self?.collectionView?.backgroundColor = V2EXColor.colors.v2_CellWhiteBackgroundColor
+            self?.collectionView?.backgroundColor = XZSwiftColor.white
         }
     }
 }

@@ -122,14 +122,14 @@ class NotificationTableViewCell: UITableViewCell {
         self.themeChangedHandler = {[weak self] _ in
             self?.backgroundColor=XZSwiftColor.backgroudColor
             self?.selectedBackgroundView?.backgroundColor = XZSwiftColor.backgroudColor
-            self?.userNameLabel.textColor = V2EXColor.colors.v2_TopicListUserNameColor
-            self?.dateLabel.textColor=V2EXColor.colors.v2_TopicListDateColor
-            self?.detailLabel.textColor=V2EXColor.colors.v2_TopicListTitleColor
-            self?.commentLabel.textColor=V2EXColor.colors.v2_TopicListTitleColor
+            self?.userNameLabel.textColor = XZSwiftColor.leftNodeTintColor
+            self?.dateLabel.textColor=XZSwiftColor.topicListDateColor
+            self?.detailLabel.textColor=XZSwiftColor.topicListTitleColor
+            self?.commentLabel.textColor=XZSwiftColor.topicListTitleColor
             self?.commentPanel.backgroundColor = XZSwiftColor.backgroudColor
             self?.dropUpImageView.tintColor = self?.commentPanel.backgroundColor
-            self?.contentPanel.backgroundColor = V2EXColor.colors.v2_CellWhiteBackgroundColor
-            self?.replyButton.backgroundColor  = V2EXColor.colors.v2_ButtonBackgroundColor
+            self?.contentPanel.backgroundColor = XZSwiftColor.white
+            self?.replyButton.backgroundColor  = XZSwiftColor.buttonBackgroundColor
         }
         
     }

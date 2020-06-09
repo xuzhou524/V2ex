@@ -86,17 +86,7 @@ class MemberViewController: UIViewController,UITableViewDelegate,UITableViewData
         self._loadView = aloadView
         
         self.refreshData()
-        
-
-        self.themeChangedHandler = {[weak self] _ in
-            self?.view.backgroundColor = XZSwiftColor.backgroudColor
-            if V2EXColor.sharedInstance.style == V2EXColor.V2EXColorStyleDark {
-                self?.color = 100
-            }
-            else{
-                self?.color = 0
-            }
-        }
+        self.color = 100
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -114,7 +104,7 @@ class MemberViewController: UIViewController,UITableViewDelegate,UITableViewData
             self.titleLabel!.text = self.model != nil ? self.model!.userName! : "Hello"
             self.titleLabel!.font = v2Font(16)
             self.titleLabel!.textAlignment = .center
-            self.titleLabel!.textColor = V2EXColor.colors.v2_TopicListTitleColor
+            self.titleLabel!.textColor = XZSwiftColor.topicListTitleColor
             coverView.addSubview(self.titleLabel!)
         }
         
@@ -248,8 +238,8 @@ class MemberViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         weak var weakView = view
         view.themeChangedHandler = {_ in
-            weakView?.backgroundColor = V2EXColor.colors.v2_CellWhiteBackgroundColor
-            label.textColor = V2EXColor.colors.v2_TopicListUserNameColor
+            weakView?.backgroundColor = XZSwiftColor.white
+            label.textColor = XZSwiftColor.leftNodeTintColor
         }
         
         tableViewHeader.append(view)

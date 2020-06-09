@@ -15,7 +15,7 @@ class PodCellTableViewCell: BaseDetailTableViewCell {
         label.font = v2Font(13)
         label.numberOfLines = 0
         label.preferredMaxLayoutWidth = SCREEN_WIDTH - 42
-        label.textColor = V2EXColor.colors.v2_TopicListUserNameColor
+        label.textColor = XZSwiftColor.leftNodeTintColor
         return label
     }()
     

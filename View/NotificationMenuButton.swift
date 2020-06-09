@@ -17,7 +17,7 @@ class NotificationMenuButton: UIButton {
         self.setImage(UIImage.imageUsedTemplateMode("ic_menu_36pt")!, for: .normal)
         
         self.aPointImageView = UIImageView()
-        self.aPointImageView!.backgroundColor = V2EXColor.colors.v2_NoticePointColor
+        self.aPointImageView!.backgroundColor = XZSwiftColor.noticePointColor
         self.aPointImageView!.layer.cornerRadius = 4
         self.aPointImageView!.layer.masksToBounds = true
         self.addSubview(self.aPointImageView!)

@@ -82,12 +82,7 @@ class RelevantCommentsViewController: UIViewController, UITableViewDelegate,UITa
         let label = UILabel(frame: shimmeringView.frame)
         label.text = "下拉关闭查看"
         label.font = UIFont(name: "HelveticaNeue-Light", size: 12)
-        if V2EXColor.sharedInstance.style == V2EXColor.V2EXColorStyleDefault {
-            label.textColor = UIColor.black
-        }
-        else{
-            label.textColor = UIColor.white
-        }
+        label.textColor = UIColor.black
         label.textAlignment = .center
         label.backgroundColor = UIColor.clear
         shimmeringView.contentView = label

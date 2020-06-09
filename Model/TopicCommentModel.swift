@@ -127,7 +127,7 @@ class TopicCommentModel: NSObject,BaseHtmlModelProtocol {
             let urlHandler: (_ attributedString:NSMutableAttributedString, _ url:String, _ url:String)->() = {attributedString,title,url in
                 let attr = NSMutableAttributedString(string: title ,attributes: [NSAttributedString.Key.font:v2ScaleFont(14)])
                 attr.yy_setTextHighlight(NSMakeRange(0, title.Lenght),
-                                         color: V2EXColor.colors.v2_LinkColor,
+                                         color: XZSwiftColor.linksColor,
                                          backgroundColor: UIColor(white: 0.95, alpha: 1),
                                          userInfo: ["url":url],
                                          tapAction: { (view, text, range, rect) -> Void in
@@ -140,7 +140,7 @@ class TopicCommentModel: NSObject,BaseHtmlModelProtocol {
             }
             
             if element.name == "text" , let content = element.content{//普通文本
-                commentAttributedString.append(NSMutableAttributedString(string: content,attributes: [NSAttributedString.Key.font:v2ScaleFont(14) , NSAttributedString.Key.foregroundColor:V2EXColor.colors.v2_TopicListTitleColor]))
+                commentAttributedString.append(NSMutableAttributedString(string: content,attributes: [NSAttributedString.Key.font:v2ScaleFont(14) , NSAttributedString.Key.foregroundColor:XZSwiftColor.topicListTitleColor]))
                 commentAttributedString.yy_lineSpacing = 5
             }
                 
@@ -178,7 +178,7 @@ class TopicCommentModel: NSObject,BaseHtmlModelProtocol {
             }
             else if let content = element.content{//其他
                 
-                commentAttributedString.append(NSMutableAttributedString(string: content,attributes: [NSAttributedString.Key.foregroundColor:V2EXColor.colors.v2_TopicListTitleColor]))
+                commentAttributedString.append(NSMutableAttributedString(string: content,attributes: [NSAttributedString.Key.foregroundColor:XZSwiftColor.topicListTitleColor]))
             }
         }
     }

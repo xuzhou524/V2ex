@@ -26,7 +26,7 @@ class NodeCollectionReusableView: UICollectionReusableView {
         
         self.themeChangedHandler = {[weak self] _ in
             self?.backgroundColor = XZSwiftColor.backgroudColor
-            self?.label.textColor = V2EXColor.colors.v2_TopicListTitleColor
+            self?.label.textColor = XZSwiftColor.topicListTitleColor
             self?.label.backgroundColor = XZSwiftColor.backgroudColor
         }
     }

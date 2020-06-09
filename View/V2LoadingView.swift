@@ -46,21 +46,14 @@ class V2LoadingView: UIView {
         //在32位机器上,如果随机的数大于Int.max ,转换就会crash。
         noticeLabel.text = noticeString[Int(arc4random() % UInt32(noticeString.count))]
         noticeLabel.font = v2Font(10)
-        noticeLabel.textColor = V2EXColor.colors.v2_TopicListDateColor
+        noticeLabel.textColor = XZSwiftColor.topicListDateColor
         self.addSubview(noticeLabel)
         noticeLabel.snp.makeConstraints{ (make) -> Void in
             make.top.equalTo(self.activityIndicatorView.snp.bottom).offset(10)
             make.centerX.equalTo(self.activityIndicatorView)
         }
         
-        self.themeChangedHandler = {[weak self] (style) -> Void in
-            if V2EXColor.sharedInstance.style == V2EXColor.V2EXColorStyleDefault {
-                self?.activityIndicatorView.style = .gray
-            }
-            else{
-                self?.activityIndicatorView.style = .white
-            }
-        }
+        self.activityIndicatorView.style = .gray
     }
 
     override func willMove(toSuperview newSuperview: UIView?) {

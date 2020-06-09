@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().isTranslucent = false
 
         
-        self.window = V2Window();
+        self.window = UIWindow();
         V2Client.sharedInstance.window = self.window
         self.window?.frame=UIScreen.main.bounds
         self.window?.backgroundColor = UIColor.white
@@ -94,7 +94,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     fileprivate var lastPasteString: String?
     func applicationDidBecomeActive(_ application: UIApplication) {
-        V2EXColor.sharedInstance.refreshStyleIfNeeded()
         //如果剪切板内有 帖子URL ，则询问用户是否打开
         if let pasteString = UIPasteboard.general.string {
             guard lastPasteString != pasteString else {
@@ -129,17 +128,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-    
 }
 
-class V2Window: UIWindow {
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        if UIApplication.shared.applicationState == .active{
-            //这里有个问题，APP返回到后台后，traitCollection.userInterfaceStyle 会从 light 切换到 night 再切换回来，导致V2EXColor以为需要更新主题，但其实不需要更新
-            //所以只在程序在前台时，才响应。程序从后台返回前台如果要更改主题，则在 applicationDidBecomeActive 里判断
-            V2EXColor.sharedInstance.refreshStyleIfNeeded()
-        }
-    }
-}

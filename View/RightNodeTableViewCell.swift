@@ -29,7 +29,7 @@ class RightNodeTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         self.backgroundColor = UIColor.white
         
-        self.nodeNameLabel.textColor = V2EXColor.colors.v2_LeftNodeTintColor
+        self.nodeNameLabel.textColor = XZSwiftColor.leftNodeTintColor
         self.contentView.addSubview(self.nodeNameLabel)
         self.nodeNameLabel.snp.makeConstraints{ (make) -> Void in
             make.left.equalTo(self.contentView).offset(15)

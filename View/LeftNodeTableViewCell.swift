@@ -73,10 +73,10 @@ class LeftNodeTableViewCell: UITableViewCell {
         }        
     }
     func configureColor(){
-        self.panel.backgroundColor = V2EXColor.colors.v2_LeftNodeBackgroundColor
-        self.nodeImageView.tintColor =  V2EXColor.colors.v2_LeftNodeTintColor
-        self.nodeNameLabel.textColor = V2EXColor.colors.v2_LeftNodeTintColor
-        self.summeryLabel.textColor = V2EXColor.colors.v2_LeftNodeTintColor
+        self.panel.backgroundColor = XZSwiftColor.white
+        self.nodeImageView.tintColor =  XZSwiftColor.leftNodeTintColor
+        self.nodeNameLabel.textColor = XZSwiftColor.leftNodeTintColor
+        self.summeryLabel.textColor = XZSwiftColor.leftNodeTintColor
     }
     
     func isHiddenRightImage(hidden:Bool){
@@ -104,7 +104,7 @@ class LeftNotifictionCell : LeftNodeTableViewCell{
         label.textColor = UIColor.white
         label.layer.cornerRadius = 7
         label.layer.masksToBounds = true
-        label.backgroundColor = V2EXColor.colors.v2_NoticePointColor
+        label.backgroundColor = XZSwiftColor.noticePointColor
         return label
     }()
     

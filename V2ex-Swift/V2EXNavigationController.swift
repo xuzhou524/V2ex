@@ -44,16 +44,7 @@ class V2EXNavigationController: UINavigationController {
     }
     override var preferredStatusBarStyle: UIStatusBarStyle{
         get {
-            if V2EXColor.sharedInstance.style == V2EXColor.V2EXColorStyleDefault {
-                if #available(iOS 13.0, *) {
-                    return .darkContent
-                } else {
-                    return .default
-                }
-            }
-            else{
-                return .lightContent
-            }
+            return .default
         }
     }
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -79,10 +70,7 @@ class V2EXNavigationController: UINavigationController {
         maskingView.isUserInteractionEnabled = false
         self.navigationBar.superview!.insertSubview(maskingView, belowSubview: self.navigationBar)
         maskingView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: NavigationBarHeight)
-//        maskingView.snp.makeConstraints{ (make) -> Void in
-//            make.left.bottom.right.equalTo(self.navigationBar)
-//            make.top.equalTo(self.navigationBar).offset(-44);
-//        }
+
 
         self.frostedView.isUserInteractionEnabled = false
         self.frostedView.clipsToBounds = true
@@ -90,44 +78,22 @@ class V2EXNavigationController: UINavigationController {
         self.frostedView.snp.makeConstraints{ (make) -> Void in
             make.top.bottom.left.right.equalTo(maskingView);
         }
-
-        self.themeChangedHandler = {[weak self] (style) -> Void in
-            self?.navigationBar.tintColor = V2EXColor.colors.v2_navigationBarTintColor
-            
-            self?.navigationBar.titleTextAttributes = [
-                NSAttributedString.Key.font : v2Font(18),
-                NSAttributedString.Key.foregroundColor : V2EXColor.colors.v2_TopicListTitleColor
-            ]
-            
-            if V2EXColor.sharedInstance.style == V2EXColor.V2EXColorStyleDefault {
-                maskingView.backgroundColor = UIColor(white: 0, alpha: 0.0);
-                if #available(iOS 13.0, *) {
-                    self?.frostedView.overrideUserInterfaceStyle = .light
-                } else {
-                    self?.frostedView.barStyle = .default
-                }
-
-                
-                //全局键盘颜色
-                UITextView.appearance().keyboardAppearance = .light
-                UITextField.appearance().keyboardAppearance = .light
-                YYTextView.appearance().keyboardAppearance = .light
-                
-            }
-            else{
-                maskingView.backgroundColor = UIColor(white: 0, alpha: 0.6);
-                if #available(iOS 13.0, *) {
-                    self?.frostedView.overrideUserInterfaceStyle = .dark
-                } else {
-                    self?.frostedView.barStyle = .black
-                }
-                
-                UITextView.appearance().keyboardAppearance = .dark
-                UITextField.appearance().keyboardAppearance = .dark
-                YYTextView.appearance().keyboardAppearance = .dark
-            }
-            
-            self?.setNeedsStatusBarAppearanceUpdate()
+        self.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.font : v2Font(18),
+            NSAttributedString.Key.foregroundColor : XZSwiftColor.topicListTitleColor
+        ]
+        
+        maskingView.backgroundColor = UIColor(white: 0, alpha: 0.0);
+        if #available(iOS 13.0, *) {
+            self.frostedView.overrideUserInterfaceStyle = .light
+        } else {
+            self.frostedView.barStyle = .default
         }
+
+        
+        //全局键盘颜色
+        UITextView.appearance().keyboardAppearance = .light
+        UITextField.appearance().keyboardAppearance = .light
+        YYTextView.appearance().keyboardAppearance = .light
     }
 }

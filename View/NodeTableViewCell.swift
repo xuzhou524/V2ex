@@ -25,9 +25,9 @@ class NodeTableViewCell: UICollectionViewCell {
         })
 
         self.themeChangedHandler = {[weak self] _ in
-            self?.backgroundColor = V2EXColor.colors.v2_CellWhiteBackgroundColor
-            self?.textLabel.textColor = V2EXColor.colors.v2_TopicListUserNameColor
-            self?.textLabel.backgroundColor = V2EXColor.colors.v2_CellWhiteBackgroundColor
+            self?.backgroundColor = XZSwiftColor.white
+            self?.textLabel.textColor = XZSwiftColor.leftNodeTintColor
+            self?.textLabel.backgroundColor = XZSwiftColor.white
         }
     }
     

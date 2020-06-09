@@ -55,9 +55,9 @@ class TopicDetailToolCell: UITableViewCell {
         }
         
         self.themeChangedHandler = {[weak self] (style) -> Void in
-            self?.sortButton.setTitleColor(V2EXColor.colors.v2_TopicListTitleColor, for: .normal)
-            self?.backgroundColor = V2EXColor.colors.v2_CellWhiteBackgroundColor
-            self?.titleLabel.textColor = V2EXColor.colors.v2_TopicListTitleColor
+            self?.sortButton.setTitleColor(XZSwiftColor.topicListTitleColor, for: .normal)
+            self?.backgroundColor = XZSwiftColor.white
+            self?.titleLabel.textColor = XZSwiftColor.topicListTitleColor
             self?.separator.image = createImageWithColor(XZSwiftColor.backgroudColor)
         }
         

@@ -90,7 +90,7 @@ class V2ActivityViewController: UIViewController ,UIViewControllerTransitioningD
         self.view.backgroundColor = UIColor(white: 0, alpha: 0)
         self.transitioningDelegate = self
         
-        self.panel.barStyle = V2EXColor.sharedInstance.style == V2EXColor.V2EXColorStyleDefault ? .default : .black
+        self.panel.barStyle = .default
         self.view.addSubview(self.panel)
         self.panel.snp.makeConstraints{ (make) -> Void in
             make.bottom.equalTo(self.view).offset(-90)
@@ -122,7 +122,7 @@ class V2ActivityViewController: UIViewController ,UIViewControllerTransitioningD
         let cancelButton = UIButton()
         cancelButton.setTitle(NSLocalizedString("cancel2"), for: .normal)
         cancelButton.titleLabel?.font = v2Font(18)
-        cancelButton.setTitleColor(V2EXColor.colors.v2_TopicListTitleColor, for: .normal)
+        cancelButton.setTitleColor(XZSwiftColor.topicListTitleColor, for: .normal)
         cancelPanel.addSubview(cancelButton)
         cancelButton.snp.makeConstraints{ (make) -> Void in
             make.left.top.right.bottom.equalTo(cancelPanel)
@@ -210,7 +210,7 @@ class V2ActivityViewController: UIViewController ,UIViewControllerTransitioningD
         
         let buttonBackgoundView = UIImageView()
         //用颜色生成图片 切成圆角 并拉伸显示
-        buttonBackgoundView.image = createImageWithColor(V2EXColor.colors.v2_CellWhiteBackgroundColor, size: CGSize(width: 15, height: 15)).roundedCornerImageWithCornerRadius(5).stretchableImage(withLeftCapWidth: 7, topCapHeight: 7)
+        buttonBackgoundView.image = createImageWithColor(XZSwiftColor.white, size: CGSize(width: 15, height: 15)).roundedCornerImageWithCornerRadius(5).stretchableImage(withLeftCapWidth: 7, topCapHeight: 7)
         cellView.addSubview(buttonBackgoundView)
         buttonBackgoundView.snp.makeConstraints{ (make) -> Void in
             make.width.height.equalTo(60)
@@ -222,7 +222,7 @@ class V2ActivityViewController: UIViewController ,UIViewControllerTransitioningD
         let button = V2ActivityButton()
         button.setImage(activity?.image.withRenderingMode(.alwaysTemplate), for: .normal)
         cellView.addSubview(button)
-        button.tintColor = V2EXColor.colors.v2_TopicListUserNameColor
+        button.tintColor = XZSwiftColor.leftNodeTintColor
         button.snp.makeConstraints{ (make) -> Void in
             make.top.right.bottom.left.equalTo(buttonBackgoundView)
         }
@@ -236,7 +236,7 @@ class V2ActivityViewController: UIViewController ,UIViewControllerTransitioningD
         titleLabel.numberOfLines = 2
         titleLabel.text = activity?.title
         titleLabel.font = v2Font(12)
-        titleLabel.textColor = V2EXColor.colors.v2_TopicListTitleColor
+        titleLabel.textColor = XZSwiftColor.topicListTitleColor
         cellView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints{ (make) -> Void in
             make.centerX.equalTo(cellView)

@@ -87,12 +87,12 @@ class TopicDetailHeaderCell: UITableViewCell {
         self.userNameLabel.addGestureRecognizer(userNameTap)
         self.nodeNameLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(nodeClick)))
  
-        self.userNameLabel.textColor = V2EXColor.colors.v2_TopicListUserNameColor
-        self.dateAndLastPostUserLabel.textColor=V2EXColor.colors.v2_TopicListDateColor
-        self.nodeNameLabel.textColor = V2EXColor.colors.v2_TopicListDateColor
-        self.nodeNameLabel.backgroundColor = V2EXColor.colors.v2_NodeBackgroundColor
-        self.topicTitleLabel.textColor = V2EXColor.colors.v2_TopicListTitleColor
-        self.contentPanel.backgroundColor = V2EXColor.colors.v2_CellWhiteBackgroundColor
+        self.userNameLabel.textColor = XZSwiftColor.leftNodeTintColor
+        self.dateAndLastPostUserLabel.textColor=XZSwiftColor.topicListDateColor
+        self.nodeNameLabel.textColor = XZSwiftColor.topicListDateColor
+        self.nodeNameLabel.backgroundColor = XZSwiftColor.nodeBackgroundColor
+        self.topicTitleLabel.textColor = XZSwiftColor.topicListTitleColor
+        self.contentPanel.backgroundColor = XZSwiftColor.white
     }
     
     fileprivate func setupLayout(){

@@ -110,13 +110,13 @@ class TopicDetailCommentCell: UITableViewCell{
         )
         
         self.themeChangedHandler = {[weak self] _ in
-            self?.userNameLabel.textColor = V2EXColor.colors.v2_TopicListUserNameColor
-            self?.authorLabel.textColor = V2EXColor.colors.v2_TopicListUserNameColor
-            self?.dateLabel.textColor=V2EXColor.colors.v2_TopicListDateColor
-            self?.commentLabel.textColor=V2EXColor.colors.v2_TopicListTitleColor;
-            self?.contentPanel.backgroundColor = V2EXColor.colors.v2_CellWhiteBackgroundColor
-            self?.favoriteIconView.tintColor = V2EXColor.colors.v2_TopicListDateColor;
-            self?.favoriteLabel.textColor = V2EXColor.colors.v2_TopicListDateColor;
+            self?.userNameLabel.textColor = XZSwiftColor.leftNodeTintColor
+            self?.authorLabel.textColor = XZSwiftColor.leftNodeTintColor
+            self?.dateLabel.textColor=XZSwiftColor.topicListDateColor
+            self?.commentLabel.textColor=XZSwiftColor.topicListTitleColor
+            self?.contentPanel.backgroundColor = XZSwiftColor.white
+            self?.favoriteIconView.tintColor = XZSwiftColor.topicListDateColor
+            self?.favoriteLabel.textColor = XZSwiftColor.topicListDateColor
             self?.backgroundColor = XZSwiftColor.backgroudColor
             self?.selectedBackgroundView?.backgroundColor = XZSwiftColor.backgroudColor
             

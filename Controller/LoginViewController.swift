@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
         userNameTextField.autocorrectionType = UITextAutocorrectionType.no
         userNameTextField.autocapitalizationType = UITextAutocapitalizationType.none
         
-        userNameTextField.textColor = V2EXColor.colors.v2_LeftNodeTintColor
+        userNameTextField.textColor = XZSwiftColor.leftNodeTintColor
         userNameTextField.font = v2Font(15)
         userNameTextField.layer.cornerRadius = 3;
         userNameTextField.layer.borderWidth = 0.5
@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
 
         let userNameIconImageView = UIImageView(image: UIImage(named: "ic_account_circle")!.withRenderingMode(.alwaysTemplate));
         userNameIconImageView.frame = CGRect(x: 0, y: 0, width: 34, height: 22)
-        userNameIconImageView.tintColor = V2EXColor.colors.v2_LeftNodeTintColor
+        userNameIconImageView.tintColor = XZSwiftColor.leftNodeTintColor
         userNameIconImageView.contentMode = .scaleAspectFit
         let userNameIconImageViewPanel = UIView(frame: userNameIconImageView.frame)
         userNameIconImageViewPanel.addSubview(userNameIconImageView)
@@ -44,7 +44,7 @@ class LoginViewController: UIViewController {
     }()
     let passwordTextField:UITextField = {
         let passwordTextField = UITextField()
-        passwordTextField.textColor = V2EXColor.colors.v2_LeftNodeTintColor
+        passwordTextField.textColor = XZSwiftColor.leftNodeTintColor
         passwordTextField.font = v2Font(15)
         passwordTextField.layer.cornerRadius = 3;
         passwordTextField.layer.borderWidth = 0.5
@@ -57,7 +57,7 @@ class LoginViewController: UIViewController {
         let passwordIconImageView = UIImageView(image: UIImage(named: "ic_lock")!.withRenderingMode(.alwaysTemplate));
         passwordIconImageView.frame = CGRect(x: 0, y: 0, width: 34, height: 22)
         passwordIconImageView.contentMode = .scaleAspectFit
-        passwordIconImageView.tintColor = V2EXColor.colors.v2_LeftNodeTintColor
+        passwordIconImageView.tintColor = XZSwiftColor.leftNodeTintColor
         let passwordIconImageViewPanel = UIView(frame: passwordIconImageView.frame)
         passwordIconImageViewPanel.addSubview(passwordIconImageView)
         passwordTextField.leftView = passwordIconImageViewPanel
@@ -66,7 +66,7 @@ class LoginViewController: UIViewController {
     }()
     let codeTextField:UITextField = {
         let codeTextField = UITextField()
-        codeTextField.textColor = V2EXColor.colors.v2_LeftNodeTintColor
+        codeTextField.textColor = XZSwiftColor.leftNodeTintColor
         codeTextField.font = v2Font(15)
         codeTextField.layer.cornerRadius = 3;
         codeTextField.layer.borderWidth = 0.5
@@ -78,7 +78,7 @@ class LoginViewController: UIViewController {
         let codeTextFieldImageView = UIImageView(image: UIImage(named: "ic_vpn_key")!.withRenderingMode(.alwaysTemplate));
         codeTextFieldImageView.frame = CGRect(x: 0, y: 0, width: 34, height: 22)
         codeTextFieldImageView.contentMode = .scaleAspectFit
-        codeTextFieldImageView.tintColor = V2EXColor.colors.v2_LeftNodeTintColor
+        codeTextFieldImageView.tintColor = XZSwiftColor.leftNodeTintColor
         let codeTextFieldImageViewPanel = UIView(frame: codeTextFieldImageView.frame)
         codeTextFieldImageViewPanel.addSubview(codeTextFieldImageView)
         codeTextField.leftView = codeTextFieldImageViewPanel
@@ -271,7 +271,7 @@ extension LoginViewController {
         let v2exLabel = UILabel()
         v2exLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 25)!;
         v2exLabel.text = "猿社区"
-        v2exLabel.textColor = V2EXColor.colors.v2_LeftNodeTintColor
+        v2exLabel.textColor = XZSwiftColor.leftNodeTintColor
         self.view.addSubview(v2exLabel);
         v2exLabel.snp.makeConstraints{ (make) -> Void in
             make.centerX.equalTo(self.view)
@@ -339,7 +339,7 @@ extension LoginViewController {
         }
         
         self.loginButton.setTitle("登录", for: .normal)
-        self.loginButton.setTitleColor(V2EXColor.colors.v2_LeftNodeTintColor, for: .normal)
+        self.loginButton.setTitleColor(XZSwiftColor.leftNodeTintColor, for: .normal)
         self.loginButton.titleLabel!.font = v2Font(16)
         self.loginButton.layer.cornerRadius = 3;
         self.loginButton.layer.borderWidth = 0.5

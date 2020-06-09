@@ -13,7 +13,7 @@ extension UIButton {
         let btn = UIButton(type: .custom)
         btn.layer.masksToBounds = true
         btn.layer.cornerRadius = 3
-        btn.backgroundColor  = V2EXColor.colors.v2_ButtonBackgroundColor
+        btn.backgroundColor  = XZSwiftColor.buttonBackgroundColor
         btn.titleLabel!.font = v2Font(14)
         btn.setTitleColor(UIColor.white, for: .normal)
         return btn

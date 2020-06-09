@@ -14,11 +14,11 @@ class HomeTopicListTableViewCell: UITableViewCell {
     
     /// 节点信息label的圆角背景图
     fileprivate static var nodeBackgroundImage_Default =
-        createImageWithColor( V2EXDefaultColor.sharedInstance.v2_NodeBackgroundColor ,size: CGSize(width: 10, height: 20))
+        createImageWithColor(XZSwiftColor.nodeBackgroundColor,size: CGSize(width: 10, height: 20))
             .roundedCornerImageWithCornerRadius(2)
             .stretchableImage(withLeftCapWidth: 3, topCapHeight: 3)
     fileprivate static var nodeBackgroundImage_Dark =
-        createImageWithColor( V2EXDarkColor.sharedInstance.v2_NodeBackgroundColor ,size: CGSize(width: 10, height: 20))
+        createImageWithColor(XZSwiftColor.nodeBackgroundColor,size: CGSize(width: 10, height: 20))
             .roundedCornerImageWithCornerRadius(2)
             .stretchableImage(withLeftCapWidth: 3, topCapHeight: 3)
     
@@ -98,32 +98,24 @@ class HomeTopicListTableViewCell: UITableViewCell {
         self.contentPanel.addSubview(self.topicTitleLabel);
         
         self.setupLayout()
-
-        self.themeChangedHandler = {[weak self] (style) -> Void in
-            if style == V2EXColor.V2EXColorStyleDefault {
-                self?.nodeBackgroundImageView.image = HomeTopicListTableViewCell.nodeBackgroundImage_Default
-            }
-            else{
-                self?.nodeBackgroundImageView.image = HomeTopicListTableViewCell.nodeBackgroundImage_Dark
-            }
-            
-            self?.backgroundColor=XZSwiftColor.backgroudColor
-            self?.selectedBackgroundView!.backgroundColor = XZSwiftColor.backgroudColor
-            self?.contentPanel.backgroundColor = V2EXColor.colors.v2_CellWhiteBackgroundColor
-            self?.userNameLabel.textColor = V2EXColor.colors.v2_TopicListUserNameColor;
-            self?.dateAndLastPostUserLabel.textColor=V2EXColor.colors.v2_TopicListDateColor;
-            self?.replyCountLabel.textColor = V2EXColor.colors.v2_TopicListDateColor
-            self?.nodeNameLabel.textColor = V2EXColor.colors.v2_TopicListDateColor
-            self?.topicTitleLabel.textColor=V2EXColor.colors.v2_TopicListTitleColor;
-            
-            self?.avatarImageView.backgroundColor = self?.contentPanel.backgroundColor
-            self?.userNameLabel.backgroundColor = self?.contentPanel.backgroundColor
-            self?.dateAndLastPostUserLabel.backgroundColor = self?.contentPanel.backgroundColor
-            self?.replyCountLabel.backgroundColor = self?.contentPanel.backgroundColor
-            self?.replyCountIconImageView.backgroundColor = self?.contentPanel.backgroundColor
-            self?.topicTitleLabel.backgroundColor = self?.contentPanel.backgroundColor
-        }
         
+        self.nodeBackgroundImageView.image = HomeTopicListTableViewCell.nodeBackgroundImage_Default
+        self.backgroundColor=XZSwiftColor.backgroudColor
+        self.selectedBackgroundView!.backgroundColor = XZSwiftColor.backgroudColor
+        self.contentPanel.backgroundColor = XZSwiftColor.white
+        self.userNameLabel.textColor = XZSwiftColor.leftNodeTintColor
+        self.dateAndLastPostUserLabel.textColor=XZSwiftColor.topicListDateColor
+        self.replyCountLabel.textColor = XZSwiftColor.topicListDateColor
+        self.nodeNameLabel.textColor = XZSwiftColor.topicListDateColor
+        self.topicTitleLabel.textColor=XZSwiftColor.topicListTitleColor
+        
+        self.avatarImageView.backgroundColor = self.contentPanel.backgroundColor
+        self.userNameLabel.backgroundColor = self.contentPanel.backgroundColor
+        self.dateAndLastPostUserLabel.backgroundColor = self.contentPanel.backgroundColor
+        self.replyCountLabel.backgroundColor = self.contentPanel.backgroundColor
+        self.replyCountIconImageView.backgroundColor = self.contentPanel.backgroundColor
+        self.topicTitleLabel.backgroundColor = self.contentPanel.backgroundColor
+
         //点击用户头像，跳转到用户主页
         self.avatarImageView.isUserInteractionEnabled = true
         self.userNameLabel.isUserInteractionEnabled = true

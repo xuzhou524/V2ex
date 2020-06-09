@@ -66,11 +66,11 @@ class AccountListTableViewCell: UITableViewCell {
         }
         
         self.themeChangedHandler = {[weak self] _ in
-            self?.backgroundColor = V2EXColor.colors.v2_CellWhiteBackgroundColor
-            self?.userNameLabel.textColor = V2EXColor.colors.v2_TopicListUserNameColor
-            self?.usedLabel.textColor = V2EXColor.colors.v2_NoticePointColor
+            self?.backgroundColor = XZSwiftColor.white
+            self?.userNameLabel.textColor = XZSwiftColor.leftNodeTintColor
+            self?.usedLabel.textColor = XZSwiftColor.noticePointColor
             
-            separator.image = createImageWithColor(V2EXColor.colors.v2_SeparatorColor)
+            separator.image = createImageWithColor(XZSwiftColor.backgroudColor)
         }
     }
     

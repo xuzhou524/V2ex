@@ -40,9 +40,53 @@ class XZSwiftColor: UIColor{
         }
     }
     
-    static var navignationColor : UIColor{
-        get{
-            return colorWith255RGB(255 ,g: 255, b: 255);
+    static var linksColor : UIColor {
+        get {
+            return colorWith255RGB(119, g: 128, b: 135)
         }
     }
+    
+    static var noticePointColor : UIColor {
+        get {
+            return colorWith255RGB(207, g: 70, b: 71)
+        }
+    }
+    
+    static var buttonBackgroundColor : UIColor {
+        get {
+            return colorWith255RGB(85, g: 172, b: 238)
+        }
+    }
+    
+    static var leftNodeTintColor : UIColor {
+        get {
+            return colorWith255RGB(51, g: 51, b: 51)
+        }
+    }
+    
+    static var nodeBackgroundColor : UIColor {
+        get {
+            return colorWith255RGB(242, g: 242, b: 242)
+        }
+    }
+    
+    static var topicListDateColor : UIColor{
+        get{
+            return colorWith255RGB(173, g: 173, b: 173);
+        }
+    }
+    
+    static var topicListTitleColor : UIColor{
+        get{
+            return colorWith255RGB(15, g: 15, b: 15);
+        }
+    }
+    
+//    static var navignationColor : UIColor{
+//        get{
+//            return colorWith255RGB(255 ,g: 255, b: 255);
+//        }
+//    }
+    
+    
 }

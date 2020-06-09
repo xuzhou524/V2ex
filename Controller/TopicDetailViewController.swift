@@ -487,7 +487,7 @@ extension TopicDetailViewController: V2ActivityViewDataSource {
     }
     func V2ActivityView(_ activityView:V2ActivityViewController ,viewForFooterInSection section: Int) ->UIView?{
         let view = UIView()
-        view.backgroundColor = V2EXColor.colors.v2_ButtonBackgroundColor
+        view.backgroundColor = XZSwiftColor.buttonBackgroundColor
         
         let label = UILabel()
         label.font = v2Font(18)

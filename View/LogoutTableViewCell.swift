@@ -31,9 +31,9 @@ class LogoutTableViewCell: UITableViewCell {
             make.height.equalTo(SEPARATOR_HEIGHT)
         }
         self.themeChangedHandler = {[weak self] _ in
-            self?.backgroundColor = V2EXColor.colors.v2_CellWhiteBackgroundColor
-            self?.textLabel!.textColor = V2EXColor.colors.v2_NoticePointColor
-            separator.image = createImageWithColor(V2EXColor.colors.v2_SeparatorColor)
+            self?.backgroundColor = XZSwiftColor.white
+            self?.textLabel!.textColor = XZSwiftColor.noticePointColor
+            separator.image = createImageWithColor(XZSwiftColor.backgroudColor)
         }
         
     }

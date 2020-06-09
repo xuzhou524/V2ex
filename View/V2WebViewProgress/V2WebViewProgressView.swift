@@ -175,7 +175,7 @@ class V2WebViewProgressView: UIView {
         self.isUserInteractionEnabled = false
         self.progressBarView = UIView()
         self.progressBarView!.autoresizingMask = [.flexibleWidth,.flexibleHeight]
-        self.progressBarView!.backgroundColor = V2EXColor.colors.v2_NoticePointColor
+        self.progressBarView!.backgroundColor = XZSwiftColor.noticePointColor
         self.addSubview(self.progressBarView!)
         
         var frame = self.bounds

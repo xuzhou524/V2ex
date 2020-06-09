@@ -103,13 +103,13 @@ class TopicListModel:NSObject, HtmlModelArrayProtocol {
             self.topicTitleAttributedString = NSMutableAttributedString(string: title,
                 attributes: [
                     NSAttributedString.Key.font:v2Font(16),
-                    NSAttributedString.Key.foregroundColor:V2EXColor.colors.v2_TopicListTitleColor,
+                    NSAttributedString.Key.foregroundColor:XZSwiftColor.topicListTitleColor,
                 ])
             self.topicTitleAttributedString?.yy_lineSpacing = 5
 
             //监听颜色配置文件变化，当有变化时，改变自身颜色
             if let str = self.topicTitleAttributedString {
-                str.yy_color = V2EXColor.colors.v2_TopicListTitleColor
+                str.yy_color = XZSwiftColor.topicListTitleColor
                 self.topicTitleLayout = YYTextLayout(containerSize: CGSize(width: SCREEN_WIDTH-30, height: 9999), text: str)
             }
         }
