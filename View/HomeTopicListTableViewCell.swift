@@ -138,11 +138,11 @@ class HomeTopicListTableViewCell: UITableViewCell {
         self.contentPanel.snp.makeConstraints{ (make) -> Void in
             make.top.left.right.equalTo(self.contentView);
         }
-        self.avatarImageView.layer.cornerRadius = 25
+        self.avatarImageView.layer.cornerRadius = 20
         self.avatarImageView.layer.masksToBounds = true
         self.avatarImageView.snp.makeConstraints{ (make) -> Void in
             make.left.top.equalTo(self.contentView).offset(12);
-            make.width.height.equalTo(50);
+            make.width.height.equalTo(40);
         }
         self.userNameLabel.snp.makeConstraints{ (make) -> Void in
             make.left.equalTo(self.avatarImageView.snp.right).offset(10);

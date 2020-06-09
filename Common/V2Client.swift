@@ -13,7 +13,6 @@ class V2Client: NSObject {
     
     var window : UIWindow? = nil
     
-    var centerViewController : HomeViewController? = nil
     var centerTabBarController : LDTabBarController? = nil
     var centerNavigation : V2EXNavigationController? = nil
     
