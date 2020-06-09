@@ -20,9 +20,9 @@ class MemberViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     var headerHeight: CGFloat = {
         if UIDevice.current.isIphoneX {
-            return 240 + 24
+            return 180 + 24
         }
-        return 240
+        return 180
     }()
     
     //昵称相对于整个屏幕时的 y 值
@@ -33,17 +33,12 @@ class MemberViewController: UIViewController,UITableViewDelegate,UITableViewData
         return 156
     }()
     
-    
-    var backgroundImageView:UIImageView?
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = UIColor.clear
-        tableView.estimatedRowHeight = 200
+        tableView.backgroundColor = XZSwiftColor.white
         tableView.separatorStyle = .none
+        tableView.contentInsetAdjustmentBehavior = .never
         
-        if #available(iOS 11.0, *) {
-            tableView.contentInsetAdjustmentBehavior = .never
-        }
         regClass(tableView, cell: MemberHeaderCell.self)
         regClass(tableView, cell: MemberTopicCell.self)
         regClass(tableView, cell: MemberReplyCell.self)
@@ -62,11 +57,6 @@ class MemberViewController: UIViewController,UITableViewDelegate,UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.backgroundImageView = UIImageView(image: UIImage(named: "12.jpg"))
-        self.backgroundImageView!.frame = self.view.frame
-        self.backgroundImageView!.contentMode = .scaleToFill
-        view.addSubview(self.backgroundImageView!)
-        
         self.view.addSubview(self.tableView);
         self.tableView.snp.makeConstraints{ (make) -> Void in
             make.top.right.bottom.left.equalTo(self.view);
@@ -74,7 +64,6 @@ class MemberViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         self.titleView = UIView(frame: CGRect(x: 0, y: 0, width: 150, height: 44))
         self.navigationItem.titleView = self.titleView!
-        
         
         let aloadView = UIActivityIndicatorView(style: .white)
         self.view.addSubview(aloadView)
@@ -107,7 +96,6 @@ class MemberViewController: UIViewController,UITableViewDelegate,UITableViewData
             self.titleLabel!.textColor = XZSwiftColor.topicListTitleColor
             coverView.addSubview(self.titleLabel!)
         }
-        
     }
     
     func refreshData(){
@@ -134,57 +122,54 @@ class MemberViewController: UIViewController,UITableViewDelegate,UITableViewData
         }
         self.tableView.fin_reloadData()
     }
-    
-
-
    
 // MARK: - UIScrollViewDelegate
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        var offsetY = scrollView.contentOffset.y
-        
-//        //navigationBar 的透明度
-//        self.changeNavigationAlpha()
-        
-        //后退按钮颜色
-        self.changeNavigationBarTintColor()
-        
-        //navigationBar title 显示
-        let navigationBarHeight = NavigationBarHeight
-        
-        //昵称距离NavigationBar 底部的距离
-        let nickLabelDistanceToNavigationBarBottom = nickLabelTop - navigationBarHeight
-
-        //因为titleLabel的高度是44 ，文字是居中的，而Header里的昵称不是相同高度，所以需要增加一点高度弥补一下 （不要问我怎么得来的，玄学数字
-        offsetY += (44-13)/2
-        
-        var y:CGFloat = 0
-        if offsetY <= nickLabelDistanceToNavigationBarBottom {
-            y = 44
-        }
-        else if offsetY >= nickLabelDistanceToNavigationBarBottom + 44 {
-            y = 0
-        }
-        else {
-            y = 44 - (offsetY - nickLabelDistanceToNavigationBarBottom)
-        }
-        
-        var frame = self.titleLabel!.frame
-        frame.origin.y = y
-        self.titleLabel?.frame = frame
-    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        var offsetY = scrollView.contentOffset.y
+//
+////        //navigationBar 的透明度
+////        self.changeNavigationAlpha()
+//
+//        //后退按钮颜色
+//        self.changeNavigationBarTintColor()
+//
+//        //navigationBar title 显示
+//        let navigationBarHeight = NavigationBarHeight
+//
+//        //昵称距离NavigationBar 底部的距离
+//        let nickLabelDistanceToNavigationBarBottom = nickLabelTop - navigationBarHeight
+//
+//        //因为titleLabel的高度是44 ，文字是居中的，而Header里的昵称不是相同高度，所以需要增加一点高度弥补一下 （不要问我怎么得来的，玄学数字
+//        offsetY += (44-13)/2
+//
+//        var y:CGFloat = 0
+//        if offsetY <= nickLabelDistanceToNavigationBarBottom {
+//            y = 44
+//        }
+//        else if offsetY >= nickLabelDistanceToNavigationBarBottom + 44 {
+//            y = 0
+//        }
+//        else {
+//            y = 44 - (offsetY - nickLabelDistanceToNavigationBarBottom)
+//        }
+//
+//        var frame = self.titleLabel!.frame
+//        frame.origin.y = y
+//        self.titleLabel?.frame = frame
+//    }
     
-    func changeNavigationBarTintColor(){
-        let offsetY = self.tableView.contentOffset.y
-        var y = 100 - offsetY
-        if offsetY < 0 {
-            y = 100-0
-        }
-        else if offsetY > 100 {
-            y = 100 - 100
-        }
-        //后退按钮颜色
-        self.navigationController?.navigationBar.tintColor = colorWith255RGB(y*2.4+self.color, g: y*2.4+self.color, b: y*2.4+self.color)
-    }
+//    func changeNavigationBarTintColor(){
+//        let offsetY = self.tableView.contentOffset.y
+//        var y = 100 - offsetY
+//        if offsetY < 0 {
+//            y = 100-0
+//        }
+//        else if offsetY > 100 {
+//            y = 100 - 100
+//        }
+//        //后退按钮颜色
+//        self.navigationController?.navigationBar.tintColor = colorWith255RGB(y*2.4+self.color, g: y*2.4+self.color, b: y*2.4+self.color)
+//    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3

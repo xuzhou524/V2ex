@@ -22,7 +22,7 @@ class MemberHeaderCell: UITableViewCell {
     /// 用户名
     var userNameLabel: UILabel = {
         let userNameLabel = UILabel()
-        userNameLabel.textColor = UIColor(white: 0.85, alpha: 1)
+        userNameLabel.textColor = XZSwiftColor.leftNodeTintColor
         userNameLabel.font = v2Font(16)
         userNameLabel.text = "Hello"
         return userNameLabel
@@ -30,12 +30,13 @@ class MemberHeaderCell: UITableViewCell {
     /// 签名
     var introduceLabel: UILabel = {
         let introduceLabel = UILabel()
-        introduceLabel.textColor = UIColor(white: 0.75, alpha: 1)
+        introduceLabel.textColor = XZSwiftColor.leftNodeTintColor
         introduceLabel.font = v2Font(16)
         introduceLabel.numberOfLines = 2
         introduceLabel.textAlignment = .center
         return introduceLabel
     }()
+    var sepView = UIView()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier);
         self.setup();
@@ -50,6 +51,7 @@ class MemberHeaderCell: UITableViewCell {
         self.contentView.addSubview(self.avatarImageView)
         self.contentView.addSubview(self.userNameLabel)
         self.contentView.addSubview(self.introduceLabel)
+        self.contentView.addSubview(self.sepView)
 
         self.setupLayout()
     }
@@ -57,7 +59,7 @@ class MemberHeaderCell: UITableViewCell {
     func setupLayout(){
         self.avatarImageView.snp.makeConstraints{ (make) -> Void in
             make.centerX.equalTo(self.contentView)
-            make.centerY.equalTo(self.contentView).offset(-15)
+            make.top.equalTo(self.contentView).offset(20)
             make.width.height.equalTo(self.avatarImageView.layer.cornerRadius * 2)
         }
         self.userNameLabel.snp.makeConstraints{ (make) -> Void in
@@ -69,6 +71,12 @@ class MemberHeaderCell: UITableViewCell {
             make.centerX.equalTo(self.avatarImageView)
             make.left.equalTo(self.contentView).offset(15)
             make.right.equalTo(self.contentView).offset(-15)
+        }
+        
+        self.sepView.backgroundColor = XZSwiftColor.backgroudColor
+        self.sepView.snp.makeConstraints{ (make) -> Void in
+            make.left.bottom.right.equalTo(self.contentView)
+            make.height.equalTo(10)
         }
     }
     
