@@ -72,7 +72,7 @@ class MemberTopicCell: UITableViewCell {
 
         self.themeChangedHandler = {[weak self] _ in
             self?.contentPanel.backgroundColor =  V2EXColor.colors.v2_CellWhiteBackgroundColor
-            self?.backgroundColor = V2EXColor.colors.v2_backgroundColor
+            self?.backgroundColor = XZSwiftColor.backgroudColor
             
             self?.dateAndLastPostUserLabel.textColor=V2EXColor.colors.v2_TopicListDateColor;
             self?.replyCountLabel.textColor = V2EXColor.colors.v2_TopicListDateColor

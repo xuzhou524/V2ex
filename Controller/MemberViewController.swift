@@ -89,7 +89,7 @@ class MemberViewController: UIViewController,UITableViewDelegate,UITableViewData
         
 
         self.themeChangedHandler = {[weak self] _ in
-            self?.view.backgroundColor = V2EXColor.colors.v2_backgroundColor
+            self?.view.backgroundColor = XZSwiftColor.backgroudColor
             if V2EXColor.sharedInstance.style == V2EXColor.V2EXColorStyleDark {
                 self?.color = 100
             }
@@ -97,22 +97,6 @@ class MemberViewController: UIViewController,UITableViewDelegate,UITableViewData
                 self?.color = 0
             }
         }
-        
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        (self.navigationController as? V2EXNavigationController)?.navigationBarAlpha = 0
-        self.changeNavigationBarTintColor()
-        (self.navigationController as? V2EXNavigationController)?.navigationBarAlpha = self.tableView.contentOffset.y / 100
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        (self.navigationController as? V2EXNavigationController)?.navigationBarAlpha = 1
-        self.navigationController?.navigationBar.tintColor = V2EXColor.colors.v2_navigationBarTintColor
-    }
-    override func viewDidDisappear(_ animated: Bool) {
-        (self.navigationController as? V2EXNavigationController)?.navigationBarAlpha = 1
-        self.navigationController?.navigationBar.tintColor = V2EXColor.colors.v2_navigationBarTintColor
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -168,8 +152,8 @@ class MemberViewController: UIViewController,UITableViewDelegate,UITableViewData
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         var offsetY = scrollView.contentOffset.y
         
-        //navigationBar 的透明度
-        self.changeNavigationAlpha()
+//        //navigationBar 的透明度
+//        self.changeNavigationAlpha()
         
         //后退按钮颜色
         self.changeNavigationBarTintColor()
@@ -199,9 +183,9 @@ class MemberViewController: UIViewController,UITableViewDelegate,UITableViewData
         self.titleLabel?.frame = frame
     }
     
-    func changeNavigationAlpha(){
-        (self.navigationController as? V2EXNavigationController)?.navigationBarAlpha = self.tableView.contentOffset.y/100
-    }
+//    func changeNavigationAlpha(){
+//        (self.navigationController as? V2EXNavigationController)?.navigationBarAlpha = self.tableView.contentOffset.y/100
+//    }
     
     func changeNavigationBarTintColor(){
         let offsetY = self.tableView.contentOffset.y

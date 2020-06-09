@@ -98,7 +98,7 @@ class BaseDetailTableViewCell: UITableViewCell {
         
         self.themeChangedHandler = {[weak self] (style) -> Void in
             self?.backgroundColor = V2EXColor.colors.v2_CellWhiteBackgroundColor
-            self?.selectedBackgroundView!.backgroundColor = V2EXColor.colors.v2_backgroundColor
+            self?.selectedBackgroundView!.backgroundColor = XZSwiftColor.backgroudColor
             self?.titleLabel.textColor = V2EXColor.colors.v2_TopicListTitleColor
             self?.detailMarkImageView.tintColor = self?.titleLabel.textColor
             self?.detailLabel.textColor = V2EXColor.colors.v2_TopicListUserNameColor

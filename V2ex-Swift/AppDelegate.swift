@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          tabBarController.viewControllers = [nav1,nav2,nav4]
         
         // 设置字体大小
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 11.0)], for: UIControl.State.normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 10.0)], for: UIControl.State.normal)
         // 设置字体偏移
         UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: 0.0)
         // 设置图标选中时颜色
@@ -111,7 +111,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     member.run()
                 }))
                 controller.addAction(UIAlertAction(title: "忽略", style: .cancel, handler: nil))
-                V2Client.sharedInstance.centerNavigation?.present(controller, animated: true, completion: nil)
+                V2Client.sharedInstance.topNavigationController.present(controller, animated: true, completion: nil)
                 
             case .topic(let topic):
                 let controller = UIAlertController(title: "是否打开帖子?", message: pasteString, preferredStyle: .alert)
@@ -119,7 +119,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     topic.run()
                 }))
                 controller.addAction(UIAlertAction(title: "忽略", style: .cancel, handler: nil))
-                V2Client.sharedInstance.centerNavigation?.present(controller, animated: true, completion: nil)
+                V2Client.sharedInstance.topNavigationController.present(controller, animated: true, completion: nil)
                 
             default : return
             }

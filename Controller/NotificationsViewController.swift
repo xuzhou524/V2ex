@@ -41,12 +41,10 @@ class NotificationsViewController: BaseViewController,UITableViewDataSource,UITa
         self.tableView.mj_header.beginRefreshing();
         
         self.themeChangedHandler = {[weak self] _ in
-            self?.view.backgroundColor = V2EXColor.colors.v2_backgroundColor
-            self?.tableView.backgroundColor = V2EXColor.colors.v2_backgroundColor
+            self?.view.backgroundColor = XZSwiftColor.backgroudColor
+            self?.tableView.backgroundColor = XZSwiftColor.backgroudColor
         }
     }
-    
-    
     
     func refresh(){
         NotificationsModel.getNotifications {[weak self] (response) -> Void in
@@ -101,7 +99,7 @@ class NotificationsViewController: BaseViewController,UITableViewDataSource,UITa
         tempTopicModel.topicId = item.topicId
         replyViewController.topicModel = tempTopicModel
         
-        let nav = V2EXNavigationController(rootViewController:replyViewController)
+        let nav = LDNavigationController(rootViewController:replyViewController)
         self.navigationController?.present(nav, animated: true, completion:nil)
     }
     

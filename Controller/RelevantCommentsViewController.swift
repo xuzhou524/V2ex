@@ -9,7 +9,7 @@
 import UIKit
 import Shimmer
 
-class RelevantCommentsNav:V2EXNavigationController , UIViewControllerTransitioningDelegate {
+class RelevantCommentsNav:LDNavigationController , UIViewControllerTransitioningDelegate {
     override init(nibName : String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: "", bundle: nil)
     }

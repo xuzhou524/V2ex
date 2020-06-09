@@ -27,7 +27,7 @@ class WritingViewController: UIViewController ,YYTextViewDelegate {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
         rightButton.addTarget(self, action: #selector(WritingViewController.rightClick), for: .touchUpInside)
         
-        self.view.backgroundColor = V2EXColor.colors.v2_backgroundColor
+        self.view.backgroundColor = XZSwiftColor.backgroudColor
         self.textView = YYTextView()
         self.textView!.scrollsToTop = false
         self.textView!.backgroundColor = V2EXColor.colors.v2_TextViewBackgroundColor

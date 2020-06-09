@@ -28,7 +28,7 @@ class RightViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = V2EXColor.colors.v2_backgroundColor
+        tableView.backgroundColor = XZSwiftColor.backgroudColor
         tableView.separatorStyle = .none
         if #available(iOS 11.0, *) {
             tableView.contentInsetAdjustmentBehavior = .never
@@ -43,7 +43,7 @@ class RightViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "分类"
-        self.view.backgroundColor = V2EXColor.colors.v2_backgroundColor;
+        self.view.backgroundColor = XZSwiftColor.backgroudColor
         
         self.view.addSubview(self.tableView);
         self.tableView.snp.makeConstraints{ (make) -> Void in

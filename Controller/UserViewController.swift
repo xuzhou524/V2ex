@@ -12,7 +12,7 @@ class UserViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     var tableView: UITableView = {
         let tableView = UITableView();
-        tableView.backgroundColor = V2EXColor.colors.v2_backgroundColor
+        tableView.backgroundColor = XZSwiftColor.backgroudColor
         tableView.separatorStyle = .none
         
         regClass(tableView, cell: LeftUserHeadCell.self)
@@ -26,7 +26,7 @@ class UserViewController: UIViewController,UITableViewDataSource,UITableViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "我的"
-        self.view.backgroundColor = V2EXColor.colors.v2_backgroundColor
+        self.view.backgroundColor = XZSwiftColor.backgroudColor
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -60,7 +60,7 @@ class UserViewController: UIViewController,UITableViewDataSource,UITableViewDele
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let bgView = UIView()
-        bgView.backgroundColor = V2EXColor.colors.v2_backgroundColor
+        bgView.backgroundColor = XZSwiftColor.backgroudColor
         return bgView
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

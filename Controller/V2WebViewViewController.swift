@@ -36,7 +36,7 @@ class V2WebViewViewController: UIViewController ,V2WebViewProgressDelegate ,V2Ac
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = V2EXColor.colors.v2_backgroundColor
+        self.view.backgroundColor = XZSwiftColor.backgroudColor
         
         let backbtn = UIButton(type: .custom)
         backbtn.setTitle("返回", for: .normal)

@@ -20,7 +20,6 @@
 		0611DE5D1C5F4C5C00933964 /* MemberTopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0611DE5C1C5F4C5C00933964 /* MemberTopicCell.swift */; };
 		0611DE5F1C5F513B00933964 /* MemberReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0611DE5E1C5F513B00933964 /* MemberReplyCell.swift */; };
 		0614FDC91CB371A600C3740A /* V2LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0614FDC81CB371A600C3740A /* V2LeftAlignedCollectionViewFlowLayout.swift */; };
-		061876891C7C15BC002E9C33 /* PodsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061876881C7C15BC002E9C33 /* PodsTableViewController.swift */; };
 		0618768B1C7C19F0002E9C33 /* PodCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0618768A1C7C19F0002E9C33 /* PodCellTableViewCell.swift */; };
 		0618768D1C7C5F8C002E9C33 /* 12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0618768C1C7C5F8C002E9C33 /* 12.jpg */; };
 		0620DA03214F56FC00761FBB /* TopicListApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0620DA02214F56FC00761FBB /* TopicListApi.swift */; };
@@ -107,6 +106,7 @@
 		06FA34D11C8AA458001D6830 /* SVProgressHUD+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FA34D01C8AA458001D6830 /* SVProgressHUD+Extension.swift */; };
 		2D43B43D1CAA2CDD007B0007 /* V2ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D43B43C1CAA2CDD007B0007 /* V2ProgressHUD.swift */; };
 		2D6B1BB01CA93F970050121D /* V2User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6B1BAF1CA93F970050121D /* V2User.swift */; };
+		536537D0248F69CB009D834B /* XZSwiftColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536537CF248F69CB009D834B /* XZSwiftColor.swift */; };
 		53C9D16F248E34F500DD1643 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9D16E248E34F500DD1643 /* UserViewController.swift */; };
 		53E7BEA6248A2F3800438BCB /* LDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E7BEA2248A2F3800438BCB /* LDTabBarController.m */; };
 		53E7BEA7248A2F3800438BCB /* LDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E7BEA5248A2F3800438BCB /* LDNavigationController.m */; };
@@ -129,7 +129,6 @@
 		0611DE5C1C5F4C5C00933964 /* MemberTopicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberTopicCell.swift; sourceTree = "<group>"; };
 		0611DE5E1C5F513B00933964 /* MemberReplyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberReplyCell.swift; sourceTree = "<group>"; };
 		0614FDC81CB371A600C3740A /* V2LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V2LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
-		061876881C7C15BC002E9C33 /* PodsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodsTableViewController.swift; sourceTree = "<group>"; };
 		0618768A1C7C19F0002E9C33 /* PodCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodCellTableViewCell.swift; sourceTree = "<group>"; };
 		0618768C1C7C5F8C002E9C33 /* 12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 12.jpg; sourceTree = "<group>"; };
 		0620DA02214F56FC00761FBB /* TopicListApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicListApi.swift; sourceTree = "<group>"; };
@@ -221,6 +220,7 @@
 		2D6B1BAF1CA93F970050121D /* V2User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V2User.swift; sourceTree = "<group>"; };
 		4B0F4B166DB726F4DA349A16 /* libPods-V2ex-Swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-V2ex-Swift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52700928D2B67AA24FBCC006 /* Pods-V2ex-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V2ex-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-V2ex-Swift/Pods-V2ex-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		536537CF248F69CB009D834B /* XZSwiftColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZSwiftColor.swift; sourceTree = "<group>"; };
 		53C9D16E248E34F500DD1643 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		53E7BEA1248A2F3700438BCB /* V2ex-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "V2ex-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		53E7BEA2248A2F3800438BCB /* LDTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDTabBarController.m; sourceTree = "<group>"; };
@@ -356,6 +356,7 @@
 				0678D2031C61B3F0007FFCFD /* Extension */,
 				0653CFA61C44E09B00E4FC05 /* UITableView+FINAutomaticHeightCell */,
 				06DD400A1C43726600CE293D /* V2EXColor.swift */,
+				536537CF248F69CB009D834B /* XZSwiftColor.swift */,
 				06D0EE1E1C915CAD003095FF /* V2Style.swift */,
 				06C49B6C1C43BFAB00684CA6 /* V2ex+Define.swift */,
 				060C4E411C48EC39004FBECC /* V2Client.swift */,
@@ -394,7 +395,6 @@
 				06E1459E1C609E8500BDD63D /* NodesViewController.swift */,
 				068910D01C61A44D00D22B4F /* NodeTopicListViewController.swift */,
 				06E1BA321C7023D900867454 /* V2WebViewViewController.swift */,
-				061876881C7C15BC002E9C33 /* PodsTableViewController.swift */,
 				06744A521E49D4C0001E3D1B /* TwoFAViewController.swift */,
 			);
 			path = Controller;
@@ -725,7 +725,6 @@
 				06E1BA331C7023D900867454 /* V2WebViewViewController.swift in Sources */,
 				06744A531E49D4C0001E3D1B /* TwoFAViewController.swift in Sources */,
 				06DD400B1C43726600CE293D /* V2EXColor.swift in Sources */,
-				061876891C7C15BC002E9C33 /* PodsTableViewController.swift in Sources */,
 				53E7BEA7248A2F3800438BCB /* LDNavigationController.m in Sources */,
 				0678F47120CE388E0048A64B /* Observable+Extension.swift in Sources */,
 				06E1459F1C609E8500BDD63D /* NodesViewController.swift in Sources */,
@@ -758,6 +757,7 @@
 				2D6B1BB01CA93F970050121D /* V2User.swift in Sources */,
 				0648F4AC1C54FC3F00475567 /* V2EXSettings.swift in Sources */,
 				06A490681C67018E00F6A063 /* MyCenterViewController.swift in Sources */,
+				536537D0248F69CB009D834B /* XZSwiftColor.swift in Sources */,
 				06E2E0821C8526A000D56116 /* V2RefreshFooter.swift in Sources */,
 				063C05D91C5889E1005B7CA1 /* V2RefreshHeader.swift in Sources */,
 				063671721C7AF44300B72D9F /* V2ZoomingScrollView.swift in Sources */,

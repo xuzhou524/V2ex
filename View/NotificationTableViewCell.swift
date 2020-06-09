@@ -120,13 +120,13 @@ class NotificationTableViewCell: UITableViewCell {
         self.replyButton.addTarget(self, action: #selector(replyButtonClick(_:)), for: .touchUpInside)
         
         self.themeChangedHandler = {[weak self] _ in
-            self?.backgroundColor=V2EXColor.colors.v2_backgroundColor;
-            self?.selectedBackgroundView?.backgroundColor = V2EXColor.colors.v2_backgroundColor
+            self?.backgroundColor=XZSwiftColor.backgroudColor
+            self?.selectedBackgroundView?.backgroundColor = XZSwiftColor.backgroudColor
             self?.userNameLabel.textColor = V2EXColor.colors.v2_TopicListUserNameColor
             self?.dateLabel.textColor=V2EXColor.colors.v2_TopicListDateColor
             self?.detailLabel.textColor=V2EXColor.colors.v2_TopicListTitleColor
             self?.commentLabel.textColor=V2EXColor.colors.v2_TopicListTitleColor
-            self?.commentPanel.backgroundColor = V2EXColor.colors.v2_backgroundColor
+            self?.commentPanel.backgroundColor = XZSwiftColor.backgroudColor
             self?.dropUpImageView.tintColor = self?.commentPanel.backgroundColor
             self?.contentPanel.backgroundColor = V2EXColor.colors.v2_CellWhiteBackgroundColor
             self?.replyButton.backgroundColor  = V2EXColor.colors.v2_ButtonBackgroundColor
@@ -178,7 +178,7 @@ class NotificationTableViewCell: UITableViewCell {
         if let _ = self.itemModel , let username = itemModel?.userName {
             let memberViewController = MemberViewController()
             memberViewController.username = username
-            V2Client.sharedInstance.centerNavigation?.pushViewController(memberViewController, animated: true)
+            V2Client.sharedInstance.topNavigationController.pushViewController(memberViewController, animated: true)
         }
     }
     

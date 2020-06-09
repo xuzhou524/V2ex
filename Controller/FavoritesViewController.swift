@@ -47,8 +47,8 @@ class FavoritesViewController: BaseViewController,UITableViewDataSource,UITableV
         self.tableView.mj_footer = footer
         
         self.themeChangedHandler = {[weak self] _ in
-            self?.view.backgroundColor = V2EXColor.colors.v2_backgroundColor
-            self?.tableView.backgroundColor = V2EXColor.colors.v2_backgroundColor
+            self?.view.backgroundColor = XZSwiftColor.backgroudColor
+            self?.tableView.backgroundColor = XZSwiftColor.backgroudColor
         }
     }
     

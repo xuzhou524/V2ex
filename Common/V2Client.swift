@@ -14,7 +14,6 @@ class V2Client: NSObject {
     var window : UIWindow? = nil
     
     var centerTabBarController : LDTabBarController? = nil
-    var centerNavigation : V2EXNavigationController? = nil
     
     // 当前程序中，最上层的 NavigationController
     var topNavigationController : UINavigationController {

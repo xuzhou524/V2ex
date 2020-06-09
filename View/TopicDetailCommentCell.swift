@@ -117,8 +117,8 @@ class TopicDetailCommentCell: UITableViewCell{
             self?.contentPanel.backgroundColor = V2EXColor.colors.v2_CellWhiteBackgroundColor
             self?.favoriteIconView.tintColor = V2EXColor.colors.v2_TopicListDateColor;
             self?.favoriteLabel.textColor = V2EXColor.colors.v2_TopicListDateColor;
-            self?.backgroundColor = V2EXColor.colors.v2_backgroundColor;
-            self?.selectedBackgroundView?.backgroundColor = V2EXColor.colors.v2_backgroundColor
+            self?.backgroundColor = XZSwiftColor.backgroudColor
+            self?.selectedBackgroundView?.backgroundColor = XZSwiftColor.backgroudColor
             
             self?.avatarImageView.backgroundColor = self?.contentPanel.backgroundColor
             self?.userNameLabel.backgroundColor = self?.contentPanel.backgroundColor

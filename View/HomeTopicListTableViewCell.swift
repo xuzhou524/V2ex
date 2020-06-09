@@ -107,8 +107,8 @@ class HomeTopicListTableViewCell: UITableViewCell {
                 self?.nodeBackgroundImageView.image = HomeTopicListTableViewCell.nodeBackgroundImage_Dark
             }
             
-            self?.backgroundColor=V2EXColor.colors.v2_backgroundColor;
-            self?.selectedBackgroundView!.backgroundColor = V2EXColor.colors.v2_backgroundColor
+            self?.backgroundColor=XZSwiftColor.backgroudColor
+            self?.selectedBackgroundView!.backgroundColor = XZSwiftColor.backgroudColor
             self?.contentPanel.backgroundColor = V2EXColor.colors.v2_CellWhiteBackgroundColor
             self?.userNameLabel.textColor = V2EXColor.colors.v2_TopicListUserNameColor;
             self?.dateAndLastPostUserLabel.textColor=V2EXColor.colors.v2_TopicListDateColor;
@@ -191,7 +191,7 @@ class HomeTopicListTableViewCell: UITableViewCell {
         if let _ = self.itemModel , let username = itemModel?.userName {
             let memberViewController = MemberViewController()
             memberViewController.username = username
-            V2Client.sharedInstance.centerNavigation?.pushViewController(memberViewController, animated: true)
+            V2Client.sharedInstance.topNavigationController.pushViewController(memberViewController, animated: true)
         }
     }
     

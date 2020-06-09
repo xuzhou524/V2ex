@@ -48,8 +48,8 @@ class AccountsManagerViewController: UIViewController,UITableViewDataSource,UITa
         }
         
         self.themeChangedHandler = {[weak self] _ in
-            self?.tableView.backgroundColor = V2EXColor.colors.v2_backgroundColor
-            self?.view.backgroundColor = V2EXColor.colors.v2_backgroundColor
+            self?.tableView.backgroundColor = XZSwiftColor.backgroudColor
+            self?.view.backgroundColor = XZSwiftColor.backgroudColor
         }
     }
 

@@ -58,7 +58,7 @@ class TopicDetailToolCell: UITableViewCell {
             self?.sortButton.setTitleColor(V2EXColor.colors.v2_TopicListTitleColor, for: .normal)
             self?.backgroundColor = V2EXColor.colors.v2_CellWhiteBackgroundColor
             self?.titleLabel.textColor = V2EXColor.colors.v2_TopicListTitleColor
-            self?.separator.image = createImageWithColor(V2EXColor.colors.v2_backgroundColor)
+            self?.separator.image = createImageWithColor(XZSwiftColor.backgroudColor)
         }
         
         self.sortButton.addTarget(self, action: #selector(sortClick(sender:)), for: .touchUpInside)

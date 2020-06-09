@@ -73,11 +73,11 @@ class MemberReplyCell: UITableViewCell {
         }
         
         self.themeChangedHandler = {[weak self] _ in
-            self?.backgroundColor = V2EXColor.colors.v2_backgroundColor
+            self?.backgroundColor = XZSwiftColor.backgroudColor
             
             self?.detailLabel.textColor=V2EXColor.colors.v2_TopicListTitleColor;
             self?.commentLabel.textColor=V2EXColor.colors.v2_TopicListTitleColor;
-            self?.commentPanel.backgroundColor = V2EXColor.colors.v2_backgroundColor
+            self?.commentPanel.backgroundColor = XZSwiftColor.backgroudColor
             self?.contentPanel.backgroundColor =  V2EXColor.colors.v2_CellWhiteBackgroundColor
             dropUpImageView.tintColor = self?.commentPanel.backgroundColor
         }

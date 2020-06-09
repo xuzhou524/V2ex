@@ -70,8 +70,8 @@ class TopicDetailViewController: BaseViewController{
         })
         
         self.themeChangedHandler = {[weak self] _ in
-            self?.tableView.backgroundColor = V2EXColor.colors.v2_backgroundColor
-            self?.view.backgroundColor = V2EXColor.colors.v2_backgroundColor
+            self?.tableView.backgroundColor = XZSwiftColor.backgroudColor
+            self?.view.backgroundColor = XZSwiftColor.backgroudColor
             
             self?.tableView.v2_scrollToTop()
             self?.showLoadingView()
@@ -414,7 +414,7 @@ extension TopicDetailViewController: UIActionSheetDelegate {
             let replyViewController = ReplyingViewController()
             replyViewController.atSomeone = "@" + item.userName! + " "
             replyViewController.topicModel = self.model!
-            let nav = V2EXNavigationController(rootViewController:replyViewController)
+            let nav = LDNavigationController(rootViewController:replyViewController)
             self.navigationController?.present(nav, animated: true, completion:nil)
         }
     }
@@ -464,8 +464,6 @@ extension TopicDetailViewController: UIActionSheetDelegate {
         self.present(controller, animated: true, completion: nil)
     }
 }
-
-
 
 //MARK: - V2ActivityView
 enum V2ActivityViewTopicDetailAction : Int {
@@ -579,7 +577,7 @@ extension TopicDetailViewController: V2ActivityViewDataSource {
         V2User.sharedInstance.ensureLoginWithHandler {
             let replyViewController = ReplyingViewController()
             replyViewController.topicModel = self.model!
-            let nav = V2EXNavigationController(rootViewController:replyViewController)
+            let nav = LDNavigationController(rootViewController:replyViewController)
             self.navigationController?.present(nav, animated: true, completion:nil)
         }
     }

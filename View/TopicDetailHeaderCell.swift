@@ -67,7 +67,7 @@ class TopicDetailHeaderCell: UITableViewCell {
     }
     func setup()->Void{
         self.selectionStyle = .none
-        
+        self.backgroundColor = XZSwiftColor.backgroudColor
         
         self.contentView.addSubview(self.contentPanel);
         self.contentPanel.addSubview(self.avatarImageView);
@@ -86,16 +86,13 @@ class TopicDetailHeaderCell: UITableViewCell {
         userNameTap = UITapGestureRecognizer(target: self, action: #selector(TopicDetailHeaderCell.userNameTap(_:)))
         self.userNameLabel.addGestureRecognizer(userNameTap)
         self.nodeNameLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(nodeClick)))
-        
-        self.themeChangedHandler = {[weak self] _ in
-            self?.backgroundColor=V2EXColor.colors.v2_backgroundColor;
-            self?.userNameLabel.textColor = V2EXColor.colors.v2_TopicListUserNameColor;
-            self?.dateAndLastPostUserLabel.textColor=V2EXColor.colors.v2_TopicListDateColor;
-            self?.nodeNameLabel.textColor = V2EXColor.colors.v2_TopicListDateColor
-            self?.nodeNameLabel.backgroundColor = V2EXColor.colors.v2_NodeBackgroundColor
-            self?.topicTitleLabel.textColor = V2EXColor.colors.v2_TopicListTitleColor;
-            self?.contentPanel.backgroundColor = V2EXColor.colors.v2_CellWhiteBackgroundColor
-        }
+ 
+        self.userNameLabel.textColor = V2EXColor.colors.v2_TopicListUserNameColor
+        self.dateAndLastPostUserLabel.textColor=V2EXColor.colors.v2_TopicListDateColor
+        self.nodeNameLabel.textColor = V2EXColor.colors.v2_TopicListDateColor
+        self.nodeNameLabel.backgroundColor = V2EXColor.colors.v2_NodeBackgroundColor
+        self.topicTitleLabel.textColor = V2EXColor.colors.v2_TopicListTitleColor
+        self.contentPanel.backgroundColor = V2EXColor.colors.v2_CellWhiteBackgroundColor
     }
     
     fileprivate func setupLayout(){
@@ -135,7 +132,7 @@ class TopicDetailHeaderCell: UITableViewCell {
         if let _ = self.itemModel , let username = itemModel?.userName {
             let memberViewController = MemberViewController()
             memberViewController.username = username
-            V2Client.sharedInstance.centerNavigation?.pushViewController(memberViewController, animated: true)
+            V2Client.sharedInstance.topNavigationController.pushViewController(memberViewController, animated: true)
         }
     }
     

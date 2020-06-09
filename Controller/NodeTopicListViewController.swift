@@ -36,7 +36,7 @@ class NodeTopicListViewController: BaseViewController ,UITableViewDataSource,UIT
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.cancelEstimatedHeight()
-        tableView.backgroundColor = V2EXColor.colors.v2_backgroundColor
+        tableView.backgroundColor = XZSwiftColor.backgroudColor
         tableView.separatorStyle = .none
         
         regClass(tableView, cell: HomeTopicListTableViewCell.self)
@@ -53,7 +53,7 @@ class NodeTopicListViewController: BaseViewController ,UITableViewDataSource,UIT
         }
 
         self.title = self.node?.nodeName
-        self.view.backgroundColor = V2EXColor.colors.v2_backgroundColor
+        self.view.backgroundColor = XZSwiftColor.backgroudColor
         self.view.addSubview(self.tableView);
         self.tableView.snp.makeConstraints{ (make) -> Void in
             make.top.right.bottom.left.equalTo(self.view);
