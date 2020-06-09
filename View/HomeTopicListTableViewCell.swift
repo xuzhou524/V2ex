@@ -38,13 +38,13 @@ class HomeTopicListTableViewCell: UITableViewCell {
     /// 日期 和 最后发送人
     var dateAndLastPostUserLabel: UILabel = {
         let label = UILabel()
-        label.font=v2Font(12)
+        label.font=v2Font(13)
         return label
     }()
     /// 评论数量
     var replyCountLabel: UILabel = {
         let label = UILabel()
-        label.font = v2Font(12)
+        label.font = v2Font(15)
         return label
     }()
     var replyCountIconImageView: UIImageView = {
@@ -56,7 +56,7 @@ class HomeTopicListTableViewCell: UITableViewCell {
     /// 节点
     var nodeNameLabel: UILabel = {
         let label = UILabel();
-        label.font = v2Font(11)
+        label.font = v2Font(14)
         return label
     }()
     var nodeBackgroundImageView:UIImageView = UIImageView()
@@ -64,8 +64,8 @@ class HomeTopicListTableViewCell: UITableViewCell {
     var topicTitleLabel: YYLabel = {
         let label = YYLabel()
         label.textVerticalAlignment = .top
-        label.font=v2Font(18)
-        label.displaysAsynchronously = true
+        label.font=v2Font(16)
+//        label.displaysAsynchronously = true
         label.numberOfLines=0
         return label
     }()
@@ -138,48 +138,52 @@ class HomeTopicListTableViewCell: UITableViewCell {
         self.contentPanel.snp.makeConstraints{ (make) -> Void in
             make.top.left.right.equalTo(self.contentView);
         }
-        self.avatarImageView.layer.cornerRadius = 20
+        self.avatarImageView.layer.cornerRadius = 18
         self.avatarImageView.layer.masksToBounds = true
         self.avatarImageView.snp.makeConstraints{ (make) -> Void in
-            make.left.top.equalTo(self.contentView).offset(12);
-            make.width.height.equalTo(40);
+            make.top.equalTo(self.contentView).offset(12);
+            make.left.equalTo(self.contentView).offset(15);
+            make.width.height.equalTo(36);
         }
         self.userNameLabel.snp.makeConstraints{ (make) -> Void in
             make.left.equalTo(self.avatarImageView.snp.right).offset(10);
-            make.top.equalTo(self.avatarImageView);
+            make.centerY.equalTo(self.avatarImageView);
         }
-        self.dateAndLastPostUserLabel.snp.makeConstraints{ (make) -> Void in
-            make.bottom.equalTo(self.avatarImageView);
-            make.left.equalTo(self.userNameLabel);
-        }
-        self.replyCountLabel.snp.makeConstraints{ (make) -> Void in
-            make.centerY.equalTo(self.userNameLabel);
-            make.right.equalTo(self.contentPanel).offset(-12);
-        }
-        self.replyCountIconImageView.snp.makeConstraints{ (make) -> Void in
-            make.centerY.equalTo(self.replyCountLabel);
-            make.width.height.equalTo(18);
-            make.right.equalTo(self.replyCountLabel.snp.left).offset(-2);
-        }
+        
         self.nodeNameLabel.snp.makeConstraints{ (make) -> Void in
-            make.centerY.equalTo(self.replyCountLabel);
-            make.right.equalTo(self.replyCountIconImageView.snp.left).offset(-9)
-            make.bottom.equalTo(self.replyCountLabel).offset(1);
-            make.top.equalTo(self.replyCountLabel).offset(-1);
+            make.centerY.equalTo(self.userNameLabel);
+            make.right.equalTo(self.contentPanel).offset(-20);
         }
         self.nodeBackgroundImageView.snp.makeConstraints{ (make) -> Void in
             make.top.bottom.equalTo(self.nodeNameLabel)
             make.left.equalTo(self.nodeNameLabel).offset(-5)
             make.right.equalTo(self.nodeNameLabel).offset(5)
         }
+        
         self.topicTitleLabel.snp.makeConstraints{ (make) -> Void in
             make.top.equalTo(self.avatarImageView.snp.bottom).offset(12);
-            make.left.equalTo(self.avatarImageView);
-            make.right.equalTo(self.contentPanel).offset(-12);
-            make.bottom.equalTo(self.contentView).offset(-8)
+            make.left.equalTo(self.contentView).offset(15);
+            make.right.equalTo(self.contentView).offset(-15);
+            make.bottom.equalTo(self.contentView).offset(-54)
         }
+        
+        self.dateAndLastPostUserLabel.snp.makeConstraints{ (make) -> Void in
+            make.top.equalTo(self.topicTitleLabel.snp.bottom).offset(12);
+            make.left.equalTo(self.avatarImageView);
+        }
+        
+        self.replyCountLabel.snp.makeConstraints{ (make) -> Void in
+            make.centerY.equalTo(self.dateAndLastPostUserLabel);
+            make.right.equalTo(self.contentPanel).offset(-15);
+        }
+        self.replyCountIconImageView.snp.makeConstraints{ (make) -> Void in
+            make.centerY.equalTo(self.replyCountLabel);
+            make.width.height.equalTo(20);
+            make.right.equalTo(self.replyCountLabel.snp.left).offset(-2);
+        }
+        
         self.contentPanel.snp.makeConstraints{ (make) -> Void in
-            make.bottom.equalTo(self.contentView.snp.bottom).offset(-8);
+            make.bottom.equalTo(self.contentView.snp.bottom).offset(-10);
         }
     }
     

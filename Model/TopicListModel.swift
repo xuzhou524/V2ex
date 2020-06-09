@@ -102,7 +102,7 @@ class TopicListModel:NSObject, HtmlModelArrayProtocol {
         if let title = self.topicTitle {
             self.topicTitleAttributedString = NSMutableAttributedString(string: title,
                 attributes: [
-                    NSAttributedString.Key.font:v2Font(17),
+                    NSAttributedString.Key.font:v2Font(16),
                     NSAttributedString.Key.foregroundColor:V2EXColor.colors.v2_TopicListTitleColor,
                 ])
             self.topicTitleAttributedString?.yy_lineSpacing = 3
@@ -111,7 +111,7 @@ class TopicListModel:NSObject, HtmlModelArrayProtocol {
             self.themeChangedHandler = {[weak self] (style) -> Void in
                 if let str = self?.topicTitleAttributedString {
                     str.yy_color = V2EXColor.colors.v2_TopicListTitleColor
-                    self?.topicTitleLayout = YYTextLayout(containerSize: CGSize(width: SCREEN_WIDTH-24, height: 9999), text: str)
+                    self?.topicTitleLayout = YYTextLayout(containerSize: CGSize(width: SCREEN_WIDTH-30, height: 9999), text: str)
                 }
             }
         }

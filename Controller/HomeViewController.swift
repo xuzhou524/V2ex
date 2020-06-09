@@ -157,8 +157,8 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let item = self.topicList![indexPath.row]
         let titleHeight = item.topicTitleLayout?.textBoundingRect.size.height ?? 0
-        //          上间隔   头像高度  头像下间隔       标题高度    标题下间隔 cell间隔
-        let height = 12    +  40     +  12      + titleHeight   + 12      + 10
+        //          上间隔   头像高度  头像下间隔   标题高度      标题下间隔 评论数高度  cell间隔
+          let height = 12    +  36   +  12  + titleHeight  + 12     + 20   + 12  + 10
 
         return height
     }
