@@ -28,7 +28,7 @@ class RightViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = UIColor.white
+        tableView.backgroundColor = V2EXColor.colors.v2_backgroundColor
         tableView.separatorStyle = .none
         if #available(iOS 11.0, *) {
             tableView.contentInsetAdjustmentBehavior = .never

@@ -42,7 +42,7 @@
     return [LDColor colorWithR255:244 G255:244 B255:247 A255:255];
 }
 + (UIColor *)separatorColor {
-    return [LDColor colorWithR255:244 G255:244 B255:247 A255:255];
+    return [LDColor colorWithR255:242 G255:243 B255:245 A255:255];
 }
 
 + (UIColor *)ldRed_222_36_61{
