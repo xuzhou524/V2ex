@@ -13,7 +13,7 @@ class TopicDetailHeaderCell: UITableViewCell {
    var avatarImageView: UIImageView = {
         let imageview = UIImageView();
         imageview.contentMode=UIView.ContentMode.scaleAspectFit;
-        imageview.layer.cornerRadius = 3;
+        imageview.layer.cornerRadius = 18;
         imageview.layer.masksToBounds = true;
         return imageview
     }()
@@ -98,7 +98,7 @@ class TopicDetailHeaderCell: UITableViewCell {
     fileprivate func setupLayout(){
         self.avatarImageView.snp.makeConstraints{ (make) -> Void in
             make.left.top.equalTo(self.contentPanel).offset(12);
-            make.width.height.equalTo(35);
+            make.width.height.equalTo(36);
         }
         self.userNameLabel.snp.makeConstraints{ (make) -> Void in
             make.left.equalTo(self.avatarImageView.snp.right).offset(10);
