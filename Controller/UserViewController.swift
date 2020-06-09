@@ -78,6 +78,7 @@ class UserViewController: UIViewController,UITableViewDataSource,UITableViewDele
                 return cell
             }else {
                 let cell = getCell(tableView, cell: LeftNodeTableViewCell.self, indexPath: indexPath)
+                cell.summeryLabel.isHidden = true
                 cell.nodeNameLabel.text = [NSLocalizedString("me"),"",NSLocalizedString("favorites")][indexPath.row]
                 let names = ["ic_face","","ic_turned_in_not"]
                 cell.nodeImageView.image = UIImage(named: names[indexPath.row])
@@ -88,6 +89,17 @@ class UserViewController: UIViewController,UITableViewDataSource,UITableViewDele
             cell.nodeNameLabel.text = [NSLocalizedString("nodes"),NSLocalizedString("version")][indexPath.row]
             let names = ["ic_navigation","ic_settings_input_svideo"]
             cell.nodeImageView.image = UIImage(named: names[indexPath.row])
+            if indexPath.row == 1 {
+                let infoDict = Bundle.main.infoDictionary
+                if let info = infoDict {
+                   // app版本
+                   let appVersion = info["CFBundleShortVersionString"] as! String?
+                   cell.summeryLabel.text = "v" + appVersion!
+                   cell.summeryLabel.isHidden = false
+                }
+            }else{
+                cell.summeryLabel.isHidden = true
+            }
             return cell
         }
     }

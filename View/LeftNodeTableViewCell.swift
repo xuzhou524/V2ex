@@ -16,6 +16,11 @@ class LeftNodeTableViewCell: UITableViewCell {
         label.font = v2Font(16)
         return label
     }()
+    var summeryLabel: UILabel = {
+        let label =  UILabel()
+        label.font = v2Font(16)
+        return label
+    }()
     var panel = UIView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -33,6 +38,7 @@ class LeftNodeTableViewCell: UITableViewCell {
         self.contentView.addSubview(panel)
         panel.addSubview(self.nodeImageView)
         panel.addSubview(self.nodeNameLabel)
+        panel.addSubview(self.summeryLabel)
         
         panel.snp.makeConstraints{ (make) -> Void in
             make.left.top.right.equalTo(self.contentView)
@@ -47,6 +53,12 @@ class LeftNodeTableViewCell: UITableViewCell {
             make.left.equalTo(self.nodeImageView.snp.right).offset(20)
             make.centerY.equalTo(self.nodeImageView)
         }
+        self.summeryLabel.snp.makeConstraints{ (make) -> Void in
+            make.right.equalTo(panel).offset(-20)
+            make.centerY.equalTo(self.nodeImageView)
+        }
+        
+        self.summeryLabel.isHidden = true
         
         self.themeChangedHandler = {[weak self] (style) -> Void in
             self?.configureColor()
@@ -56,6 +68,7 @@ class LeftNodeTableViewCell: UITableViewCell {
         self.panel.backgroundColor = V2EXColor.colors.v2_LeftNodeBackgroundColor
         self.nodeImageView.tintColor =  V2EXColor.colors.v2_LeftNodeTintColor
         self.nodeNameLabel.textColor = V2EXColor.colors.v2_LeftNodeTintColor
+        self.summeryLabel.textColor = V2EXColor.colors.v2_LeftNodeTintColor
     }
 }
 
