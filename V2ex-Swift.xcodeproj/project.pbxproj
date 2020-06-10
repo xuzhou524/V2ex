@@ -104,6 +104,7 @@
 		2D43B43D1CAA2CDD007B0007 /* V2ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D43B43C1CAA2CDD007B0007 /* V2ProgressHUD.swift */; };
 		2D6B1BB01CA93F970050121D /* V2User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6B1BAF1CA93F970050121D /* V2User.swift */; };
 		536537D0248F69CB009D834B /* XZSwiftColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536537CF248F69CB009D834B /* XZSwiftColor.swift */; };
+		539AB0392490D9DB0054CB56 /* V2ex-Swift.m in Sources */ = {isa = PBXBuildFile; fileRef = 539AB0382490D9DB0054CB56 /* V2ex-Swift.m */; };
 		53C9D16F248E34F500DD1643 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9D16E248E34F500DD1643 /* UserViewController.swift */; };
 		53E7BEA6248A2F3800438BCB /* LDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E7BEA2248A2F3800438BCB /* LDTabBarController.m */; };
 		53E7BEA7248A2F3800438BCB /* LDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E7BEA5248A2F3800438BCB /* LDNavigationController.m */; };
@@ -215,6 +216,8 @@
 		4B0F4B166DB726F4DA349A16 /* libPods-V2ex-Swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-V2ex-Swift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52700928D2B67AA24FBCC006 /* Pods-V2ex-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V2ex-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-V2ex-Swift/Pods-V2ex-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		536537CF248F69CB009D834B /* XZSwiftColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZSwiftColor.swift; sourceTree = "<group>"; };
+		539AB0372490D9DB0054CB56 /* V2ex-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "V2ex-Swift.h"; sourceTree = "<group>"; };
+		539AB0382490D9DB0054CB56 /* V2ex-Swift.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "V2ex-Swift.m"; sourceTree = "<group>"; };
 		53C9D16E248E34F500DD1643 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		53E7BEA1248A2F3700438BCB /* V2ex-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "V2ex-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		53E7BEA2248A2F3800438BCB /* LDTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDTabBarController.m; sourceTree = "<group>"; };
@@ -389,6 +392,8 @@
 				068910D01C61A44D00D22B4F /* NodeTopicListViewController.swift */,
 				06E1BA321C7023D900867454 /* V2WebViewViewController.swift */,
 				06744A521E49D4C0001E3D1B /* TwoFAViewController.swift */,
+				539AB0372490D9DB0054CB56 /* V2ex-Swift.h */,
+				539AB0382490D9DB0054CB56 /* V2ex-Swift.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -670,6 +675,7 @@
 				53E7BEA6248A2F3800438BCB /* LDTabBarController.m in Sources */,
 				067FF8C01C804B8A009538F7 /* V2PhotoBrowserTransionPresent.swift in Sources */,
 				0610F1B01C46136300481402 /* BaseModel.swift in Sources */,
+				539AB0392490D9DB0054CB56 /* V2ex-Swift.m in Sources */,
 				069508E41C3F74FF0088D031 /* AppDelegate.swift in Sources */,
 				069839831C478ECC00FF7163 /* RightViewController.swift in Sources */,
 				06E583851C3F8F4B00FCA361 /* HomeTopicListTableViewCell.swift in Sources */,
