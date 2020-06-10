@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Fabric
-import Crashlytics
 
 import SVProgressHUD
 
@@ -68,13 +66,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SVProgressHUD.setMinimumDismissTimeInterval(1.5)
         SVProgressHUD.setContainerView(self.window!)
         
-        /**
-        DEBUG 模式下不统计任何信息，如果你需要使用Crashlytics ，请自行申请账号替换我的Key
-        */
-        #if DEBUG
-        #else
-            Fabric.with([Crashlytics.self])
-        #endif
         return true
     }
     

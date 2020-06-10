@@ -539,7 +539,6 @@
 				069508DC1C3F74FF0088D031 /* Sources */,
 				069508DD1C3F74FF0088D031 /* Frameworks */,
 				069508DE1C3F74FF0088D031 /* Resources */,
-				0600D8081C74209E002DB97F /* Run Script */,
 				E8038E4E35A14C64D67C20D0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -608,20 +607,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0600D8081C74209E002DB97F /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ \"$CONFIGURATION\" == \"Release\" ]; then\n    echo \"fabric run Successfully\"\n    \"${PODS_ROOT}/Fabric/run\" e35a0878ffe50135a432ed19f88b19ba853f1a95 ed4490cfa5708117190644629735fd5abf04934826578407415ed78ff17d08ad\nelse\n    echo \"fabric disabled\"\nfi";
-		};
 		AA63AF201CF29D0554C1B2AC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

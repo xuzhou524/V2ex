@@ -4,11 +4,8 @@ PODS:
   - AlamofireObjectMapper (5.2.1):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
-  - Crashlytics (3.14.0):
-    - Fabric (~> 1.10.2)
   - CXSwipeGestureRecognizer (1.1.0)
   - DeviceKit (2.3.0)
-  - Fabric (1.10.2)
   - FDFullscreenPopGesture (1.1)
   - Ji (5.0.0)
   - KeychainSwift (18.0.0)
@@ -34,10 +31,8 @@ DEPENDENCIES:
   - 1PasswordExtension
   - Alamofire
   - AlamofireObjectMapper
-  - Crashlytics
   - CXSwipeGestureRecognizer
   - DeviceKit
-  - Fabric
   - FDFullscreenPopGesture
   - Ji
   - KeychainSwift
@@ -62,10 +57,8 @@ SPEC REPOS:
     - 1PasswordExtension
     - Alamofire
     - AlamofireObjectMapper
-    - Crashlytics
     - CXSwipeGestureRecognizer
     - DeviceKit
-    - Fabric
     - Ji
     - KeychainSwift
     - Kingfisher
@@ -82,10 +75,8 @@ SPEC CHECKSUMS:
   1PasswordExtension: 0e95bdea64ec8ff2f4f693be5467a09fac42a83d
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
-  Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
   CXSwipeGestureRecognizer: 5a53916aa69e85d041c35b5fc2180ff0bfe6333b
   DeviceKit: da103891aa928d89f64ea8dd8aca738c5f3d8ac0
-  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   Ji: d795fed288fe78658b404c88946d753b17d8d7f4
   KeychainSwift: c46e1438d121e47459fb304ac88c5e058a2a91ed
@@ -102,6 +93,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: f6aa062f5065a6df2ac62a573430e0b2849f6427
+PODFILE CHECKSUM: fb2df2592fc09fa81b1daa215d1795420e722554
 
 COCOAPODS: 1.7.3
