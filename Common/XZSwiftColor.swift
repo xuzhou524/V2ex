@@ -38,6 +38,12 @@ class XZSwiftColor: UIColor{
         }
     }
     
+    static var sepColor : UIColor{
+        get{
+            return colorWith255RGB(220, g: 220, b: 220);
+        }
+    }
+    
     static var linksColor : UIColor {
         get {
             return colorWith255RGB(119, g: 128, b: 135)

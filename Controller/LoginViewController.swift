@@ -295,7 +295,7 @@ extension LoginViewController {
             make.height.equalTo(45)
         }
         let separator = UIView()
-        separator.backgroundColor = XZSwiftColor.backgroudColor
+        separator.backgroundColor = XZSwiftColor.sepColor
         self.view.addSubview(separator)
         separator.snp.makeConstraints{ (make) -> Void in
             make.left.right.bottom.equalTo(self.userNameTextField)
@@ -311,7 +311,7 @@ extension LoginViewController {
             make.height.equalTo(45)
         }
         let separator1 = UIView()
-        separator1.backgroundColor = XZSwiftColor.backgroudColor
+        separator1.backgroundColor = XZSwiftColor.sepColor
         self.view.addSubview(separator1)
         separator1.snp.makeConstraints{ (make) -> Void in
             make.left.right.bottom.equalTo(self.passwordTextField)
@@ -326,7 +326,7 @@ extension LoginViewController {
             make.height.equalTo(45)
         }
         let separator2 = UIView()
-        separator2.backgroundColor = XZSwiftColor.backgroudColor
+        separator2.backgroundColor = XZSwiftColor.sepColor
         self.view.addSubview(separator2)
         separator2.snp.makeConstraints{ (make) -> Void in
             make.left.right.bottom.equalTo(self.codeTextField)
