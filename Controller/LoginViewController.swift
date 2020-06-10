@@ -25,10 +25,10 @@ class LoginViewController: UIViewController {
         
         userNameTextField.textColor = XZSwiftColor.leftNodeTintColor
         userNameTextField.font = v2Font(15)
-        userNameTextField.layer.cornerRadius = 3;
-        userNameTextField.layer.borderWidth = 0.5
+//        userNameTextField.layer.cornerRadius = 3;
+//        userNameTextField.layer.borderWidth = 0.5
         userNameTextField.keyboardType = .asciiCapable
-        userNameTextField.layer.borderColor = UIColor(white: 0, alpha: 0.8).cgColor;
+//        userNameTextField.layer.borderColor = UIColor(white: 0, alpha: 0.8).cgColor;
         userNameTextField.placeholder = "用户名"
         userNameTextField.clearButtonMode = .always
 
@@ -46,11 +46,11 @@ class LoginViewController: UIViewController {
         let passwordTextField = UITextField()
         passwordTextField.textColor = XZSwiftColor.leftNodeTintColor
         passwordTextField.font = v2Font(15)
-        passwordTextField.layer.cornerRadius = 3;
-        passwordTextField.layer.borderWidth = 0.5
+//        passwordTextField.layer.cornerRadius = 3;
+//        passwordTextField.layer.borderWidth = 0.5
         passwordTextField.keyboardType = .asciiCapable
         passwordTextField.isSecureTextEntry = true
-        passwordTextField.layer.borderColor = UIColor(white: 0, alpha: 0.8).cgColor;
+//        passwordTextField.layer.borderColor = UIColor(white: 0, alpha: 0.8).cgColor;
         passwordTextField.placeholder = "密码"
         passwordTextField.clearButtonMode = .always
 
@@ -68,10 +68,10 @@ class LoginViewController: UIViewController {
         let codeTextField = UITextField()
         codeTextField.textColor = XZSwiftColor.leftNodeTintColor
         codeTextField.font = v2Font(15)
-        codeTextField.layer.cornerRadius = 3;
-        codeTextField.layer.borderWidth = 0.5
+//        codeTextField.layer.cornerRadius = 3;
+//        codeTextField.layer.borderWidth = 0.5
         codeTextField.keyboardType = .asciiCapable
-        codeTextField.layer.borderColor = UIColor(white: 0, alpha: 0.8).cgColor;
+//        codeTextField.layer.borderColor = UIColor(white: 0, alpha: 0.8).cgColor;
         codeTextField.placeholder = "验证码"
         codeTextField.clearButtonMode = .always
         
@@ -280,7 +280,7 @@ extension LoginViewController {
 
         let v2exSummaryLabel = UILabel()
         v2exSummaryLabel.font = v2Font(13);
-        v2exSummaryLabel.text = "V2EX - 创意者的工作社区"
+        v2exSummaryLabel.text = "V2EX - 程序猿的工作社区"
         self.view.addSubview(v2exSummaryLabel);
         v2exSummaryLabel.snp.makeConstraints{ (make) -> Void in
             make.centerX.equalTo(self.view)
@@ -294,6 +294,14 @@ extension LoginViewController {
             make.width.equalTo(300)
             make.height.equalTo(45)
         }
+        let separator = UIView()
+        separator.backgroundColor = XZSwiftColor.backgroudColor
+        self.view.addSubview(separator)
+        separator.snp.makeConstraints{ (make) -> Void in
+            make.left.right.bottom.equalTo(self.userNameTextField)
+            make.height.equalTo(SEPARATOR_HEIGHT)
+        }
+
 
         self.view.addSubview(self.passwordTextField);
         self.passwordTextField.snp.makeConstraints{ (make) -> Void in
@@ -302,6 +310,13 @@ extension LoginViewController {
             make.width.equalTo(300)
             make.height.equalTo(45)
         }
+        let separator1 = UIView()
+        separator1.backgroundColor = XZSwiftColor.backgroudColor
+        self.view.addSubview(separator1)
+        separator1.snp.makeConstraints{ (make) -> Void in
+            make.left.right.bottom.equalTo(self.passwordTextField)
+            make.height.equalTo(SEPARATOR_HEIGHT)
+        }
         
         self.view.addSubview(self.codeTextField)
         self.codeTextField.snp.makeConstraints { (make) in
@@ -309,6 +324,13 @@ extension LoginViewController {
             make.left.equalTo(passwordTextField)
             make.width.equalTo(180)
             make.height.equalTo(45)
+        }
+        let separator2 = UIView()
+        separator2.backgroundColor = XZSwiftColor.backgroudColor
+        self.view.addSubview(separator2)
+        separator2.snp.makeConstraints{ (make) -> Void in
+            make.left.right.bottom.equalTo(self.codeTextField)
+            make.height.equalTo(SEPARATOR_HEIGHT)
         }
         
         self.codeImageView.backgroundColor = UIColor(white: 1, alpha: 0.2)
@@ -339,11 +361,13 @@ extension LoginViewController {
         }
         
         self.loginButton.setTitle("登录", for: .normal)
-        self.loginButton.setTitleColor(XZSwiftColor.leftNodeTintColor, for: .normal)
+        self.loginButton.setTitleColor(XZSwiftColor.white, for: .normal)
+        self.loginButton.setBackgroundImage(createImageWithColor(XZSwiftColor.leftNodeTintColor), for: .normal)
         self.loginButton.titleLabel!.font = v2Font(16)
-        self.loginButton.layer.cornerRadius = 3;
-        self.loginButton.layer.borderWidth = 0.5
-        self.loginButton.layer.borderColor = UIColor(white: 0, alpha: 0.8).cgColor;
+        self.loginButton.layer.cornerRadius = 5;
+        self.loginButton.layer.masksToBounds = true
+//        self.loginButton.layer.borderWidth = 0.5
+//        self.loginButton.layer.borderColor = UIColor(white: 0, alpha: 0.8).cgColor;
         self.view.addSubview(self.loginButton);
 
         self.loginButton.snp.makeConstraints{ (make) -> Void in
