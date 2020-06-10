@@ -17,14 +17,6 @@ class MemberViewController: UIViewController,UITableViewDelegate,UITableViewData
     var followButton:UIButton?
     var model:MemberModel?
     
-    
-    var headerHeight: CGFloat = {
-        if UIDevice.current.isIphoneX {
-            return 180 + 24
-        }
-        return 180
-    }()
-    
     //昵称相对于整个屏幕时的 y 值
     var nickLabelTop: CGFloat = {
         if UIDevice.current.isIphoneX {
@@ -188,7 +180,7 @@ class MemberViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return headerHeight
+            return 200
         }
         else if indexPath.section == 1 {
             return tableView.fin_heightForCellWithIdentifier(MemberTopicCell.self, indexPath: indexPath) { (cell) -> Void in
