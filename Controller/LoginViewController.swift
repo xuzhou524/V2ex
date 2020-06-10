@@ -333,11 +333,9 @@ extension LoginViewController {
             make.height.equalTo(SEPARATOR_HEIGHT)
         }
         
-        self.codeImageView.backgroundColor = UIColor(white: 1, alpha: 0.2)
+        self.codeImageView.backgroundColor = XZSwiftColor.backgroudColor
         self.codeImageView.layer.cornerRadius = 3;
         self.codeImageView.clipsToBounds = true
-        self.codeImageView.layer.borderWidth = 0.5
-        self.codeImageView.layer.borderColor = UIColor(white: 0, alpha: 0.8).cgColor;
         self.codeImageView.isUserInteractionEnabled = true
         self.view.addSubview(self.codeImageView)
         self.codeImageView.snp.makeConstraints { (make) in
