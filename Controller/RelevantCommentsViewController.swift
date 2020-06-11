@@ -7,7 +7,9 @@
 //
 
 import UIKit
+//import FXBlurView
 import Shimmer
+import FDFullscreenPopGesture
 
 class RelevantCommentsNav:LDNavigationController , UIViewControllerTransitioningDelegate {
     override init(nibName : String?, bundle nibBundleOrNil: Bundle?) {
@@ -69,13 +71,18 @@ class RelevantCommentsViewController: UIViewController, UITableViewDelegate,UITa
         tableView.dataSource = self
         return tableView
     }()
-
+    
+//    var frostedView = UIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
+        self.view.backgroundColor = XZSwiftColor.backgroudColor
+        self.fd_prefersNavigationBarHidden = true
+
         let shimmeringView = FBShimmeringView()
         shimmeringView.isShimmering = true
-        shimmeringView.shimmeringOpacity = 0.3
+        shimmeringView.shimmeringOpacity = 0.5
         shimmeringView.shimmeringSpeed = 45
         shimmeringView.shimmeringHighlightLength = 0.6
         self.view.addSubview(shimmeringView)
@@ -112,18 +119,7 @@ class RelevantCommentsViewController: UIViewController, UITableViewDelegate,UITa
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        (self.navigationController as! V2EXNavigationController).navigationBarAlpha = 0
-//    }
-//    override func viewWillDisappear(_ animated: Bool) {
-//        if !self.dismissing{
-//            (self.navigationController as! V2EXNavigationController).navigationBarAlpha = 1
-//        }
-//    }
-//    
-//    
-//    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.commentsArray.count;
     }

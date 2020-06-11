@@ -458,6 +458,7 @@ extension TopicDetailViewController: UIActionSheetDelegate {
             return;
         }
         let controller = RelevantCommentsNav(comments: relevantComments)
+        controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true, completion: nil)
     }
 }
