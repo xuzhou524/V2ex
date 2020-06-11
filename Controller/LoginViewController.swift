@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import OnePasswordExtension
 import Kingfisher
 import SVProgressHUD
 import Alamofire
@@ -102,18 +101,6 @@ class LoginViewController: UIViewController {
         //初始化界面
         self.setupView()
 
-        //初始化1Password
-        if OnePasswordExtension.shared().isAppExtensionAvailable() {
-            let onepasswordButton = UIImageView(image: UIImage(named: "onepassword-button")?.withRenderingMode(.alwaysTemplate))
-            onepasswordButton.isUserInteractionEnabled = true
-            onepasswordButton.frame = CGRect(x: 0, y: 0, width: 34, height: 22)
-            onepasswordButton.contentMode = .scaleAspectFit
-            onepasswordButton.tintColor = UIColor.white
-            self.passwordTextField.rightView = onepasswordButton
-            self.passwordTextField.rightViewMode = .always
-            onepasswordButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(LoginViewController.findLoginFrom1Password)))
-        }
-
         //绑定事件
         self.loginButton.addTarget(self, action: #selector(LoginViewController.loginClick(_:)), for: .touchUpInside)
         self.cancelButton.addTarget(self, action: #selector(LoginViewController.cancelClick), for: .touchUpInside)
@@ -121,17 +108,6 @@ class LoginViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
     }
 
-    @objc func findLoginFrom1Password(){
-        OnePasswordExtension.shared().findLogin(forURLString: "v2ex.com", for: self, sender: nil) { (loginDictionary, errpr) -> Void in
-            if let count = loginDictionary?.count , count > 0 {
-                self.userNameTextField.text = loginDictionary![AppExtensionUsernameKey] as? String
-                self.passwordTextField.text = loginDictionary![AppExtensionPasswordKey] as? String
-
-                //密码赋值后，点确认按钮
-                self.loginClick(self.loginButton)
-            }
-        }
-    }
     @objc func cancelClick (){
         self.dismiss(animated: true, completion: nil)
     }

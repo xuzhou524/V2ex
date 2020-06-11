@@ -9,9 +9,8 @@
 import UIKit
 import WebKit
 
-class V2WebViewViewController: UIViewController ,V2WebViewProgressDelegate ,V2ActivityViewDataSource {
-    var webViewProgress: V2WebViewProgress?
-    var webViewProgressView: V2WebViewProgressView?
+class V2WebViewViewController: UIViewController ,V2ActivityViewDataSource {
+
     var webView:WKWebView?
     var closeButton:UIButton = {
         let button = UIButton(type: .custom)
@@ -66,19 +65,12 @@ class V2WebViewViewController: UIViewController ,V2WebViewProgressDelegate ,V2Ac
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
         rightButton.addTarget(self, action: #selector(V2WebViewViewController.rightClick), for: .touchUpInside)
         
-        
-        self.webViewProgress = V2WebViewProgress()
-        self.webViewProgress!.delegate = self
-        
         self.webView = WKWebView()
         self.webView!.backgroundColor = self.view.backgroundColor
         self.view.addSubview(self.webView!)
         self.webView!.snp.makeConstraints{ (make) -> Void in
             make.top.right.bottom.left.equalTo(self.view)
         }
-        
-        self.webViewProgressView = V2WebViewProgressView(frame: CGRect(x: 0, y: NavigationBarHeight, width: SCREEN_WIDTH, height: 2))
-        self.view.addSubview(self.webViewProgressView!)
         
         if let URL = URL(string: self.url) {
             _ = self.webView?.load(URLRequest(url: URL))
@@ -90,9 +82,7 @@ class V2WebViewViewController: UIViewController ,V2WebViewProgressDelegate ,V2Ac
     }
     
     private func refreshState(){
-        
-        self.webViewProgressView?.setProgress(Float(self.webView!.estimatedProgress), animated: true)
-        
+                
         if self.webView!.canGoBack {
             self.setCloseButtonHidden(false)
         } else {
