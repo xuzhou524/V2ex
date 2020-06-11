@@ -10,7 +10,7 @@ import UIKit
 import KVOController
 import JavaScriptCore
 import Kingfisher
-
+import WebKit
 /**
  * 由于这里的逻辑比较分散，但又缺一不可，所以在这里说明一下
  * 1. 将V站帖子的HTML和此APP内置的CSS等拼接起来，然后用 UIWebView 加载。以实现富文本功能
@@ -23,21 +23,22 @@ import Kingfisher
 public typealias TopicDetailWebViewContentHeightChanged = (CGFloat) -> Void
 
 let HTMLHEADER  = "<html><head><meta name=\"viewport\" content=\"width=device-width, user-scalable=no\">"
-let jsCode = try! String(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "JSTools", ofType: "js")!))
-class TopicDetailWebViewContentCell: UITableViewCell ,UIWebViewDelegate {
+
+class TopicDetailWebViewContentCell: UITableViewCell {
     
     fileprivate var model:TopicDetailModel?
     
     var contentHeight : CGFloat = 0
-    var contentWebView:UIWebView = {
-        let contentWebView = UIWebView()
-        contentWebView.isOpaque = false
-        contentWebView.backgroundColor = UIColor.clear
-        contentWebView.scrollView.isScrollEnabled = false
-        contentWebView.scalesPageToFit = false
-        return contentWebView
-
-    }()
+    var contentWebView:WKWebView?
+//    var contentWebView:WKWebView = {
+//        let contentWebView = WKWebView()
+//        contentWebView.isOpaque = false
+//        contentWebView.backgroundColor = UIColor.clear
+//        contentWebView.scrollView.isScrollEnabled = false
+////        contentWebView.scalesPageToFit = false
+//        return contentWebView
+//
+//    }()
     var contentHeightChanged : TopicDetailWebViewContentHeightChanged?
     
     var tapGesture:UITapGestureRecognizer?
@@ -59,15 +60,32 @@ class TopicDetailWebViewContentCell: UITableViewCell ,UIWebViewDelegate {
     func setup()->Void{
         self.clipsToBounds = true
         
-        self.contentWebView.delegate = self
-        self.contentView.addSubview(self.contentWebView);
-        self.contentWebView.snp.makeConstraints{ (make) -> Void in
+        let jScript = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);"
+        let wkUScript = WKUserScript.init(source: jScript, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+
+        let jsCode = try! String(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "JSTools", ofType: "js")!))
+        let wkJsCode = WKUserScript.init(source: jsCode, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+
+        
+        let wkUController = WKUserContentController()
+          wkUController.addUserScript(wkUScript)
+         wkUController.addUserScript(wkJsCode)
+        
+        let wkWebConfig = WKWebViewConfiguration()
+          wkWebConfig.userContentController = wkUController
+          
+          self.contentWebView = WKWebView.init(frame: CGRect(x: 0 , y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 50), configuration: wkWebConfig)
+    
+//        self.contentWebView.delegate = self
+
+        self.contentView.addSubview(self.contentWebView!);
+        self.contentWebView?.snp.makeConstraints{ (make) -> Void in
             make.left.top.right.bottom.equalTo(self.contentView)
         }
-        for view in self.contentWebView.scrollView.subviews ?? [] {
+        for view in self.contentWebView?.scrollView.subviews ?? [] {
             view.backgroundColor = XZSwiftColor.white
         }
-        self.kvoController.observe(self.contentWebView.scrollView, keyPath: "contentSize", options: [.new]) {
+        self.kvoController.observe(self.contentWebView?.scrollView, keyPath: "contentSize", options: [.new]) {
             [weak self] (observe, observer, change) -> Void in
             if let weakSelf = self {
                 let size = change["new"] as! NSValue
@@ -76,53 +94,53 @@ class TopicDetailWebViewContentCell: UITableViewCell ,UIWebViewDelegate {
             }
         }
         
-        tapGesture = UITapGestureRecognizer(target: self, action:#selector(TopicDetailWebViewContentCell.tapHandler(_:)))
-        self.tapGesture!.delegate = self
-        self.contentWebView.addGestureRecognizer(self.tapGesture!);
+//        tapGesture = UITapGestureRecognizer(target: self, action:#selector(TopicDetailWebViewContentCell.tapHandler(_:)))
+//        self.tapGesture!.delegate = self
+//        self.contentWebView?.addGestureRecognizer(self.tapGesture!);
     }
-    @objc func tapHandler(_ tap :UITapGestureRecognizer){
-        let tapPoint = tap.location(in: tap.view)
-    
-        let script = String(format: "getHTMLElementAtPoint(%i,%i)", Int(tapPoint.x),Int(tapPoint.y))
-
-        let imgSrc = self.contentWebView.stringByEvaluatingJavaScript(from: script)
-        guard let img = imgSrc , img.Lenght > 0 else {
-            return
-        }
-        let arr = img.components(separatedBy: ",")
-        guard arr.count == 5 else {
-            return;
-        }
-        let url = fixUrl(url: arr[0])
-        let width = Int(arr[1])
-        let height = Int(arr[2])
-        let left = Int(arr[3])
-        let top = Int(arr[4])
-        guard let w = width ,let h = height , let l = left , let t = top else {
-            return;
-        }
-        
-        self.tapImageInfo = TapImageInfo(url: url, width: w, height: h, left: l, top: t)
-        
-        let photoBrowser = V2PhotoBrowser(delegate: self)
-        photoBrowser.currentPageIndex = 0;
-        V2Client.sharedInstance.topNavigationController.present(photoBrowser, animated: true, completion: nil)
-        
-    }
-    private func fixUrl(url:String) -> String {
-        if(url.hasPrefix("http") || url.hasPrefix("https")){
-            return url
-        }
-        if (url.hasPrefix("//")){
-            return "https:" + url
-        }
-        else if(url.hasPrefix("/")){
-            return "https://www.v2ex.com" + url
-        }
-        else {
-            return url
-        }
-    }
+//    @objc func tapHandler(_ tap :UITapGestureRecognizer){
+//        let tapPoint = tap.location(in: tap.view)
+//
+//        let script = String(format: "getHTMLElementAtPoint(%i,%i)", Int(tapPoint.x),Int(tapPoint.y))
+//
+//        let imgSrc = self.contentWebView.stringByEvaluatingJavaScript(from: script)
+//        guard let img = imgSrc , img.Lenght > 0 else {
+//            return
+//        }
+//        let arr = img.components(separatedBy: ",")
+//        guard arr.count == 5 else {
+//            return;
+//        }
+//        let url = fixUrl(url: arr[0])
+//        let width = Int(arr[1])
+//        let height = Int(arr[2])
+//        let left = Int(arr[3])
+//        let top = Int(arr[4])
+//        guard let w = width ,let h = height , let l = left , let t = top else {
+//            return;
+//        }
+//
+//        self.tapImageInfo = TapImageInfo(url: url, width: w, height: h, left: l, top: t)
+//
+//        let photoBrowser = V2PhotoBrowser(delegate: self)
+//        photoBrowser.currentPageIndex = 0;
+//        V2Client.sharedInstance.topNavigationController.present(photoBrowser, animated: true, completion: nil)
+//
+//    }
+//    private func fixUrl(url:String) -> String {
+//        if(url.hasPrefix("http") || url.hasPrefix("https")){
+//            return url
+//        }
+//        if (url.hasPrefix("//")){
+//            return "https:" + url
+//        }
+//        else if(url.hasPrefix("/")){
+//            return "https://www.v2ex.com" + url
+//        }
+//        else {
+//            return url
+//        }
+//    }
     override func layoutSubviews() {
         super.layoutSubviews()
     }
@@ -138,7 +156,7 @@ class TopicDetailWebViewContentCell: UITableViewCell ,UIWebViewDelegate {
             let style = "<style>" + V2Style.sharedInstance.CSS + "</style></head>"
             html =  HTMLHEADER + style  + html + "</html>"
             
-            self.contentWebView.loadHTMLString(html, baseURL: URL(string: "https://www.v2ex.com"))
+            self.contentWebView?.loadHTMLString(html, baseURL: URL(string: "https://www.v2ex.com"))
 
             //这里有一个问题，
             
@@ -153,49 +171,49 @@ class TopicDetailWebViewContentCell: UITableViewCell ,UIWebViewDelegate {
         }
     }
     
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
-        //如果加载的是 自己load 的本地页面 则肯定放过啊
-        if navigationType == .other {
-            return true
-        }
-        else if navigationType == .linkClicked {
-            if let url = request.url?.absoluteString{
-                return !AnalyzeURLHelper.Analyze(url)
-            }
-        }
-        return true
-    }
+//    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
+//        //如果加载的是 自己load 的本地页面 则肯定放过啊
+//        if navigationType == .other {
+//            return true
+//        }
+//        else if navigationType == .linkClicked {
+//            if let url = request.url?.absoluteString{
+//                return !AnalyzeURLHelper.Analyze(url)
+//            }
+//        }
+//        return true
+//    }
     
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        self.contentWebView.stringByEvaluatingJavaScript(from: jsCode)
-    }
+//    func webViewDidFinishLoad(_ webView: UIWebView) {
+//        self.contentWebView.stringByEvaluatingJavaScript(from: jsCode)
+//    }
 }
 
 //MARK: - 点击图片放大
-extension TopicDetailWebViewContentCell : V2PhotoBrowserDelegate {
-    //V2PhotoBrowser Delegate
-    func numberOfPhotosInPhotoBrowser(_ photoBrowser: V2PhotoBrowser) -> Int {
-        return 1
-    }
-    func photoAtIndexInPhotoBrowser(_ photoBrowser: V2PhotoBrowser, index: Int) -> V2Photo {
-        let photo = V2Photo(url: URL(string: self.tapImageInfo!.url)!)
-        return photo
-    }
-    func guideContentModeInPhotoBrowser(_ photoBrowser: V2PhotoBrowser, index: Int) -> UIView.ContentMode {
-        return .scaleAspectFit
-    }
-    func guideFrameInPhotoBrowser(_ photoBrowser: V2PhotoBrowser, index: Int) -> CGRect {
-        let location = self.contentWebView.convert(self.contentWebView.bounds, to: UIApplication.shared.keyWindow!)
-        return CGRect(x: tapImageInfo!.left + Int(location.origin.x), y: tapImageInfo!.top + Int(location.origin.y), width: tapImageInfo!.width, height: tapImageInfo!.height)
-    }
-    func guideImageInPhotoBrowser(_ photoBrowser: V2PhotoBrowser, index: Int) -> UIImage? {
-        var image = KingfisherManager.shared.cache.retrieveImageInMemoryCache(forKey: URL(string:tapImageInfo!.url)!.cacheKey)
-        if image == nil {
-            image = KingfisherManager.shared.cache.retrieveImageInDiskCache(forKey: URL(string:tapImageInfo!.url)!.cacheKey)
-        }
-        return image
-    }
-}
+//extension TopicDetailWebViewContentCell : V2PhotoBrowserDelegate {
+//    //V2PhotoBrowser Delegate
+//    func numberOfPhotosInPhotoBrowser(_ photoBrowser: V2PhotoBrowser) -> Int {
+//        return 1
+//    }
+//    func photoAtIndexInPhotoBrowser(_ photoBrowser: V2PhotoBrowser, index: Int) -> V2Photo {
+//        let photo = V2Photo(url: URL(string: self.tapImageInfo!.url)!)
+//        return photo
+//    }
+//    func guideContentModeInPhotoBrowser(_ photoBrowser: V2PhotoBrowser, index: Int) -> UIView.ContentMode {
+//        return .scaleAspectFit
+//    }
+//    func guideFrameInPhotoBrowser(_ photoBrowser: V2PhotoBrowser, index: Int) -> CGRect {
+//        let location = self.contentWebView.convert(self.contentWebView?.bounds, to: UIApplication.shared.keyWindow!)
+//        return CGRect(x: tapImageInfo!.left + Int(location.origin.x), y: tapImageInfo!.top + Int(location.origin.y), width: tapImageInfo!.width, height: tapImageInfo!.height)
+//    }
+//    func guideImageInPhotoBrowser(_ photoBrowser: V2PhotoBrowser, index: Int) -> UIImage? {
+//        var image = KingfisherManager.shared.cache.retrieveImageInMemoryCache(forKey: URL(string:tapImageInfo!.url)!.cacheKey)
+//        if image == nil {
+//            image = KingfisherManager.shared.cache.retrieveImageInDiskCache(forKey: URL(string:tapImageInfo!.url)!.cacheKey)
+//        }
+//        return image
+//    }
+//}
 
 extension TopicDetailWebViewContentCell {
     //让点击图片手势 和webView的手势能共存
