@@ -13,7 +13,6 @@
 		060C72571C8D6100000F4D2F /* V2ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C72561C8D6100000F4D2F /* V2ActivityViewController.swift */; };
 		0610F1B01C46136300481402 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0610F1AF1C46136300481402 /* BaseModel.swift */; };
 		0610F1B21C4613D800481402 /* TopicListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0610F1B11C4613D800481402 /* TopicListModel.swift */; };
-		0610F1B41C46491800481402 /* V2EXNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0610F1B31C46491800481402 /* V2EXNavigationController.swift */; };
 		0611DE591C5F385800933964 /* MemberHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0611DE581C5F385800933964 /* MemberHeaderCell.swift */; };
 		0611DE5B1C5F3ACA00933964 /* MemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0611DE5A1C5F3ACA00933964 /* MemberModel.swift */; };
 		0611DE5D1C5F4C5C00933964 /* MemberTopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0611DE5C1C5F4C5C00933964 /* MemberTopicCell.swift */; };
@@ -119,7 +118,6 @@
 		060C72561C8D6100000F4D2F /* V2ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V2ActivityViewController.swift; sourceTree = "<group>"; };
 		0610F1AF1C46136300481402 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		0610F1B11C4613D800481402 /* TopicListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListModel.swift; sourceTree = "<group>"; };
-		0610F1B31C46491800481402 /* V2EXNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V2EXNavigationController.swift; sourceTree = "<group>"; };
 		0611DE581C5F385800933964 /* MemberHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberHeaderCell.swift; sourceTree = "<group>"; };
 		0611DE5A1C5F3ACA00933964 /* MemberModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberModel.swift; sourceTree = "<group>"; };
 		0611DE5C1C5F4C5C00933964 /* MemberTopicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberTopicCell.swift; sourceTree = "<group>"; };
@@ -334,7 +332,6 @@
 		069508E21C3F74FF0088D031 /* V2ex-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				0610F1B31C46491800481402 /* V2EXNavigationController.swift */,
 				069508E31C3F74FF0088D031 /* AppDelegate.swift */,
 				53E7BEA1248A2F3700438BCB /* V2ex-Swift-Bridging-Header.h */,
 				069839781C4773D600FF7163 /* Localizable.strings */,
@@ -671,7 +668,6 @@
 				53E7BEAD248A306A00438BCB /* LDTabBar.m in Sources */,
 				0618768B1C7C19F0002E9C33 /* PodCellTableViewCell.swift in Sources */,
 				0614FDC91CB371A600C3740A /* V2LeftAlignedCollectionViewFlowLayout.swift in Sources */,
-				0610F1B41C46491800481402 /* V2EXNavigationController.swift in Sources */,
 				067FF8C21C804B9C009538F7 /* V2PhotoBrowserTransionDismiss.swift in Sources */,
 				06E4B7511C5CA0300056A673 /* FavoritesViewController.swift in Sources */,
 				0678D2051C61B423007FFCFD /* UIImage+Extension.swift in Sources */,
